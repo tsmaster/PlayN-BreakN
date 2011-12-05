@@ -1,0 +1,6156 @@
+<html>
+<head><meta charset="UTF-8" /><script>
+var $gwt_version = "2.4.0";
+var $wnd = parent;
+var $doc = $wnd.document;
+var $moduleName, $moduleBase;
+var $strongName = '23F3FA0854C09691EB98840793E23A1B';
+var $stats = $wnd.__gwtStatsEvent ? function(a) {return $wnd.__gwtStatsEvent(a);} : null,
+$sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
+$stats && $stats({moduleName:'breakn',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalStart'});
+</script></head>
+<body>
+<script><!--
+var _, Q$Object = 0, Q$String = 1, Q$Style$HasCssName = 2, Q$Style$Overflow = 3, Q$Style$Position = 4, Q$Style$Unit = 5, Q$Style$Visibility = 6, Q$LongLibBase$LongEmul = 7, Q$Serializable = 8, Q$CharSequence = 9, Q$Class = 10, Q$Comparable = 11, Q$Enum = 12, Q$Exception = 13, Q$RuntimeException = 14, Q$StackTraceElement = 15, Q$Throwable = 16, Q$List = 17, Q$Map = 18, Q$Map$Entry = 19, Q$Set = 20, Q$AbstractLayer$Flag = 21, Q$HtmlPlatform$Mode = 22, Q$AbstractVector = 23;
+function makeCastMap(a){
+  var result = {};
+  for (var i = 0, c = a.length; i < c; ++i) {
+    result[a[i]] = 1;
+  }
+  return result;
+}
+
+function nullMethod(){
+}
+
+function Object_0(){
+}
+
+_ = Object_0.prototype = {};
+_.equals$ = function equals(other){
+  return this === other;
+}
+;
+_.getClass$ = function getClass_0(){
+  return Ljava_lang_Object_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_0(){
+  return getHashCode(this);
+}
+;
+_.toString$ = function toString_0(){
+  return this.getClass$().typeName + '@' + toPowerOfTwoString(this.hashCode$());
+}
+;
+_.toString = function(){
+  return this.toString$();
+}
+;
+_.typeMarker$ = nullMethod;
+_.castableTypeMap$ = {};
+function $clinit_SoundController(){
+  $clinit_SoundController = nullMethod;
+  $wnd.$GWT_VOICES_VERSION = '2.1.3';
+}
+
+function $setPreferredSoundType(clazz){
+  var c$index, c$max;
+  for (c$index = 0 , c$max = clazz.length; c$index < c$max; ++c$index) {
+  }
+}
+
+function SoundController_0(){
+  var s, i, gwtVoices, style;
+  $clinit_SoundController();
+  this.soundContainer = $doc.createElement('div');
+  (s = $doc.location.href , i = s.indexOf('#') , i != -1 && (s = s.substring(0, i)) , i = s.indexOf('?') , i != -1 && (s = s.substring(0, i)) , i = s.lastIndexOf('/') , i != -1 && (s = s.substring(0, i)) , s.length > 0?s + '/':'') + $moduleName + '/';
+  gwtVoices = (ensureParameterMap() , $get_0(paramMap, 'gwt-voices'));
+  $equals('flash', gwtVoices)?$setPreferredSoundType(initValues(_3Ljava_lang_Class_2_classLit, makeCastMap([Q$Serializable]), Q$Class, [Lcom_allen_1sauer_gwt_voices_client_FlashSound_2_classLit])):$equals('html5', gwtVoices)?$setPreferredSoundType(initValues(_3Ljava_lang_Class_2_classLit, makeCastMap([Q$Serializable]), Q$Class, [Lcom_allen_1sauer_gwt_voices_client_Html5Sound_2_classLit])):$equals('webaudio', gwtVoices)?$setPreferredSoundType(initValues(_3Ljava_lang_Class_2_classLit, makeCastMap([Q$Serializable]), Q$Class, [Lcom_allen_1sauer_gwt_voices_client_WebAudioSound_2_classLit])):$equals('native', gwtVoices)?$setPreferredSoundType(initValues(_3Ljava_lang_Class_2_classLit, makeCastMap([Q$Serializable]), Q$Class, [Lcom_allen_1sauer_gwt_voices_client_NativeSound_2_classLit])):$setPreferredSoundType(initValues(_3Ljava_lang_Class_2_classLit, makeCastMap([Q$Serializable]), Q$Class, [Lcom_allen_1sauer_gwt_voices_client_WebAudioSound_2_classLit, Lcom_allen_1sauer_gwt_voices_client_FlashSound_2_classLit, Lcom_allen_1sauer_gwt_voices_client_Html5Sound_2_classLit]));
+  $appendChild(($clinit_RootPanel() , $doc.body), this.soundContainer);
+  style = this.soundContainer.style;
+  style['position'] = ($clinit_Style$Position() , 'absolute');
+  style['overflow'] = ($clinit_Style$Overflow() , 'hidden');
+  style['left'] = -500 + ($clinit_Style$Unit() , 'px');
+  style['top'] = '-500px';
+  style['width'] = '0px';
+  style['height'] = '0px';
+}
+
+function SoundController(){
+}
+
+_ = SoundController_0.prototype = SoundController.prototype = new Object_0;
+_.getClass$ = function getClass_1(){
+  return Lcom_allen_1sauer_gwt_voices_client_SoundController_2_classLit;
+}
+;
+function $addToPositionX(this$static, deltaX){
+  this$static.positionX += deltaX;
+  this$static.ballLayer.setTranslation(this$static.positionX, this$static.positionY);
+}
+
+function $addToPositionY(this$static, deltaY){
+  this$static.positionY += deltaY;
+  this$static.ballLayer.setTranslation(this$static.positionX, this$static.positionY);
+}
+
+function $loadAssets(this$static){
+  $addCallback(this$static.ballImage, new Ball$1_0(this$static));
+}
+
+function $serve(this$static){
+  this$static.positionX = 400;
+  this$static.positionY = 300;
+  this$static.ballLayer.setTranslation(this$static.positionX, this$static.positionY);
+  this$static.velocityX = 250;
+  this$static.velocityY = 250;
+  this$static.inBounds = true;
+}
+
+function $setPositionX(this$static, positionX){
+  this$static.positionX = positionX;
+  this$static.ballLayer.setTranslation(this$static.positionX, this$static.positionY);
+}
+
+function $setPositionY(this$static, positionY){
+  this$static.positionY = positionY;
+  this$static.ballLayer.setTranslation(this$static.positionX, this$static.positionY);
+}
+
+function $update(this$static, deltaSeconds, paddle, brickManager){
+  $addToPositionX(this$static, this$static.velocityX * deltaSeconds);
+  $addToPositionY(this$static, this$static.velocityY * deltaSeconds);
+  if (this$static.positionY > paddle.positionY) {
+    if (abs(this$static.positionX - paddle.positionX) < ~~($width(paddle.paddleImage) / 2)) {
+      $setPositionY(this$static, paddle.positionY);
+      this$static.velocityY *= -1;
+    }
+     else {
+      this$static.inBounds = false;
+    }
+  }
+  if (this$static.positionY < 0) {
+    this$static.positionY = 0;
+    this$static.ballLayer.setTranslation(this$static.positionX, this$static.positionY);
+    this$static.velocityY *= -1;
+  }
+  if (this$static.positionX < 0) {
+    this$static.positionX = 0;
+    this$static.ballLayer.setTranslation(this$static.positionX, this$static.positionY);
+    this$static.velocityX *= -1;
+  }
+  if (this$static.positionX > platform_0.graphics.width_1()) {
+    $setPositionX(this$static, platform_0.graphics.width_1());
+    this$static.velocityX *= -1;
+  }
+  $collide(brickManager, this$static.positionX, this$static.positionY) && (this$static.velocityY *= -1);
+}
+
+function Ball_0(){
+  this.ballImage = $getImage(platform_0.assetManager, 'images/ball.png');
+  this.ballLayer = platform_0.graphics.createImageLayer(this.ballImage);
+}
+
+function Ball(){
+}
+
+_ = Ball_0.prototype = Ball.prototype = new Object_0;
+_.getClass$ = function getClass_2(){
+  return Lcom_bigdicegames_playndemos_core_Ball_2_classLit;
+}
+;
+_.ballImage = null;
+_.ballLayer = null;
+_.centerX = 0;
+_.centerY = 0;
+_.inBounds = false;
+_.positionX = 0;
+_.positionY = 0;
+_.velocityX = 0;
+_.velocityY = 0;
+function Ball$1_0(this$0){
+  this.this$0 = this$0;
+}
+
+function Ball$1(){
+}
+
+_ = Ball$1_0.prototype = Ball$1.prototype = new Object_0;
+_.done = function done(resource){
+  this.this$0.centerX = ~~((!resource.img?0:resource.img.width) / 2);
+  this.this$0.centerY = ~~((!resource.img?0:resource.img.height) / 2);
+  this.this$0.ballLayer.setOrigin(this.this$0.centerX, this.this$0.centerY);
+}
+;
+_.error = function error(err){
+  err.getMessage();
+}
+;
+_.getClass$ = function getClass_3(){
+  return Lcom_bigdicegames_playndemos_core_Ball$1_2_classLit;
+}
+;
+_.this$0 = null;
+function $addLayers(this$static){
+  var brickLayer, brickLayer$iterator;
+  platform_0.graphics.rootLayer_0().remove(this$static.titleLayer);
+  platform_0.graphics.rootLayer_0().add_0(this$static.paddle.paddleLayer);
+  for (brickLayer$iterator = new AbstractList$IteratorImpl_0($getLayers(this$static.brickManager)); brickLayer$iterator.i < brickLayer$iterator.this$0.size;) {
+    brickLayer = $next_0(brickLayer$iterator);
+    platform_0.graphics.rootLayer_0().add_0(brickLayer);
+  }
+  platform_0.graphics.rootLayer_0().add_0(this$static.ball.ballLayer);
+}
+
+function $initBackground(bgSurfaceLayer){
+  bgSurfaceLayer.surface_0().setFillColor(-12303292);
+  bgSurfaceLayer.surface_0().fillRect_0(0, 0, 800, 480);
+}
+
+function $startGame(this$static){
+  $setup(this$static.brickManager);
+  $addLayers(this$static);
+  $serve(this$static.ball);
+  this$static.inPlay = true;
+}
+
+function $update_0(this$static, deltaMilliseconds){
+  var deltaSeconds;
+  deltaSeconds = deltaMilliseconds / 1000;
+  if (this$static.inPlay) {
+    $update(this$static.ball, deltaSeconds, this$static.paddle, this$static.brickManager);
+    if (!this$static.ball.inBounds || this$static.brickManager.bricks.size == 0) {
+      $clear(this$static.brickManager);
+      platform_0.graphics.rootLayer_0().remove(this$static.paddle.paddleLayer);
+      platform_0.graphics.rootLayer_0().remove(this$static.ball.ballLayer);
+      platform_0.graphics.rootLayer_0().add_0(this$static.titleLayer);
+      this$static.inPlay = false;
+    }
+  }
+}
+
+function BreakN_0(){
+}
+
+function BreakN(){
+}
+
+_ = BreakN_0.prototype = BreakN.prototype = new Object_0;
+_.getClass$ = function getClass_4(){
+  return Lcom_bigdicegames_playndemos_core_BreakN_2_classLit;
+}
+;
+_.ball = null;
+_.bgSurfaceLayer = null;
+_.brickManager = null;
+_.inPlay = false;
+_.paddle = null;
+_.titleLayer = null;
+function Mouse$Adapter(){
+}
+
+_ = Mouse$Adapter.prototype = new Object_0;
+_.getClass$ = function getClass_5(){
+  return Lplayn_core_Mouse$Adapter_2_classLit;
+}
+;
+function $onMouseDown(this$static, event_0){
+  this$static.this$0.inPlay || $startGame(this$static.this$0);
+  $setPositionX_0(this$static.this$0.paddle, event_0.x);
+}
+
+function $onMouseMove(this$static, event_0){
+  $setPositionX_0(this$static.this$0.paddle, event_0.x);
+}
+
+function BreakN$1_0(this$0){
+  this.this$0 = this$0;
+}
+
+function BreakN$1(){
+}
+
+_ = BreakN$1_0.prototype = BreakN$1.prototype = new Mouse$Adapter;
+_.getClass$ = function getClass_6(){
+  return Lcom_bigdicegames_playndemos_core_BreakN$1_2_classLit;
+}
+;
+_.this$0 = null;
+function Pointer$Adapter(){
+}
+
+_ = Pointer$Adapter.prototype = new Object_0;
+_.getClass$ = function getClass_7(){
+  return Lplayn_core_Pointer$Adapter_2_classLit;
+}
+;
+function $onPointerDrag(this$static, event_0){
+  $setPositionX_0(this$static.this$0.paddle, event_0.x);
+}
+
+function $onPointerStart(this$static, event_0){
+  this$static.this$0.inPlay || $startGame(this$static.this$0);
+  $setPositionX_0(this$static.this$0.paddle, event_0.x);
+}
+
+function BreakN$2_0(this$0){
+  this.this$0 = this$0;
+}
+
+function BreakN$2(){
+}
+
+_ = BreakN$2_0.prototype = BreakN$2.prototype = new Pointer$Adapter;
+_.getClass$ = function getClass_8(){
+  return Lcom_bigdicegames_playndemos_core_BreakN$2_2_classLit;
+}
+;
+_.this$0 = null;
+function Brick_0(brickImage, x, y){
+  this.width_0 = !brickImage.img?0:brickImage.img.width;
+  this.height_0 = !brickImage.img?0:brickImage.img.height;
+  this.brickLayer = platform_0.graphics.createImageLayer(brickImage);
+  this.brickLayer.setOrigin(~~(this.width_0 / 2), ~~(this.height_0 / 2));
+  this.positionX = x;
+  this.positionY = y;
+  this.brickLayer.setTranslation(this.positionX, this.positionY);
+}
+
+function Brick(){
+}
+
+_ = Brick_0.prototype = Brick.prototype = new Object_0;
+_.getClass$ = function getClass_9(){
+  return Lcom_bigdicegames_playndemos_core_Brick_2_classLit;
+}
+;
+_.brickLayer = null;
+_.height_0 = 0;
+_.positionX = 0;
+_.positionY = 0;
+_.width_0 = 0;
+function $clear(this$static){
+  var brick, brick$iterator;
+  for (brick$iterator = new AbstractList$IteratorImpl_0(this$static.bricks); brick$iterator.i < brick$iterator.this$0.size;) {
+    brick = $next_0(brick$iterator);
+    platform_0.graphics.rootLayer_0().remove(brick.brickLayer);
+  }
+  $clear_0(this$static.bricks);
+}
+
+function $collide(this$static, x, y){
+  var brick, brick$iterator;
+  for (brick$iterator = new AbstractList$IteratorImpl_0(this$static.bricks); brick$iterator.i < brick$iterator.this$0.size;) {
+    brick = $next_0(brick$iterator);
+    if (abs(brick.positionX - x) < ~~(brick.width_0 / 2) && abs(brick.positionY - y) < ~~(brick.height_0 / 2)) {
+      platform_0.graphics.rootLayer_0().remove(brick.brickLayer);
+      $remove_0(this$static.bricks, brick);
+      return true;
+    }
+  }
+  return false;
+}
+
+function $getLayers(this$static){
+  var brick, brick$iterator, layers;
+  layers = new ArrayList_0;
+  for (brick$iterator = new AbstractList$IteratorImpl_0(this$static.bricks); brick$iterator.i < brick$iterator.this$0.size;) {
+    brick = $next_0(brick$iterator);
+    $add(layers, brick.brickLayer);
+  }
+  return layers;
+}
+
+function $setup(this$static){
+  var brick, x, y;
+  for (x = 50; x < 800; x += 100) {
+    for (y = 95; y <= 275; y += 60) {
+      brick = new Brick_0(this$static.brickImage, x, y);
+      $add(this$static.bricks, brick);
+    }
+  }
+}
+
+function BrickManager_0(){
+  this.bricks = new ArrayList_0;
+  this.brickImage = $getImage(platform_0.assetManager, 'images/brick.png');
+}
+
+function BrickManager(){
+}
+
+_ = BrickManager_0.prototype = BrickManager.prototype = new Object_0;
+_.getClass$ = function getClass_10(){
+  return Lcom_bigdicegames_playndemos_core_BrickManager_2_classLit;
+}
+;
+_.brickImage = null;
+function $loadAssets_0(this$static){
+  $addCallback(this$static.paddleImage, new Paddle$1_0(this$static));
+}
+
+function $setPositionX_0(this$static, x){
+  this$static.positionX = x;
+  this$static.paddleLayer.setTranslation(this$static.positionX, this$static.positionY);
+}
+
+function Paddle_0(){
+  this.paddleImage = $getImage(platform_0.assetManager, 'images/paddle.png');
+  this.paddleLayer = platform_0.graphics.createImageLayer(this.paddleImage);
+  this.positionX = 400;
+  this.positionY = 450;
+  this.paddleLayer.setTranslation(this.positionX, this.positionY);
+}
+
+function Paddle(){
+}
+
+_ = Paddle_0.prototype = Paddle.prototype = new Object_0;
+_.getClass$ = function getClass_11(){
+  return Lcom_bigdicegames_playndemos_core_Paddle_2_classLit;
+}
+;
+_.centerX = 0;
+_.centerY = 0;
+_.paddleImage = null;
+_.paddleLayer = null;
+_.positionX = 0;
+_.positionY = 0;
+function Paddle$1_0(this$0){
+  this.this$0 = this$0;
+}
+
+function Paddle$1(){
+}
+
+_ = Paddle$1_0.prototype = Paddle$1.prototype = new Object_0;
+_.done = function done_0(resource){
+  this.this$0.centerX = ~~((!resource.img?0:resource.img.width) / 2);
+  this.this$0.centerY = ~~((!resource.img?0:resource.img.height) / 2);
+  this.this$0.paddleLayer.setOrigin(this.this$0.centerX, this.this$0.centerY);
+}
+;
+_.error = function error_0(err){
+  $error(err);
+}
+;
+_.getClass$ = function getClass_12(){
+  return Lcom_bigdicegames_playndemos_core_Paddle$1_2_classLit;
+}
+;
+_.this$0 = null;
+function $start(){
+  var platform;
+  platform = ($clinit_HtmlPlatform() , register($clinit_HtmlPlatform$Mode()));
+  platform.assetManager.pathPrefix = 'breakn/';
+  run(new BreakN_0);
+}
+
+function equals__devirtual$(this$static, other){
+  var maybeJsoInvocation;
+  return maybeJsoInvocation = this$static , isJavaObject(maybeJsoInvocation)?maybeJsoInvocation.equals$(other):maybeJsoInvocation === other;
+}
+
+function hashCode__devirtual$(this$static){
+  var maybeJsoInvocation;
+  return maybeJsoInvocation = this$static , isJavaObject(maybeJsoInvocation)?maybeJsoInvocation.hashCode$():getHashCode(maybeJsoInvocation);
+}
+
+function toString__devirtual$(this$static){
+  var maybeJsoInvocation;
+  return maybeJsoInvocation = this$static , isJavaObject(maybeJsoInvocation)?maybeJsoInvocation.toString$():maybeJsoInvocation.toString?maybeJsoInvocation.toString():'[JavaScriptObject]';
+}
+
+function $fillRect(this$static, x, y, w, h){
+  this$static.fillRect(x, y, w, h);
+}
+
+function $setFillStyleWeb(this$static, fillStyle){
+  this$static.fillStyle = fillStyle;
+}
+
+function $setStrokeStyleWeb(this$static, strokeStyle){
+  this$static.strokeStyle = strokeStyle;
+}
+
+function currentTimeMillis(){
+  return (new Date).getTime();
+}
+
+function setUncaughtExceptionHandler(handler){
+  sUncaughtExceptionHandler = handler;
+}
+
+var sUncaughtExceptionHandler = null;
+function $printStackTrace(this$static){
+  var causeMessage, currentCause, msg;
+  msg = new StringBuffer_0;
+  currentCause = this$static;
+  while (currentCause) {
+    causeMessage = currentCause.getMessage();
+    currentCause != this$static && (msg.impl.string += 'Caused by: ' , msg);
+    $append_4(msg, currentCause.getClass$().typeName);
+    msg.impl.string += ': ';
+    $append_3(msg.impl, causeMessage == null?'(No exception detail)':causeMessage);
+    msg.impl.string += '\n';
+    currentCause = currentCause.cause;
+  }
+}
+
+function $setStackTrace(stackTrace){
+  var c, copy, i;
+  copy = initDim(_3Ljava_lang_StackTraceElement_2_classLit, makeCastMap([Q$Serializable]), Q$StackTraceElement, stackTrace.length, 0);
+  for (i = 0 , c = stackTrace.length; i < c; ++i) {
+    if (!stackTrace[i]) {
+      throw new NullPointerException_0;
+    }
+    copy[i] = stackTrace[i];
+  }
+}
+
+function Throwable(){
+}
+
+_ = Throwable.prototype = new Object_0;
+_.getClass$ = function getClass_13(){
+  return Ljava_lang_Throwable_2_classLit;
+}
+;
+_.getMessage = function getMessage(){
+  return this.detailMessage;
+}
+;
+_.toString$ = function toString_1(){
+  var className, msg;
+  className = this.getClass$().typeName;
+  msg = this.getMessage();
+  return msg != null?className + ': ' + msg:className;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Throwable]);
+_.cause = null;
+_.detailMessage = null;
+function Exception(){
+}
+
+_ = Exception.prototype = new Throwable;
+_.getClass$ = function getClass_14(){
+  return Ljava_lang_Exception_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Exception, Q$Throwable]);
+function RuntimeException_0(){
+  $fillInStackTrace();
+}
+
+function RuntimeException_1(message){
+  $fillInStackTrace();
+  this.detailMessage = message;
+}
+
+function RuntimeException(){
+}
+
+_ = RuntimeException_1.prototype = RuntimeException_0.prototype = RuntimeException.prototype = new Exception;
+_.getClass$ = function getClass_15(){
+  return Ljava_lang_RuntimeException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Exception, Q$RuntimeException, Q$Throwable]);
+function JavaScriptException_0(e){
+  $fillInStackTrace();
+  this.e = e;
+  $createStackTrace(new StackTraceCreator$CollectorChrome_0, this);
+}
+
+function getDescription(e){
+  return instanceOfJso(e)?e == null?null:e.message:e + '';
+}
+
+function getName(e){
+  var maybeJsoInvocation;
+  return e == null?'null':instanceOfJso(e)?e == null?null:e.name:instanceOf(e, Q$String)?'String':(maybeJsoInvocation = e , isJavaObject(maybeJsoInvocation)?maybeJsoInvocation.getClass$():Lcom_google_gwt_core_client_JavaScriptObject_2_classLit).typeName;
+}
+
+function getProperties(e){
+  return instanceOfJso(e)?$getProperties(e):'';
+}
+
+function JavaScriptException(){
+}
+
+_ = JavaScriptException_0.prototype = JavaScriptException.prototype = new RuntimeException;
+_.getClass$ = function getClass_16(){
+  return Lcom_google_gwt_core_client_JavaScriptException_2_classLit;
+}
+;
+_.getMessage = function getMessage_0(){
+  this.message_0 == null && (this.name_0 = getName(this.e) , this.description = getDescription(this.e) , this.message_0 = '(' + this.name_0 + '): ' + this.description + getProperties(this.e) , undefined);
+  return this.message_0;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Exception, Q$RuntimeException, Q$Throwable]);
+_.description = null;
+_.e = null;
+_.message_0 = null;
+_.name_0 = null;
+function Scheduler(){
+}
+
+_ = Scheduler.prototype = new Object_0;
+_.getClass$ = function getClass_17(){
+  return Lcom_google_gwt_core_client_Scheduler_2_classLit;
+}
+;
+function apply(jsFunction, thisObj, arguments_0){
+  return jsFunction.apply(thisObj, arguments_0);
+  var __0;
+}
+
+function enter(){
+  if (entryDepth++ == 0) {
+    $flushEntryCommands(($clinit_SchedulerImpl() , INSTANCE));
+    return true;
+  }
+  return false;
+}
+
+function entry_0(jsFunction){
+  return function(){
+    try {
+      return entry0(jsFunction, this, arguments);
+    }
+     catch (e) {
+      throw e;
+    }
+  }
+  ;
+}
+
+function entry0(jsFunction, thisObj, arguments_0){
+  var $e0, initialEntry, t;
+  initialEntry = enter();
+  try {
+    if (sUncaughtExceptionHandler) {
+      try {
+        return apply(jsFunction, thisObj, arguments_0);
+      }
+       catch ($e0) {
+        $e0 = caught($e0);
+        if (instanceOf($e0, Q$Throwable)) {
+          t = $e0;
+          $error(t);
+          return undefined;
+        }
+         else 
+          throw $e0;
+      }
+    }
+     else {
+      return apply(jsFunction, thisObj, arguments_0);
+    }
+  }
+   finally {
+    initialEntry && $flushFinallyCommands(($clinit_SchedulerImpl() , INSTANCE));
+    --entryDepth;
+  }
+}
+
+function getHashCode(o){
+  return o.$H || (o.$H = ++sNextHashId);
+}
+
+var entryDepth = 0, sNextHashId = 0;
+function $clinit_SchedulerImpl(){
+  $clinit_SchedulerImpl = nullMethod;
+  INSTANCE = new SchedulerImpl_0;
+}
+
+function $flushEntryCommands(this$static){
+  var oldQueue, rescheduled;
+  if (this$static.entryCommands) {
+    rescheduled = null;
+    do {
+      oldQueue = this$static.entryCommands;
+      this$static.entryCommands = null;
+      rescheduled = runScheduledTasks(oldQueue, rescheduled);
+    }
+     while (this$static.entryCommands);
+    this$static.entryCommands = rescheduled;
+  }
+}
+
+function $flushFinallyCommands(this$static){
+  var oldQueue, rescheduled;
+  if (this$static.finallyCommands) {
+    rescheduled = null;
+    do {
+      oldQueue = this$static.finallyCommands;
+      this$static.finallyCommands = null;
+      rescheduled = runScheduledTasks(oldQueue, rescheduled);
+    }
+     while (this$static.finallyCommands);
+    this$static.finallyCommands = rescheduled;
+  }
+}
+
+function $flushPostEventPumpCommands(this$static){
+  var oldDeferred;
+  if (this$static.deferredCommands) {
+    oldDeferred = this$static.deferredCommands;
+    this$static.deferredCommands = null;
+    !this$static.incrementalCommands && (this$static.incrementalCommands = []);
+    runScheduledTasks(oldDeferred, this$static.incrementalCommands);
+  }
+  !!this$static.incrementalCommands && (this$static.incrementalCommands = runRepeatingTasks(this$static.incrementalCommands));
+}
+
+function $isWorkQueued(this$static){
+  return !!this$static.deferredCommands || !!this$static.incrementalCommands;
+}
+
+function $maybeSchedulePostEventPumpCommands(this$static){
+  if (!this$static.shouldBeRunning) {
+    this$static.shouldBeRunning = true;
+    !this$static.flusher && (this$static.flusher = new SchedulerImpl$Flusher_0(this$static));
+    scheduleFixedDelayImpl(this$static.flusher, 1);
+    !this$static.rescue && (this$static.rescue = new SchedulerImpl$Rescuer_0(this$static));
+    scheduleFixedDelayImpl(this$static.rescue, 50);
+  }
+}
+
+function $scheduleDeferred(this$static, cmd){
+  this$static.deferredCommands = push(this$static.deferredCommands, [cmd, false]);
+  $maybeSchedulePostEventPumpCommands(this$static);
+}
+
+function SchedulerImpl_0(){
+}
+
+function execute(cmd){
+  return cmd.execute();
+}
+
+function push(queue, task){
+  !queue && (queue = []);
+  queue[queue.length] = task;
+  return queue;
+}
+
+function runRepeatingTasks(tasks){
+  var canceledSomeTasks, i, length_0, newTasks, start, t;
+  length_0 = tasks.length;
+  if (length_0 == 0) {
+    return null;
+  }
+  canceledSomeTasks = false;
+  start = currentTimeMillis();
+  while (currentTimeMillis() - start < 100) {
+    for (i = 0; i < length_0; ++i) {
+      t = tasks[i];
+      if (!t) {
+        continue;
+      }
+      if (!t[0].execute()) {
+        tasks[i] = null;
+        canceledSomeTasks = true;
+      }
+    }
+  }
+  if (canceledSomeTasks) {
+    newTasks = [];
+    for (i = 0; i < length_0; ++i) {
+      !!tasks[i] && (newTasks[newTasks.length] = tasks[i] , undefined);
+    }
+    return newTasks.length == 0?null:newTasks;
+  }
+   else {
+    return tasks;
+  }
+}
+
+function runScheduledTasks(tasks, rescheduled){
+  var $e0, e, i, j, t;
+  for (i = 0 , j = tasks.length; i < j; ++i) {
+    t = tasks[i];
+    try {
+      t[1]?t[0].execute() && (rescheduled = push(rescheduled, t)):$start(t[0]);
+    }
+     catch ($e0) {
+      $e0 = caught($e0);
+      if (instanceOf($e0, Q$RuntimeException)) {
+        e = $e0;
+        !!sUncaughtExceptionHandler && $error(e);
+      }
+       else 
+        throw $e0;
+    }
+  }
+  return rescheduled;
+}
+
+function scheduleFixedDelayImpl(cmd, delayMs){
+  $clinit_SchedulerImpl();
+  $wnd.setTimeout(function(){
+    var ret = $entry(execute)(cmd);
+    ret && $wnd.setTimeout(arguments.callee, delayMs);
+  }
+  , delayMs);
+}
+
+function SchedulerImpl(){
+}
+
+_ = SchedulerImpl_0.prototype = SchedulerImpl.prototype = new Scheduler;
+_.getClass$ = function getClass_18(){
+  return Lcom_google_gwt_core_client_impl_SchedulerImpl_2_classLit;
+}
+;
+_.deferredCommands = null;
+_.entryCommands = null;
+_.finallyCommands = null;
+_.flushRunning = false;
+_.flusher = null;
+_.incrementalCommands = null;
+_.rescue = null;
+_.shouldBeRunning = false;
+var INSTANCE;
+function SchedulerImpl$Flusher_0(this$0){
+  this.this$0 = this$0;
+}
+
+function SchedulerImpl$Flusher(){
+}
+
+_ = SchedulerImpl$Flusher_0.prototype = SchedulerImpl$Flusher.prototype = new Object_0;
+_.execute = function execute_0(){
+  this.this$0.flushRunning = true;
+  $flushPostEventPumpCommands(this.this$0);
+  this.this$0.flushRunning = false;
+  return this.this$0.shouldBeRunning = $isWorkQueued(this.this$0);
+}
+;
+_.getClass$ = function getClass_19(){
+  return Lcom_google_gwt_core_client_impl_SchedulerImpl$Flusher_2_classLit;
+}
+;
+_.this$0 = null;
+function SchedulerImpl$Rescuer_0(this$0){
+  this.this$0 = this$0;
+}
+
+function SchedulerImpl$Rescuer(){
+}
+
+_ = SchedulerImpl$Rescuer_0.prototype = SchedulerImpl$Rescuer.prototype = new Object_0;
+_.execute = function execute_1(){
+  this.this$0.flushRunning && scheduleFixedDelayImpl(this.this$0.flusher, 1);
+  return this.this$0.shouldBeRunning;
+}
+;
+_.getClass$ = function getClass_20(){
+  return Lcom_google_gwt_core_client_impl_SchedulerImpl$Rescuer_2_classLit;
+}
+;
+_.this$0 = null;
+function extractNameFromToString(fnToString){
+  var index, start, toReturn;
+  toReturn = '';
+  fnToString = $trim(fnToString);
+  index = fnToString.indexOf('(');
+  if (index != -1) {
+    start = fnToString.indexOf('function') == 0?8:0;
+    toReturn = $trim(fnToString.substr(start, index - start));
+  }
+  return toReturn.length > 0?toReturn:'anonymous';
+}
+
+function splice(arr, length_0){
+  arr.length >= length_0 && arr.splice(0, length_0);
+  return arr;
+}
+
+function $createStackTrace(this$static, e){
+  var i, j, stack, stackTrace;
+  stack = $inferFrom_0(this$static, instanceOfJso(e.e)?e.e:null);
+  stackTrace = initDim(_3Ljava_lang_StackTraceElement_2_classLit, makeCastMap([Q$Serializable]), Q$StackTraceElement, stack.length, 0);
+  for (i = 0 , j = stackTrace.length; i < j; ++i) {
+    stackTrace[i] = new StackTraceElement_0(stack[i]);
+  }
+  $setStackTrace(stackTrace);
+}
+
+function $fillInStackTrace(){
+  var i, j, stack, stackTrace;
+  stack = $collect(new StackTraceCreator$CollectorChrome_0);
+  stackTrace = initDim(_3Ljava_lang_StackTraceElement_2_classLit, makeCastMap([Q$Serializable]), Q$StackTraceElement, stack.length, 0);
+  for (i = 0 , j = stackTrace.length; i < j; ++i) {
+    stackTrace[i] = new StackTraceElement_0(stack[i]);
+  }
+  $setStackTrace(stackTrace);
+}
+
+function $getProperties(e){
+  var result = '';
+  try {
+    for (var prop in e) {
+      if (prop != 'name' && prop != 'message' && prop != 'toString') {
+        try {
+          result += '\n ' + prop + ': ' + e[prop];
+        }
+         catch (ignored) {
+        }
+      }
+    }
+  }
+   catch (ignored) {
+  }
+  return result;
+}
+
+function $makeException(){
+  try {
+    null.a();
+  }
+   catch (e) {
+    return e;
+  }
+}
+
+function StackTraceCreator$Collector_0(){
+}
+
+function StackTraceCreator$Collector(){
+}
+
+_ = StackTraceCreator$Collector_0.prototype = StackTraceCreator$Collector.prototype = new Object_0;
+_.collect = function collect(){
+  var seen = {};
+  var toReturn = [];
+  var callee = arguments.callee.caller.caller;
+  while (callee) {
+    var name_0 = this.extractName(callee.toString());
+    toReturn.push(name_0);
+    var keyName = ':' + name_0;
+    var withThisName = seen[keyName];
+    if (withThisName) {
+      var i, j;
+      for (i = 0 , j = withThisName.length; i < j; i++) {
+        if (withThisName[i] === callee) {
+          return toReturn;
+        }
+      }
+    }
+    (withThisName || (seen[keyName] = [])).push(callee);
+    callee = callee.caller;
+  }
+  return toReturn;
+}
+;
+_.extractName = function extractName(fnToString){
+  return extractNameFromToString(fnToString);
+}
+;
+_.getClass$ = function getClass_21(){
+  return Lcom_google_gwt_core_client_impl_StackTraceCreator$Collector_2_classLit;
+}
+;
+_.inferFrom = function inferFrom(e){
+  return [];
+}
+;
+function $inferFrom(this$static, e){
+  var i, j, stack;
+  stack = e && e.stack?e.stack.split('\n'):[];
+  for (i = 0 , j = stack.length; i < j; ++i) {
+    stack[i] = this$static.extractName(stack[i]);
+  }
+  return stack;
+}
+
+function StackTraceCreator$CollectorMoz(){
+}
+
+_ = StackTraceCreator$CollectorMoz.prototype = new StackTraceCreator$Collector;
+_.collect = function collect_0(){
+  return splice(this.inferFrom($makeException()), this.toSplice());
+}
+;
+_.getClass$ = function getClass_22(){
+  return Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorMoz_2_classLit;
+}
+;
+_.inferFrom = function inferFrom_0(e){
+  return $inferFrom(this, e);
+}
+;
+_.toSplice = function toSplice(){
+  return 2;
+}
+;
+function $collect(this$static){
+  var res;
+  res = splice($inferFrom_0(this$static, $makeException()), 3);
+  res.length == 0 && (res = splice((new StackTraceCreator$Collector_0).collect(), 1));
+  return res;
+}
+
+function $inferFrom_0(this$static, e){
+  var stack;
+  stack = $inferFrom(this$static, e);
+  return stack.length == 0?(new StackTraceCreator$Collector_0).inferFrom(e):splice(stack, 1);
+}
+
+function StackTraceCreator$CollectorChrome_0(){
+}
+
+function StackTraceCreator$CollectorChrome(){
+}
+
+_ = StackTraceCreator$CollectorChrome_0.prototype = StackTraceCreator$CollectorChrome.prototype = new StackTraceCreator$CollectorMoz;
+_.collect = function collect_1(){
+  return $collect(this);
+}
+;
+_.extractName = function extractName_0(fnToString){
+  var index, toReturn;
+  if (fnToString.length == 0) {
+    return 'anonymous';
+  }
+  toReturn = $trim(fnToString);
+  toReturn.indexOf('at ') == 0 && (toReturn = $substring(toReturn, 3));
+  index = toReturn.indexOf('[');
+  index == -1 && (index = toReturn.indexOf('('));
+  if (index == -1) {
+    return 'anonymous';
+  }
+   else {
+    toReturn = $trim(toReturn.substr(0, index - 0));
+  }
+  index = $indexOf(toReturn, String.fromCharCode(46));
+  index != -1 && (toReturn = $substring(toReturn, index + 1));
+  return toReturn.length > 0?toReturn:'anonymous';
+}
+;
+--></script>
+<script><!--
+_.getClass$ = function getClass_23(){
+  return Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorChrome_2_classLit;
+}
+;
+_.inferFrom = function inferFrom_1(e){
+  return $inferFrom_0(this, e);
+}
+;
+_.toSplice = function toSplice_0(){
+  return 3;
+}
+;
+function StringBufferImpl(){
+}
+
+_ = StringBufferImpl.prototype = new Object_0;
+_.getClass$ = function getClass_24(){
+  return Lcom_google_gwt_core_client_impl_StringBufferImpl_2_classLit;
+}
+;
+function $append(this$static, x){
+  this$static.string += x;
+}
+
+function $append_0(this$static, x){
+  this$static.string += x;
+}
+
+function $append_1(this$static, x){
+  this$static.string += x;
+}
+
+function $append_2(this$static, x){
+  this$static.string += x;
+}
+
+function $append_3(this$static, x){
+  this$static.string += x;
+}
+
+function $appendNonNull(this$static, x){
+  this$static.string += x;
+}
+
+function $replace(this$static, start, end){
+  this$static.string = $substring_0(this$static.string, 0, start) + '' + $substring(this$static.string, end);
+}
+
+function StringBufferImplAppend_0(){
+}
+
+function StringBufferImplAppend(){
+}
+
+_ = StringBufferImplAppend_0.prototype = StringBufferImplAppend.prototype = new StringBufferImpl;
+_.getClass$ = function getClass_25(){
+  return Lcom_google_gwt_core_client_impl_StringBufferImplAppend_2_classLit;
+}
+;
+_.string = '';
+function $appendChild(this$static, newChild){
+  return this$static.appendChild(newChild);
+}
+
+function $getChild(this$static, index){
+  return this$static.childNodes[index];
+}
+
+function $insertBefore(this$static, newChild, refChild){
+  return this$static.insertBefore(newChild, refChild);
+}
+
+function $removeChild(this$static, oldChild){
+  return this$static.removeChild(oldChild);
+}
+
+function $setHeight(this$static, height){
+  this$static.height = height;
+}
+
+function $setWidth(this$static, width){
+  this$static.width = width;
+}
+
+function $eventGetButton(evt){
+  var button = evt.button;
+  if (button == 1) {
+    return 4;
+  }
+   else if (button == 2) {
+    return 2;
+  }
+  return 1;
+}
+
+function $getAbsoluteLeft(elem){
+  var rect;
+  rect = getBoundingClientRect(elem);
+  return rect?rect.left + $getScrollLeft(elem.ownerDocument.body):getAbsoluteLeftUsingOffsets(elem);
+}
+
+function $getAbsoluteTop(elem){
+  var rect;
+  rect = getBoundingClientRect(elem);
+  return rect?rect.top + (elem.ownerDocument.body.scrollTop || 0):getAbsoluteTopUsingOffsets(elem);
+}
+
+function $getScrollLeft(elem){
+  if (elem.ownerDocument.defaultView.getComputedStyle(elem, '').direction == 'rtl') {
+    return (elem.scrollLeft || 0) - ((elem.scrollWidth || 0) - elem.clientWidth);
+  }
+  return elem.scrollLeft || 0;
+}
+
+function getAbsoluteLeftUsingOffsets(elem){
+  if (elem.offsetLeft == null) {
+    return 0;
+  }
+  var left = 0;
+  var doc = elem.ownerDocument;
+  var curr = elem.parentNode;
+  if (curr) {
+    while (curr.offsetParent) {
+      left -= curr.scrollLeft;
+      doc.defaultView.getComputedStyle(curr, '').getPropertyValue('direction') == 'rtl' && (left += curr.scrollWidth - curr.clientWidth);
+      curr = curr.parentNode;
+    }
+  }
+  while (elem) {
+    left += elem.offsetLeft;
+    if (doc.defaultView.getComputedStyle(elem, '')['position'] == 'fixed') {
+      left += doc.body.scrollLeft;
+      return left;
+    }
+    var parent_0 = elem.offsetParent;
+    parent_0 && $wnd.devicePixelRatio && (left += parseInt(doc.defaultView.getComputedStyle(parent_0, '').getPropertyValue('border-left-width')));
+    if (parent_0 && parent_0.tagName == 'BODY' && elem.style.position == 'absolute') {
+      break;
+    }
+    elem = parent_0;
+  }
+  return left;
+}
+
+function getAbsoluteTopUsingOffsets(elem){
+  if (elem.offsetTop == null) {
+    return 0;
+  }
+  var top_0 = 0;
+  var doc = elem.ownerDocument;
+  var curr = elem.parentNode;
+  if (curr) {
+    while (curr.offsetParent) {
+      top_0 -= curr.scrollTop;
+      curr = curr.parentNode;
+    }
+  }
+  while (elem) {
+    top_0 += elem.offsetTop;
+    if (doc.defaultView.getComputedStyle(elem, '')['position'] == 'fixed') {
+      top_0 += doc.body.scrollTop;
+      return top_0;
+    }
+    var parent_0 = elem.offsetParent;
+    parent_0 && $wnd.devicePixelRatio && (top_0 += parseInt(doc.defaultView.getComputedStyle(parent_0, '').getPropertyValue('border-top-width')));
+    if (parent_0 && parent_0.tagName == 'BODY' && elem.style.position == 'absolute') {
+      break;
+    }
+    elem = parent_0;
+  }
+  return top_0;
+}
+
+function getBoundingClientRect(element){
+  return element.getBoundingClientRect && element.getBoundingClientRect();
+}
+
+function Enum(){
+}
+
+_ = Enum.prototype = new Object_0;
+_.equals$ = function equals_0(other){
+  return this === other;
+}
+;
+_.getClass$ = function getClass_26(){
+  return Ljava_lang_Enum_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_1(){
+  return getHashCode(this);
+}
+;
+_.toString$ = function toString_2(){
+  return this.name_0;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparable, Q$Enum]);
+_.name_0 = null;
+function $clinit_Style$Overflow(){
+  $clinit_Style$Overflow = nullMethod;
+  VISIBLE = new Style$Overflow$1_0;
+  HIDDEN = new Style$Overflow$2_0;
+  SCROLL = new Style$Overflow$3_0;
+  AUTO = new Style$Overflow$4_0;
+  $VALUES = initValues(_3Lcom_google_gwt_dom_client_Style$Overflow_2_classLit, makeCastMap([Q$Serializable]), Q$Style$Overflow, [VISIBLE, HIDDEN, SCROLL, AUTO]);
+}
+
+function values(){
+  $clinit_Style$Overflow();
+  return $VALUES;
+}
+
+function Style$Overflow(){
+}
+
+_ = Style$Overflow.prototype = new Enum;
+_.getClass$ = function getClass_27(){
+  return Lcom_google_gwt_dom_client_Style$Overflow_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$HasCssName, Q$Style$Overflow, Q$Serializable, Q$Comparable, Q$Enum]);
+var $VALUES, AUTO, HIDDEN, SCROLL, VISIBLE;
+function Style$Overflow$1_0(){
+  this.name_0 = 'VISIBLE';
+}
+
+function Style$Overflow$1(){
+}
+
+_ = Style$Overflow$1_0.prototype = Style$Overflow$1.prototype = new Style$Overflow;
+_.getClass$ = function getClass_28(){
+  return Lcom_google_gwt_dom_client_Style$Overflow$1_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$HasCssName, Q$Style$Overflow, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Overflow$2_0(){
+  this.name_0 = 'HIDDEN';
+}
+
+function Style$Overflow$2(){
+}
+
+_ = Style$Overflow$2_0.prototype = Style$Overflow$2.prototype = new Style$Overflow;
+_.getClass$ = function getClass_29(){
+  return Lcom_google_gwt_dom_client_Style$Overflow$2_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$HasCssName, Q$Style$Overflow, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Overflow$3_0(){
+  this.name_0 = 'SCROLL';
+}
+
+function Style$Overflow$3(){
+}
+
+_ = Style$Overflow$3_0.prototype = Style$Overflow$3.prototype = new Style$Overflow;
+_.getClass$ = function getClass_30(){
+  return Lcom_google_gwt_dom_client_Style$Overflow$3_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$HasCssName, Q$Style$Overflow, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Overflow$4_0(){
+  this.name_0 = 'AUTO';
+}
+
+function Style$Overflow$4(){
+}
+
+_ = Style$Overflow$4_0.prototype = Style$Overflow$4.prototype = new Style$Overflow;
+_.getClass$ = function getClass_31(){
+  return Lcom_google_gwt_dom_client_Style$Overflow$4_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$HasCssName, Q$Style$Overflow, Q$Serializable, Q$Comparable, Q$Enum]);
+function $clinit_Style$Position(){
+  $clinit_Style$Position = nullMethod;
+  STATIC = new Style$Position$1_0;
+  RELATIVE = new Style$Position$2_0;
+  ABSOLUTE = new Style$Position$3_0;
+  FIXED = new Style$Position$4_0;
+  $VALUES_0 = initValues(_3Lcom_google_gwt_dom_client_Style$Position_2_classLit, makeCastMap([Q$Serializable]), Q$Style$Position, [STATIC, RELATIVE, ABSOLUTE, FIXED]);
+}
+
+function values_0(){
+  $clinit_Style$Position();
+  return $VALUES_0;
+}
+
+function Style$Position(){
+}
+
+_ = Style$Position.prototype = new Enum;
+_.getClass$ = function getClass_32(){
+  return Lcom_google_gwt_dom_client_Style$Position_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$HasCssName, Q$Style$Position, Q$Serializable, Q$Comparable, Q$Enum]);
+var $VALUES_0, ABSOLUTE, FIXED, RELATIVE, STATIC;
+function Style$Position$1_0(){
+  this.name_0 = 'STATIC';
+}
+
+function Style$Position$1(){
+}
+
+_ = Style$Position$1_0.prototype = Style$Position$1.prototype = new Style$Position;
+_.getClass$ = function getClass_33(){
+  return Lcom_google_gwt_dom_client_Style$Position$1_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$HasCssName, Q$Style$Position, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Position$2_0(){
+  this.name_0 = 'RELATIVE';
+}
+
+function Style$Position$2(){
+}
+
+_ = Style$Position$2_0.prototype = Style$Position$2.prototype = new Style$Position;
+_.getClass$ = function getClass_34(){
+  return Lcom_google_gwt_dom_client_Style$Position$2_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$HasCssName, Q$Style$Position, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Position$3_0(){
+  this.name_0 = 'ABSOLUTE';
+}
+
+function Style$Position$3(){
+}
+
+_ = Style$Position$3_0.prototype = Style$Position$3.prototype = new Style$Position;
+_.getClass$ = function getClass_35(){
+  return Lcom_google_gwt_dom_client_Style$Position$3_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$HasCssName, Q$Style$Position, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Position$4_0(){
+  this.name_0 = 'FIXED';
+}
+
+function Style$Position$4(){
+}
+
+_ = Style$Position$4_0.prototype = Style$Position$4.prototype = new Style$Position;
+_.getClass$ = function getClass_36(){
+  return Lcom_google_gwt_dom_client_Style$Position$4_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$HasCssName, Q$Style$Position, Q$Serializable, Q$Comparable, Q$Enum]);
+function $clinit_Style$Unit(){
+  $clinit_Style$Unit = nullMethod;
+  PX = new Style$Unit$1_0;
+  PCT = new Style$Unit$2_0;
+  EM = new Style$Unit$3_0;
+  EX = new Style$Unit$4_0;
+  PT = new Style$Unit$5_0;
+  PC = new Style$Unit$6_0;
+  IN = new Style$Unit$7_0;
+  CM = new Style$Unit$8_0;
+  MM = new Style$Unit$9_0;
+  $VALUES_1 = initValues(_3Lcom_google_gwt_dom_client_Style$Unit_2_classLit, makeCastMap([Q$Serializable]), Q$Style$Unit, [PX, PCT, EM, EX, PT, PC, IN, CM, MM]);
+}
+
+function values_1(){
+  $clinit_Style$Unit();
+  return $VALUES_1;
+}
+
+function Style$Unit(){
+}
+
+_ = Style$Unit.prototype = new Enum;
+_.getClass$ = function getClass_37(){
+  return Lcom_google_gwt_dom_client_Style$Unit_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$Unit, Q$Serializable, Q$Comparable, Q$Enum]);
+var $VALUES_1, CM, EM, EX, IN, MM, PC, PCT, PT, PX;
+function Style$Unit$1_0(){
+  this.name_0 = 'PX';
+}
+
+function Style$Unit$1(){
+}
+
+_ = Style$Unit$1_0.prototype = Style$Unit$1.prototype = new Style$Unit;
+_.getClass$ = function getClass_38(){
+  return Lcom_google_gwt_dom_client_Style$Unit$1_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$Unit, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Unit$2_0(){
+  this.name_0 = 'PCT';
+}
+
+function Style$Unit$2(){
+}
+
+_ = Style$Unit$2_0.prototype = Style$Unit$2.prototype = new Style$Unit;
+_.getClass$ = function getClass_39(){
+  return Lcom_google_gwt_dom_client_Style$Unit$2_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$Unit, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Unit$3_0(){
+  this.name_0 = 'EM';
+}
+
+function Style$Unit$3(){
+}
+
+_ = Style$Unit$3_0.prototype = Style$Unit$3.prototype = new Style$Unit;
+_.getClass$ = function getClass_40(){
+  return Lcom_google_gwt_dom_client_Style$Unit$3_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$Unit, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Unit$4_0(){
+  this.name_0 = 'EX';
+}
+
+function Style$Unit$4(){
+}
+
+_ = Style$Unit$4_0.prototype = Style$Unit$4.prototype = new Style$Unit;
+_.getClass$ = function getClass_41(){
+  return Lcom_google_gwt_dom_client_Style$Unit$4_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$Unit, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Unit$5_0(){
+  this.name_0 = 'PT';
+}
+
+function Style$Unit$5(){
+}
+
+_ = Style$Unit$5_0.prototype = Style$Unit$5.prototype = new Style$Unit;
+_.getClass$ = function getClass_42(){
+  return Lcom_google_gwt_dom_client_Style$Unit$5_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$Unit, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Unit$6_0(){
+  this.name_0 = 'PC';
+}
+
+function Style$Unit$6(){
+}
+
+_ = Style$Unit$6_0.prototype = Style$Unit$6.prototype = new Style$Unit;
+_.getClass$ = function getClass_43(){
+  return Lcom_google_gwt_dom_client_Style$Unit$6_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$Unit, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Unit$7_0(){
+  this.name_0 = 'IN';
+}
+
+function Style$Unit$7(){
+}
+
+_ = Style$Unit$7_0.prototype = Style$Unit$7.prototype = new Style$Unit;
+_.getClass$ = function getClass_44(){
+  return Lcom_google_gwt_dom_client_Style$Unit$7_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$Unit, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Unit$8_0(){
+  this.name_0 = 'CM';
+}
+
+function Style$Unit$8(){
+}
+
+_ = Style$Unit$8_0.prototype = Style$Unit$8.prototype = new Style$Unit;
+_.getClass$ = function getClass_45(){
+  return Lcom_google_gwt_dom_client_Style$Unit$8_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$Unit, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Unit$9_0(){
+  this.name_0 = 'MM';
+}
+
+function Style$Unit$9(){
+}
+
+_ = Style$Unit$9_0.prototype = Style$Unit$9.prototype = new Style$Unit;
+_.getClass$ = function getClass_46(){
+  return Lcom_google_gwt_dom_client_Style$Unit$9_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$Unit, Q$Serializable, Q$Comparable, Q$Enum]);
+function $clinit_Style$Visibility(){
+  $clinit_Style$Visibility = nullMethod;
+  VISIBLE_0 = new Style$Visibility$1_0;
+  HIDDEN_0 = new Style$Visibility$2_0;
+  $VALUES_2 = initValues(_3Lcom_google_gwt_dom_client_Style$Visibility_2_classLit, makeCastMap([Q$Serializable]), Q$Style$Visibility, [VISIBLE_0, HIDDEN_0]);
+}
+
+function values_2(){
+  $clinit_Style$Visibility();
+  return $VALUES_2;
+}
+
+function Style$Visibility(){
+}
+
+_ = Style$Visibility.prototype = new Enum;
+_.getClass$ = function getClass_47(){
+  return Lcom_google_gwt_dom_client_Style$Visibility_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$HasCssName, Q$Style$Visibility, Q$Serializable, Q$Comparable, Q$Enum]);
+var $VALUES_2, HIDDEN_0, VISIBLE_0;
+function Style$Visibility$1_0(){
+  this.name_0 = 'VISIBLE';
+}
+
+function Style$Visibility$1(){
+}
+
+_ = Style$Visibility$1_0.prototype = Style$Visibility$1.prototype = new Style$Visibility;
+_.getClass$ = function getClass_48(){
+  return Lcom_google_gwt_dom_client_Style$Visibility$1_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$HasCssName, Q$Style$Visibility, Q$Serializable, Q$Comparable, Q$Enum]);
+function Style$Visibility$2_0(){
+  this.name_0 = 'HIDDEN';
+}
+
+function Style$Visibility$2(){
+}
+
+_ = Style$Visibility$2_0.prototype = Style$Visibility$2.prototype = new Style$Visibility;
+_.getClass$ = function getClass_49(){
+  return Lcom_google_gwt_dom_client_Style$Visibility$2_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Style$HasCssName, Q$Style$Visibility, Q$Serializable, Q$Comparable, Q$Enum]);
+function $getRelativeX(this$static, target){
+  return this$static.clientX - $getAbsoluteLeft(target) + $getScrollLeft(target) + $getScrollLeft(target.ownerDocument.body);
+}
+
+function $getRelativeY(this$static, target){
+  return this$static.clientY - $getAbsoluteTop(target) + (target.scrollTop || 0) + (target.ownerDocument.body.scrollTop || 0);
+}
+
+var impl = null;
+function TouchEvent$TouchSupportDetector_0(){
+  var elem;
+  this.isSupported = (elem = document.createElement('div') , elem.setAttribute('ontouchstart', 'return;') , typeof elem.ontouchstart == 'function');
+}
+
+function TouchEvent$TouchSupportDetector(){
+}
+
+_ = TouchEvent$TouchSupportDetector_0.prototype = TouchEvent$TouchSupportDetector.prototype = new Object_0;
+_.getClass$ = function getClass_50(){
+  return Lcom_google_gwt_event_dom_client_TouchEvent$TouchSupportDetector_2_classLit;
+}
+;
+function throwIfNull(value){
+  if (null == value) {
+    throw new NullPointerException_1;
+  }
+}
+
+function Array_1(){
+}
+
+function createFromSeed(seedType, length_0){
+  var array = new Array(length_0);
+  if (seedType == 3) {
+    for (var i = 0; i < length_0; ++i) {
+      var value = new Object;
+      value.l = value.m = value.h = 0;
+      array[i] = value;
+    }
+  }
+   else if (seedType > 0) {
+    var value = [null, 0, false][seedType];
+    for (var i = 0; i < length_0; ++i) {
+      array[i] = value;
+    }
+  }
+  return array;
+}
+
+function initDim(arrayClass, castableTypeMap, queryId, length_0, seedType){
+  var result;
+  result = createFromSeed(seedType, length_0);
+  initValues(arrayClass, castableTypeMap, queryId, result);
+  return result;
+}
+
+function initValues(arrayClass, castableTypeMap, queryId, array){
+  $clinit_Array$ExpandoWrapper();
+  wrapArray(array, expandoNames_0, expandoValues_0);
+  array.arrayClass$ = arrayClass;
+  array.castableTypeMap$ = castableTypeMap;
+  array.queryId$ = queryId;
+  return array;
+}
+
+function setCheck(array, index, value){
+  if (value != null) {
+    if (array.queryId$ > 0 && !canCastUnsafe(value, array.queryId$)) {
+      throw new ArrayStoreException_0;
+    }
+    if (array.queryId$ < 0 && (value.typeMarker$ == nullMethod || canCast(value, 1))) {
+      throw new ArrayStoreException_0;
+    }
+  }
+  return array[index] = value;
+}
+
+function Array_0(){
+}
+
+_ = Array_1.prototype = Array_0.prototype = new Object_0;
+_.getClass$ = function getClass_51(){
+  return this.arrayClass$;
+}
+;
+_.arrayClass$ = null;
+_.queryId$ = 0;
+function $clinit_Array$ExpandoWrapper(){
+  $clinit_Array$ExpandoWrapper = nullMethod;
+  expandoNames_0 = [];
+  expandoValues_0 = [];
+  initExpandos(new Array_1, expandoNames_0, expandoValues_0);
+}
+
+function initExpandos(protoType, expandoNames, expandoValues){
+  var i = 0, value;
+  for (var name_0 in protoType) {
+    if (value = protoType[name_0]) {
+      expandoNames[i] = name_0;
+      expandoValues[i] = value;
+      ++i;
+    }
+  }
+}
+
+function wrapArray(array, expandoNames, expandoValues){
+  $clinit_Array$ExpandoWrapper();
+  for (var i = 0, c = expandoNames.length; i < c; ++i) {
+    array[expandoNames[i]] = expandoValues[i];
+  }
+}
+
+var expandoNames_0, expandoValues_0;
+function canCast(src, dstId){
+  return src.castableTypeMap$ && !!src.castableTypeMap$[dstId];
+}
+
+function canCastUnsafe(src, dstId){
+  return src.castableTypeMap$ && src.castableTypeMap$[dstId];
+}
+
+function instanceOf(src, dstId){
+  return src != null && canCast(src, dstId);
+}
+
+function instanceOfJso(src){
+  return src != null && src.typeMarker$ != nullMethod && !canCast(src, 1);
+}
+
+function isJavaObject(src){
+  return src.typeMarker$ == nullMethod || canCast(src, 1);
+}
+
+function maskUndefined(src){
+  return src == null?null:src;
+}
+
+function round_int(x){
+  return ~~Math.max(Math.min(x, 2147483647), -2147483648);
+}
+
+function init(){
+  !!$stats && onModuleStart('com.google.gwt.user.client.UserAgentAsserter');
+  !!$stats && onModuleStart('com.google.gwt.user.client.DocumentModeAsserter');
+  $onModuleLoad();
+  !!$stats && onModuleStart('com.bigdicegames.playndemos.html.BreakNHtml');
+  setUncaughtExceptionHandler(new HtmlGame$1_0);
+  $scheduleDeferred(($clinit_SchedulerImpl() , INSTANCE), new HtmlGame$2_0);
+}
+
+function caught(e){
+  if (instanceOf(e, Q$Throwable)) {
+    return e;
+  }
+  return new JavaScriptException_0(e);
+}
+
+function onModuleStart(mainClassName){
+  return $stats({moduleName:$moduleName, sessionId:$sessionId, subSystem:'startup', evtGroup:'moduleStartup', millis:(new Date).getTime(), type:'onModuleLoadStart', className:mainClassName});
+}
+
+function $exec(this$static, input){
+  return this$static.exec(input);
+}
+
+function $getItem(this$static, key){
+  return $getItem_0(this$static.storage, key);
+}
+
+function $key(this$static, index){
+  return $key_0(this$static.storage, index);
+}
+
+function $setItem(this$static, key, data){
+  $setItem_0(this$static.storage, key, data);
+}
+
+function Storage_0(){
+  this.storage = 'localStorage';
+}
+
+function getLocalStorageIfSupported(){
+  if ((!supportDetectorImpl && (supportDetectorImpl = new Storage$StorageSupportDetector_0) , supportDetectorImpl).isLocalStorageSupported) {
+    !localStorage_0 && (localStorage_0 = new Storage_0);
+    return localStorage_0;
+  }
+  return null;
+}
+
+function Storage(){
+}
+
+_ = Storage_0.prototype = Storage.prototype = new Object_0;
+_.getClass$ = function getClass_52(){
+  return Lcom_google_gwt_storage_client_Storage_2_classLit;
+}
+;
+_.storage = null;
+var localStorage_0 = null, supportDetectorImpl = null;
+function Storage$StorageSupportDetector_0(){
+  this.isLocalStorageSupported = typeof $wnd.localStorage != 'undefined';
+  typeof $wnd.sessionStorage != 'undefined';
+}
+
+function Storage$StorageSupportDetector(){
+}
+
+_ = Storage$StorageSupportDetector_0.prototype = Storage$StorageSupportDetector.prototype = new Object_0;
+_.getClass$ = function getClass_53(){
+  return Lcom_google_gwt_storage_client_Storage$StorageSupportDetector_2_classLit;
+}
+;
+function $getItem_0(storage, key){
+  return $wnd[storage].getItem(key);
+}
+
+function $getLength(storage){
+  return $wnd[storage].length;
+}
+
+function $key_0(storage, index){
+  return index >= 0 && index < $wnd[storage].length?$wnd[storage].key(index):null;
+}
+
+function $setItem_0(storage, key, data){
+  $wnd[storage].getItem(key);
+  $wnd[storage].setItem(key, data);
+}
+
+function $implFindEntry(this$static, key){
+  var entry, iter, k;
+  for (iter = this$static.entrySet_0().iterator(); iter.hasNext();) {
+    entry = iter.next();
+    k = entry.getKey();
+    if (key == null?k == null:equals__devirtual$(key, k)) {
+      return entry;
+    }
+  }
+  return null;
+}
+
+function $keySet(this$static){
+  var entrySet;
+  entrySet = new AbstractHashMap$EntrySet_0(this$static);
+  return new AbstractMap$1_0(this$static, entrySet);
+}
+
+function AbstractMap(){
+}
+
+_ = AbstractMap.prototype = new Object_0;
+_.containsKey = function containsKey(key){
+  return !!$implFindEntry(this, key);
+}
+;
+_.equals$ = function equals_1(obj){
+  var entry, entry$iterator, otherKey, otherMap, otherValue;
+  if (obj === this) {
+    return true;
+  }
+  if (!instanceOf(obj, Q$Map)) {
+    return false;
+  }
+  otherMap = obj;
+  if (this.size_0() != otherMap.size_0()) {
+    return false;
+  }
+  for (entry$iterator = otherMap.entrySet_0().iterator(); entry$iterator.hasNext();) {
+    entry = entry$iterator.next();
+    otherKey = entry.getKey();
+    otherValue = entry.getValue();
+    if (!this.containsKey(otherKey)) {
+      return false;
+    }
+    if (!equalsWithNullCheck(otherValue, this.get(otherKey))) {
+      return false;
+    }
+  }
+  return true;
+}
+;
+_.get = function get(key){
+  var entry;
+  entry = $implFindEntry(this, key);
+  return !entry?null:entry.getValue();
+}
+;
+_.getClass$ = function getClass_54(){
+  return Ljava_util_AbstractMap_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_2(){
+  var entry, entry$iterator, hashCode;
+  hashCode = 0;
+  for (entry$iterator = this.entrySet_0().iterator(); entry$iterator.hasNext();) {
+    entry = entry$iterator.next();
+    hashCode += entry.hashCode$();
+    hashCode = ~~hashCode;
+  }
+  return hashCode;
+}
+;
+_.size_0 = function size_0(){
+  return this.entrySet_0().size_0();
+}
+;
+_.toString$ = function toString_3(){
+  var comma, entry, iter, s;
+  s = '{';
+  comma = false;
+  for (iter = this.entrySet_0().iterator(); iter.hasNext();) {
+    entry = iter.next();
+    comma?(s += ', '):(comma = true);
+    s += '' + entry.getKey();
+    s += '=';
+    s += '' + entry.getValue();
+  }
+  return s + '}';
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map]);
+function $containsKey(this$static, key){
+  return $getItem(this$static.storage, toString__devirtual$(key)) != null;
+}
+
+function $eq(a, b){
+  if (maskUndefined(a) === maskUndefined(b)) {
+    return true;
+  }
+  if (a == null) {
+    return false;
+  }
+  return $equals(a, b);
+}
+
+function $get(this$static, key){
+  if (key == null) {
+    return null;
+  }
+  return $getItem(this$static.storage, toString__devirtual$(key));
+}
+
+function StorageMap_0(storage){
+  this.storage = storage;
+}
+
+function StorageMap(){
+}
+
+_ = StorageMap_0.prototype = StorageMap.prototype = new AbstractMap;
+_.containsKey = function containsKey_0(key){
+  return $containsKey(this, key);
+}
+;
+_.entrySet_0 = function entrySet_0(){
+  !this.entrySet && (this.entrySet = new StorageMap$StorageEntrySet_0(this));
+  return this.entrySet;
+}
+;
+_.get = function get_0(key){
+  return $get(this, key);
+}
+;
+_.getClass$ = function getClass_55(){
+  return Lcom_google_gwt_storage_client_StorageMap_2_classLit;
+}
+;
+_.size_0 = function size_1(){
+  return $getLength(this.storage.storage);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map]);
+_.entrySet = null;
+_.storage = null;
+function StorageMap$StorageEntry_0(this$0, key){
+  this.this$0 = this$0;
+  this.key_0 = key;
+}
+
+function StorageMap$StorageEntry(){
+}
+
+_ = StorageMap$StorageEntry_0.prototype = StorageMap$StorageEntry.prototype = new Object_0;
+_.equals$ = function equals_2(obj){
+  var e;
+  if (obj == null) {
+    return false;
+  }
+   else if (obj === this) {
+    return true;
+  }
+   else if (!instanceOf(obj, Q$Map$Entry)) {
+    return false;
+  }
+  e = obj;
+  return $eq(this.key_0, e.getKey()) && $eq($getItem(this.this$0.storage, this.key_0), e.getValue());
+}
+;
+_.getClass$ = function getClass_56(){
+  return Lcom_google_gwt_storage_client_StorageMap$StorageEntry_2_classLit;
+}
+;
+_.getKey = function getKey(){
+  return this.key_0;
+}
+;
+_.getValue = function getValue(){
+  return $getItem(this.this$0.storage, this.key_0);
+}
+;
+_.hashCode$ = function hashCode_3(){
+  var value;
+  value = $getItem(this.this$0.storage, this.key_0);
+  return (this.key_0 == null?0:getHashCode_0(this.key_0)) ^ (value == null?0:getHashCode_0(value));
+}
+;
+_.setValue = function setValue(value){
+  var oldValue;
+  return oldValue = $getItem(this.this$0.storage, this.key_0) , $setItem(this.this$0.storage, this.key_0, value) , oldValue;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map$Entry]);
+_.key_0 = null;
+_.this$0 = null;
+function $next(this$static){
+  if (this$static.index_0 < $getLength(this$static.this$0.storage.storage) - 1) {
+    ++this$static.index_0;
+    return new StorageMap$StorageEntry_0(this$static.this$0, $key(this$static.this$0.storage, this$static.index_0));
+  }
+  throw new NoSuchElementException_0;
+}
+
+function StorageMap$StorageEntryIterator_0(this$0){
+  this.this$0 = this$0;
+}
+
+function StorageMap$StorageEntryIterator(){
+}
+
+_ = StorageMap$StorageEntryIterator_0.prototype = StorageMap$StorageEntryIterator.prototype = new Object_0;
+_.getClass$ = function getClass_57(){
+  return Lcom_google_gwt_storage_client_StorageMap$StorageEntryIterator_2_classLit;
+}
+;
+_.hasNext = function hasNext(){
+  return this.index_0 < $getLength(this.this$0.storage.storage) - 1;
+}
+;
+_.next = function next_0(){
+  return $next(this);
+}
+;
+_.index_0 = -1;
+_.this$0 = null;
+function $advanceToFind(iter, o){
+  var t;
+  while (iter.hasNext()) {
+    t = iter.next();
+    if (o == null?t == null:equals__devirtual$(o, t)) {
+      return iter;
+    }
+  }
+  return null;
+}
+
+function $toString(this$static){
+  var comma, iter, sb, value;
+  sb = new StringBuffer_0;
+  comma = null;
+  sb.impl.string += '[';
+  iter = this$static.iterator();
+  while (iter.hasNext()) {
+    comma != null?($append_3(sb.impl, comma) , sb):(comma = ', ');
+    value = iter.next();
+    $append_3(sb.impl, value === this$static?'(this Collection)':'' + value);
+  }
+  sb.impl.string += ']';
+  return sb.impl.string;
+}
+
+function AbstractCollection(){
+}
+
+_ = AbstractCollection.prototype = new Object_0;
+_.add = function add(o){
+  throw new UnsupportedOperationException_1('Add not supported on this collection');
+}
+;
+_.contains = function contains(o){
+  var iter;
+  iter = $advanceToFind(this.iterator(), o);
+  return !!iter;
+}
+;
+_.getClass$ = function getClass_58(){
+  return Ljava_util_AbstractCollection_2_classLit;
+}
+;
+_.toString$ = function toString_4(){
+  return $toString(this);
+}
+;
+function AbstractSet(){
+}
+
+_ = AbstractSet.prototype = new AbstractCollection;
+_.equals$ = function equals_3(o){
+  var iter, other, otherItem;
+  if (o === this) {
+    return true;
+  }
+  if (!instanceOf(o, Q$Set)) {
+    return false;
+  }
+  other = o;
+  if (other.size_0() != this.size_0()) {
+    return false;
+  }
+  for (iter = other.iterator(); iter.hasNext();) {
+    otherItem = iter.next();
+    if (!this.contains(otherItem)) {
+      return false;
+    }
+  }
+  return true;
+}
+;
+_.getClass$ = function getClass_59(){
+  return Ljava_util_AbstractSet_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_4(){
+  var hashCode, iter, next;
+  hashCode = 0;
+  for (iter = this.iterator(); iter.hasNext();) {
+    next = iter.next();
+    if (next != null) {
+      hashCode += hashCode__devirtual$(next);
+      hashCode = ~~hashCode;
+    }
+  }
+  return hashCode;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Set]);
+function StorageMap$StorageEntrySet_0(this$0){
+  this.this$0 = this$0;
+}
+
+function StorageMap$StorageEntrySet(){
+}
+
+_ = StorageMap$StorageEntrySet_0.prototype = StorageMap$StorageEntrySet.prototype = new AbstractSet;
+_.contains = function contains_0(o){
+  var e, key;
+  if (o == null || !instanceOf(o, Q$Map$Entry)) {
+    return false;
+  }
+  e = o;
+  key = e.getKey();
+  return key != null && $containsKey(this.this$0, key) && $eq($get(this.this$0, key), e.getValue());
+}
+;
+_.getClass$ = function getClass_60(){
+  return Lcom_google_gwt_storage_client_StorageMap$StorageEntrySet_2_classLit;
+}
+;
+_.iterator = function iterator(){
+  return new StorageMap$StorageEntryIterator_0(this.this$0);
+}
+;
+_.size_0 = function size_2(){
+  return $getLength(this.this$0.storage.storage);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Set]);
+_.this$0 = null;
+function toJsArray(data){
+  var i, jsan, len;
+  jsan = [];
+  len = data.length;
+  for (i = len - 1; i >= 0; --i) {
+    jsan[i] = data[i];
+  }
+  return jsan;
+}
+
+function toJsArray_0(data){
+  var i, jsan, len;
+  jsan = [];
+  len = data.length;
+  for (i = len - 1; i >= 0; --i) {
+    jsan[i] = data[i];
+  }
+  return jsan;
+}
+
+--></script>
+<script><!--
+function $set(this$static, array){
+  this$static.set(array);
+}
+
+function $set_0(this$static, array, offset){
+  this$static.set(array, offset);
+}
+
+function $set_1(this$static, array, offset){
+  this$static.set(array, offset);
+}
+
+function create(data){
+  return new Float32Array(data);
+}
+
+function create_0(data){
+  return new Int32Array(data);
+}
+
+function create_1(data){
+  return new Uint16Array(data);
+}
+
+function create_2(data){
+  return new Uint8Array(data);
+}
+
+function $onModuleLoad(){
+  var allowedModes, currentMode, i;
+  currentMode = $doc.compatMode;
+  allowedModes = initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable]), Q$String, ['CSS1Compat']);
+  for (i = 0; i < allowedModes.length; ++i) {
+    if ($equals(allowedModes[i], currentMode)) {
+      return;
+    }
+  }
+  allowedModes.length == 1 && $equals('CSS1Compat', allowedModes[0]) && $equals('BackCompat', currentMode)?"GWT no longer supports Quirks Mode (document.compatMode=' BackCompat').<br>Make sure your application's host HTML page has a Standards Mode (document.compatMode=' CSS1Compat') doctype,<br>e.g. by using &lt;!doctype html&gt; at the start of your application's HTML page.<br><br>To continue using this unsupported rendering mode and risk layout problems, suppress this message by adding<br>the following line to your*.gwt.xml module file:<br>&nbsp;&nbsp;&lt;extend-configuration-property name=\"document.compatMode\" value=\"" + currentMode + '"/&gt;':"Your *.gwt.xml module configuration prohibits the use of the current doucment rendering mode (document.compatMode=' " + currentMode + "').<br>Modify your application's host HTML page doctype, or update your custom 'document.compatMode' configuration property settings.";
+}
+
+function alert_0(msg){
+  $wnd.alert(msg);
+}
+
+function ensureParameterMap(){
+  var kv, kvPair, kvPair$array, kvPair$index, kvPair$max, qs, queryString, regexp;
+  if (!paramMap) {
+    paramMap = new HashMap_0;
+    queryString = $wnd.location.search;
+    if (queryString != null && queryString.length > 1) {
+      qs = $substring(queryString, 1);
+      for (kvPair$array = $split(qs, '&', 0) , kvPair$index = 0 , kvPair$max = kvPair$array.length; kvPair$index < kvPair$max; ++kvPair$index) {
+        kvPair = kvPair$array[kvPair$index];
+        kv = $split(kvPair, '=', 2);
+        kv.length > 1?$put(paramMap, kv[0], (throwIfNull(kv[1]) , regexp = /\+/g , decodeURIComponent(kv[1].replace(regexp, '%20')))):$put(paramMap, kv[0], '');
+      }
+    }
+  }
+}
+
+var paramMap = null;
+function $clinit_RootPanel(){
+  $clinit_RootPanel = nullMethod;
+  new HashMap_0;
+  new HashSet_0;
+}
+
+function $bindBuffer(this$static, target, buffer){
+  this$static.bindBuffer(target, buffer);
+}
+
+function $bindFramebuffer(this$static, target, framebuffer){
+  this$static.bindFramebuffer(target, framebuffer);
+}
+
+function $bindTexture(this$static, target, texture){
+  this$static.bindTexture(target, texture);
+}
+
+function $bufferData(this$static, target, data, usage){
+  this$static.bufferData(target, data, usage);
+}
+
+function $deleteFramebuffer(this$static, framebuffer){
+  this$static.deleteFramebuffer(framebuffer);
+}
+
+function $drawElements(this$static, mode, count, type, offset){
+  this$static.drawElements(mode, count, type, offset);
+}
+
+function $enableVertexAttribArray(this$static, index){
+  this$static.enableVertexAttribArray(index);
+}
+
+function $framebufferTexture2D(this$static, target, attachment, textarget, texture, level){
+  this$static.framebufferTexture2D(target, attachment, textarget, texture, level);
+}
+
+function $getAttribLocation(this$static, program, name_0){
+  return this$static.getAttribLocation(program, name_0);
+}
+
+function $getUniformLocation(this$static, program, name_0){
+  return this$static.getUniformLocation(program, name_0);
+}
+
+function $readPixels(this$static, x, y, width, height, format, type, pixels){
+  this$static.readPixels(x, y, width, height, format, type, pixels);
+}
+
+function $texImage2D(this$static, target, level, internalformat, width, height, border, format, type, pixels){
+  this$static.texImage2D(target, level, internalformat, width, height, border, format, type, pixels);
+}
+
+function $texImage2D_0(this$static, target, level, internalformat, format, type, image){
+  this$static.texImage2D(target, level, internalformat, format, type, image);
+}
+
+function $texParameteri(this$static, target, pname, param){
+  this$static.texParameteri(target, pname, param);
+}
+
+function $uniform1f(this$static, location_0, x){
+  this$static.uniform1f(location_0, x);
+}
+
+function $uniform1i(this$static, location_0, x){
+  this$static.uniform1i(location_0, x);
+}
+
+function $uniform2fv(this$static, location_0, v){
+  this$static.uniform2fv(location_0, v);
+}
+
+function $uniform4fv(this$static, location_0, v){
+  this$static.uniform4fv(location_0, v);
+}
+
+function $useProgram(this$static, program){
+  this$static.useProgram(program);
+}
+
+function $vertexAttribPointer(this$static, indx, size, type, normalized, stride, offset){
+  this$static.vertexAttribPointer(indx, size, type, normalized, stride, offset);
+}
+
+function $viewport(this$static, x, y, width, height){
+  this$static.viewport(x, y, width, height);
+}
+
+function getContext(canvas, attributes){
+  var names = ['experimental-webgl', 'webgl', 'moz-webgl', 'webkit-webgl', 'webkit-3d'];
+  for (var i = 0; i < names.length; i++) {
+    try {
+      var ctx = canvas.getContext(names[i], attributes);
+      if (ctx != null) {
+        if ($wnd.WebGLDebugUtils) {
+          $wnd.console && $wnd.console.log && console.log('WebGL debugging enabled');
+          return $wnd.WebGLDebugUtils.makeDebugContext(ctx);
+        }
+        return ctx;
+      }
+    }
+     catch (e) {
+    }
+  }
+  return null;
+}
+
+function createShaderProgram(gl, fragmentSource){
+  var fragmentShader, shaderProgram, vertexShader;
+  vertexShader = getShader(gl, 35633, 'uniform vec2 u_ScreenSize;\n\nattribute vec4 a_Matrix;\nattribute vec2 a_Translation;\nattribute vec2 a_Position;\nattribute vec2 a_Texture;\n\nvarying vec2 v_TexCoord;\n\nvoid main(void) {\n  // Transform the vertex.\n  mat3 transform = mat3(\n    a_Matrix[0], a_Matrix[1], 0,\n    a_Matrix[2], a_Matrix[3], 0,\n    a_Translation[0], a_Translation[1], 1);\n  gl_Position = vec4(transform * vec3(a_Position, 1.0), 1);\n\n  // Scale from screen coordinates to [0, 2].\n  gl_Position.x /= (u_ScreenSize.x / 2.0);\n  gl_Position.y /= (u_ScreenSize.y / 2.0);\n\n  // Offset to [-1, 1] and flip y axis to put origin at top-left.\n  gl_Position.x -= 1.0;\n  gl_Position.y = 1.0 - gl_Position.y;\n\n  v_TexCoord = a_Texture;\n}\n');
+  fragmentShader = getShader(gl, 35632, fragmentSource);
+  shaderProgram = gl.createProgram();
+  gl.attachShader(shaderProgram, fragmentShader);
+  gl.attachShader(shaderProgram, vertexShader);
+  gl.linkProgram(shaderProgram);
+  if (!gl.getProgramParameter(shaderProgram, 35714)) {
+    throw new RuntimeException_1('Could not initialize shaders');
+  }
+  return shaderProgram;
+}
+
+function getShader(gl, shaderType, source){
+  var shader;
+  shader = gl.createShader(shaderType);
+  gl.shaderSource(shader, source);
+  gl.compileShader(shader);
+  if (!gl.getShaderParameter(shader, 35713)) {
+    throw new RuntimeException_1(gl.getShaderInfoLog(shader));
+  }
+  return shader;
+}
+
+function ArrayStoreException_0(){
+  $fillInStackTrace();
+}
+
+function ArrayStoreException(){
+}
+
+_ = ArrayStoreException_0.prototype = ArrayStoreException.prototype = new RuntimeException;
+_.getClass$ = function getClass_61(){
+  return Ljava_lang_ArrayStoreException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Exception, Q$RuntimeException, Q$Throwable]);
+function Class_0(){
+}
+
+function createForArray(seedName){
+  var clazz;
+  clazz = new Class_0;
+  clazz.typeName = 'Class$' + (seedName != null?seedName:'' + getHashCode(clazz));
+  clazz.modifiers = 4;
+  return clazz;
+}
+
+function createForClass(seedName){
+  var clazz;
+  clazz = new Class_0;
+  clazz.typeName = 'Class$' + (seedName != null?seedName:'' + getHashCode(clazz));
+  return clazz;
+}
+
+function createForEnum(seedName, enumConstantsFunc){
+  var clazz;
+  clazz = new Class_0;
+  clazz.typeName = 'Class$' + (seedName != null?seedName:'' + getHashCode(clazz));
+  clazz.modifiers = enumConstantsFunc?8:0;
+  return clazz;
+}
+
+function createForInterface(){
+  var clazz;
+  clazz = new Class_0;
+  clazz.typeName = 'Class$' + getHashCode(clazz);
+  clazz.modifiers = 2;
+  return clazz;
+}
+
+function Class(){
+}
+
+_ = Class_0.prototype = Class.prototype = new Object_0;
+_.getClass$ = function getClass_62(){
+  return Ljava_lang_Class_2_classLit;
+}
+;
+_.toString$ = function toString_5(){
+  return ((this.modifiers & 2) != 0?'interface ':(this.modifiers & 1) != 0?'':'class ') + this.typeName;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Class]);
+_.modifiers = 0;
+_.typeName = null;
+function __parseAndValidateDouble(s){
+  var toReturn;
+  toReturn = __parseDouble(s);
+  if (isNaN(toReturn)) {
+    throw new NumberFormatException_0('For input string: "' + s + '"');
+  }
+  return toReturn;
+}
+
+function __parseDouble(str){
+  var floatRegex = floatRegex_0;
+  !floatRegex && (floatRegex = floatRegex_0 = /^\s*[+-]?((\d+\.?\d*)|(\.\d+))([eE][+-]?\d+)?[dDfF]?\s*$/i);
+  if (floatRegex.test(str)) {
+    return parseFloat(str);
+  }
+   else {
+    return Number.NaN;
+  }
+}
+
+var floatRegex_0 = null;
+function parseFloat_0(s){
+  var doubleValue;
+  doubleValue = __parseAndValidateDouble(s);
+  if (doubleValue > 3.4028234663852886E38) {
+    return Infinity;
+  }
+   else if (doubleValue < -3.4028234663852886E38) {
+    return -Infinity;
+  }
+  return doubleValue;
+}
+
+function IllegalArgumentException(){
+}
+
+_ = IllegalArgumentException.prototype = new RuntimeException;
+_.getClass$ = function getClass_63(){
+  return Ljava_lang_IllegalArgumentException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Exception, Q$RuntimeException, Q$Throwable]);
+function IndexOutOfBoundsException_0(message){
+  RuntimeException_1.call(this, message);
+}
+
+function IndexOutOfBoundsException(){
+}
+
+_ = IndexOutOfBoundsException_0.prototype = IndexOutOfBoundsException.prototype = new RuntimeException;
+_.getClass$ = function getClass_64(){
+  return Ljava_lang_IndexOutOfBoundsException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Exception, Q$RuntimeException, Q$Throwable]);
+function toPowerOfTwoString(value){
+  var buf, digits, pos;
+  buf = initDim(_3C_classLit, makeCastMap([Q$Serializable]), -1, 8, 1);
+  digits = ($clinit_Number$__Digits() , digits_0);
+  pos = 7;
+  if (value >= 0) {
+    while (value > 15) {
+      buf[pos--] = digits[value & 15];
+      value >>= 4;
+    }
+  }
+   else {
+    while (pos > 0) {
+      buf[pos--] = digits[value & 15];
+      value >>= 4;
+    }
+  }
+  buf[pos] = digits[value & 15];
+  return __valueOf(buf, pos, 8);
+}
+
+function abs(x){
+  return x <= 0?0 - x:x;
+}
+
+function NullPointerException_0(){
+  $fillInStackTrace();
+}
+
+function NullPointerException_1(){
+  RuntimeException_1.call(this, 'encodedURLComponent cannot be null');
+}
+
+function NullPointerException(){
+}
+
+_ = NullPointerException_1.prototype = NullPointerException_0.prototype = NullPointerException.prototype = new RuntimeException;
+_.getClass$ = function getClass_65(){
+  return Ljava_lang_NullPointerException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Exception, Q$RuntimeException, Q$Throwable]);
+function $clinit_Number$__Digits(){
+  $clinit_Number$__Digits = nullMethod;
+  digits_0 = initValues(_3C_classLit, makeCastMap([Q$Serializable]), -1, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122]);
+}
+
+var digits_0;
+function NumberFormatException_0(message){
+  RuntimeException_1.call(this, message);
+}
+
+function NumberFormatException(){
+}
+
+_ = NumberFormatException_0.prototype = NumberFormatException.prototype = new IllegalArgumentException;
+_.getClass$ = function getClass_66(){
+  return Ljava_lang_NumberFormatException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Exception, Q$RuntimeException, Q$Throwable]);
+function StackTraceElement_0(methodName){
+  this.className = 'Unknown';
+  this.methodName = methodName;
+  this.lineNumber = -1;
+}
+
+function StackTraceElement(){
+}
+
+_ = StackTraceElement_0.prototype = StackTraceElement.prototype = new Object_0;
+_.getClass$ = function getClass_67(){
+  return Ljava_lang_StackTraceElement_2_classLit;
+}
+;
+_.toString$ = function toString_6(){
+  return this.className + '.' + this.methodName + '(Unknown Source' + (this.lineNumber >= 0?':' + this.lineNumber:'') + ')';
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$StackTraceElement]);
+_.className = null;
+_.lineNumber = 0;
+_.methodName = null;
+function $charAt(this$static, index){
+  return this$static.charCodeAt(index);
+}
+
+function $equals(this$static, other){
+  if (!instanceOf(other, Q$String)) {
+    return false;
+  }
+  return String(this$static) == other;
+}
+
+function $indexOf(this$static, str){
+  return this$static.indexOf(str);
+}
+
+function $split(this$static, regex, maxMatch){
+  var compiled = new RegExp(regex, 'g');
+  var out = [];
+  var count = 0;
+  var trail = this$static;
+  var lastTrail = null;
+  while (true) {
+    var matchObj = compiled.exec(trail);
+    if (matchObj == null || trail == '' || count == maxMatch - 1 && maxMatch > 0) {
+      out[count] = trail;
+      break;
+    }
+     else {
+      out[count] = trail.substring(0, matchObj.index);
+      trail = trail.substring(matchObj.index + matchObj[0].length, trail.length);
+      compiled.lastIndex = 0;
+      if (lastTrail == trail) {
+        out[count] = trail.substring(0, 1);
+        trail = trail.substring(1);
+      }
+      lastTrail = trail;
+      count++;
+    }
+  }
+  if (maxMatch == 0 && this$static.length > 0) {
+    var lastNonEmpty = out.length;
+    while (lastNonEmpty > 0 && out[lastNonEmpty - 1] == '') {
+      --lastNonEmpty;
+    }
+    lastNonEmpty < out.length && out.splice(lastNonEmpty, out.length - lastNonEmpty);
+  }
+  var jr = __createArray(out.length);
+  for (var i = 0; i < out.length; ++i) {
+    jr[i] = out[i];
+  }
+  return jr;
+}
+
+function $substring(this$static, beginIndex){
+  return this$static.substr(beginIndex, this$static.length - beginIndex);
+}
+
+function $substring_0(this$static, beginIndex, endIndex){
+  return this$static.substr(beginIndex, endIndex - beginIndex);
+}
+
+function $trim(this$static){
+  if (this$static.length == 0 || this$static[0] > ' ' && this$static[this$static.length - 1] > ' ') {
+    return this$static;
+  }
+  var r1 = this$static.replace(/^(\s*)/, '');
+  var r2 = r1.replace(/\s*$/, '');
+  return r2;
+}
+
+function __createArray(numElements){
+  return initDim(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable]), Q$String, numElements, 0);
+}
+
+function __valueOf(x, start, end){
+  x = x.slice(start, end);
+  return String.fromCharCode.apply(null, x);
+}
+
+_ = String.prototype;
+_.equals$ = function equals_4(other){
+  return $equals(this, other);
+}
+;
+_.getClass$ = function getClass_68(){
+  return Ljava_lang_String_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_5(){
+  return getHashCode_0(this);
+}
+;
+_.toString$ = function toString_7(){
+  return this;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$String, Q$Serializable, Q$CharSequence, Q$Comparable]);
+function $clinit_String$HashCache(){
+  $clinit_String$HashCache = nullMethod;
+  back_0 = {};
+  front = {};
+}
+
+function compute(str){
+  var hashCode, i, n, nBatch;
+  hashCode = 0;
+  n = str.length;
+  nBatch = n - 4;
+  i = 0;
+  while (i < nBatch) {
+    hashCode = str.charCodeAt(i + 3) + 31 * (str.charCodeAt(i + 2) + 31 * (str.charCodeAt(i + 1) + 31 * (str.charCodeAt(i) + 31 * hashCode))) | 0;
+    i += 4;
+  }
+  while (i < n) {
+    hashCode = hashCode * 31 + $charAt(str, i++);
+  }
+  return hashCode | 0;
+}
+
+function getHashCode_0(str){
+  $clinit_String$HashCache();
+  var key = ':' + str;
+  var result = front[key];
+  if (result != null) {
+    return result;
+  }
+  result = back_0[key];
+  result == null && (result = compute(str));
+  increment();
+  return front[key] = result;
+}
+
+function increment(){
+  if (count_0 == 256) {
+    back_0 = front;
+    front = {};
+    count_0 = 0;
+  }
+  ++count_0;
+}
+
+var back_0, count_0 = 0, front;
+function $append_4(this$static, x){
+  $append_3(this$static.impl, x);
+  return this$static;
+}
+
+function StringBuffer_0(){
+  this.impl = new StringBufferImplAppend_0;
+}
+
+function StringBuffer(){
+}
+
+_ = StringBuffer_0.prototype = StringBuffer.prototype = new Object_0;
+_.getClass$ = function getClass_69(){
+  return Ljava_lang_StringBuffer_2_classLit;
+}
+;
+_.toString$ = function toString_8(){
+  return this.impl.string;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$CharSequence]);
+function $$init(this$static){
+  this$static.impl = new StringBufferImplAppend_0;
+}
+
+function $append_5(this$static, x){
+  $append(this$static.impl, x);
+  return this$static;
+}
+
+function $append_6(this$static, x){
+  $appendNonNull(this$static.impl, String.fromCharCode(x));
+  return this$static;
+}
+
+function $append_7(this$static, x){
+  $appendNonNull(this$static.impl, String.fromCharCode.apply(null, x));
+  return this$static;
+}
+
+function $append_8(this$static, x){
+  $append_0(this$static.impl, x);
+  return this$static;
+}
+
+function $append_9(this$static, x){
+  $append_1(this$static.impl, x);
+  return this$static;
+}
+
+function $append_10(this$static, x){
+  $append_2(this$static.impl, x);
+  return this$static;
+}
+
+function $append_11(this$static, x){
+  $append_3(this$static.impl, x);
+  return this$static;
+}
+
+function $charAt_0(this$static, index){
+  return $charAt(this$static.impl.string, index);
+}
+
+function $setLength(this$static, newLength){
+  var oldLength;
+  oldLength = this$static.impl.string.length;
+  newLength < oldLength?($replace(this$static.impl, newLength, oldLength) , this$static):newLength > oldLength && $append_7(this$static, initDim(_3C_classLit, makeCastMap([Q$Serializable]), -1, newLength - oldLength, 1));
+}
+
+function StringBuilder_0(){
+  $$init(this);
+}
+
+function StringBuilder_1(s){
+  $$init(this);
+  $append_3(this.impl, s);
+}
+
+function StringBuilder(){
+}
+
+_ = StringBuilder_1.prototype = StringBuilder_0.prototype = StringBuilder.prototype = new Object_0;
+_.getClass$ = function getClass_70(){
+  return Ljava_lang_StringBuilder_2_classLit;
+}
+;
+_.toString$ = function toString_9(){
+  return this.impl.string;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$CharSequence]);
+function UnsupportedOperationException_0(){
+  $fillInStackTrace();
+}
+
+function UnsupportedOperationException_1(message){
+  RuntimeException_1.call(this, message);
+}
+
+function UnsupportedOperationException(){
+}
+
+_ = UnsupportedOperationException_1.prototype = UnsupportedOperationException_0.prototype = UnsupportedOperationException.prototype = new RuntimeException;
+_.getClass$ = function getClass_71(){
+  return Ljava_lang_UnsupportedOperationException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Exception, Q$RuntimeException, Q$Throwable]);
+function $addAllHashEntries(this$static, dest){
+  var hashCodeMap = this$static.hashCodeMap;
+  for (var hashCode in hashCodeMap) {
+    var hashCodeInt = parseInt(hashCode, 10);
+    if (hashCode == hashCodeInt) {
+      var array = hashCodeMap[hashCodeInt];
+      for (var i = 0, c = array.length; i < c; ++i) {
+        dest.add(array[i]);
+      }
+    }
+  }
+}
+
+function $addAllStringEntries(this$static, dest){
+  var stringMap = this$static.stringMap;
+  for (var key in stringMap) {
+    if (key.charCodeAt(0) == 58) {
+      var entry = new AbstractHashMap$MapEntryString_0(this$static, key.substring(1));
+      dest.add(entry);
+    }
+  }
+}
+
+function $containsKey_0(this$static, key){
+  return key == null?this$static.nullSlotLive:instanceOf(key, Q$String)?':' + key in this$static.stringMap:$hasHashValue(this$static, key, ~~hashCode__devirtual$(key));
+}
+
+function $get_0(this$static, key){
+  return key == null?this$static.nullSlot:instanceOf(key, Q$String)?this$static.stringMap[':' + key]:$getHashValue(this$static, key, ~~hashCode__devirtual$(key));
+}
+
+function $getHashValue(this$static, key, hashCode){
+  var array = this$static.hashCodeMap[hashCode];
+  if (array) {
+    for (var i = 0, c = array.length; i < c; ++i) {
+      var entry = array[i];
+      var entryKey = entry.getKey();
+      if (this$static.equalsBridge(key, entryKey)) {
+        return entry.getValue();
+      }
+    }
+  }
+  return null;
+}
+
+function $getStringValue(this$static, key){
+  return this$static.stringMap[':' + key];
+}
+
+function $hasHashValue(this$static, key, hashCode){
+  var array = this$static.hashCodeMap[hashCode];
+  if (array) {
+    for (var i = 0, c = array.length; i < c; ++i) {
+      var entry = array[i];
+      var entryKey = entry.getKey();
+      if (this$static.equalsBridge(key, entryKey)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+function $put(this$static, key, value){
+  return key == null?$putNullSlot(this$static, value):instanceOf(key, Q$String)?$putStringValue(this$static, key, value):$putHashValue(this$static, key, value, ~~hashCode__devirtual$(key));
+}
+
+function $putHashValue(this$static, key, value, hashCode){
+  var array = this$static.hashCodeMap[hashCode];
+  if (array) {
+    for (var i = 0, c = array.length; i < c; ++i) {
+      var entry = array[i];
+      var entryKey = entry.getKey();
+      if (this$static.equalsBridge(key, entryKey)) {
+        var previous = entry.getValue();
+        entry.setValue(value);
+        return previous;
+      }
+    }
+  }
+   else {
+    array = this$static.hashCodeMap[hashCode] = [];
+  }
+  var entry = new MapEntryImpl_0(key, value);
+  array.push(entry);
+  ++this$static.size;
+  return null;
+}
+
+function $putNullSlot(this$static, value){
+  var result;
+  result = this$static.nullSlot;
+  this$static.nullSlot = value;
+  if (!this$static.nullSlotLive) {
+    this$static.nullSlotLive = true;
+    ++this$static.size;
+  }
+  return result;
+}
+
+function $putStringValue(this$static, key, value){
+  var result, stringMap = this$static.stringMap;
+  key = ':' + key;
+  key in stringMap?(result = stringMap[key]):++this$static.size;
+  stringMap[key] = value;
+  return result;
+}
+
+function AbstractHashMap(){
+}
+
+_ = AbstractHashMap.prototype = new AbstractMap;
+_.containsKey = function containsKey_1(key){
+  return $containsKey_0(this, key);
+}
+;
+_.entrySet_0 = function entrySet_1(){
+  return new AbstractHashMap$EntrySet_0(this);
+}
+;
+_.equalsBridge = function equalsBridge(value1, value2){
+  return maskUndefined(value1) === maskUndefined(value2) || value1 != null && equals__devirtual$(value1, value2);
+}
+;
+_.get = function get_1(key){
+  return $get_0(this, key);
+}
+;
+_.getClass$ = function getClass_72(){
+  return Ljava_util_AbstractHashMap_2_classLit;
+}
+;
+_.size_0 = function size_3(){
+  return this.size;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map]);
+_.hashCodeMap = null;
+_.nullSlot = null;
+_.nullSlotLive = false;
+_.size = 0;
+_.stringMap = null;
+function AbstractHashMap$EntrySet_0(this$0){
+  this.this$0 = this$0;
+}
+
+function AbstractHashMap$EntrySet(){
+}
+
+_ = AbstractHashMap$EntrySet_0.prototype = AbstractHashMap$EntrySet.prototype = new AbstractSet;
+_.contains = function contains_1(o){
+  var entry, key, value;
+  if (instanceOf(o, Q$Map$Entry)) {
+    entry = o;
+    key = entry.getKey();
+    if ($containsKey_0(this.this$0, key)) {
+      value = $get_0(this.this$0, key);
+      return $equals_0(entry.getValue(), value);
+    }
+  }
+  return false;
+}
+;
+_.getClass$ = function getClass_73(){
+  return Ljava_util_AbstractHashMap$EntrySet_2_classLit;
+}
+;
+_.iterator = function iterator_0(){
+  return new AbstractHashMap$EntrySetIterator_0(this.this$0);
+}
+;
+_.size_0 = function size_4(){
+  return this.this$0.size;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Set]);
+_.this$0 = null;
+function AbstractHashMap$EntrySetIterator_0(this$0){
+  var list;
+  list = new ArrayList_0;
+  this$0.nullSlotLive && $add(list, new AbstractHashMap$MapEntryNull_0(this$0));
+  $addAllStringEntries(this$0, list);
+  $addAllHashEntries(this$0, list);
+  this.iter = new AbstractList$IteratorImpl_0(list);
+}
+
+function AbstractHashMap$EntrySetIterator(){
+}
+
+_ = AbstractHashMap$EntrySetIterator_0.prototype = AbstractHashMap$EntrySetIterator.prototype = new Object_0;
+_.getClass$ = function getClass_74(){
+  return Ljava_util_AbstractHashMap$EntrySetIterator_2_classLit;
+}
+;
+_.hasNext = function hasNext_0(){
+  return $hasNext(this.iter);
+}
+;
+_.next = function next_1(){
+  return $next_0(this.iter);
+}
+;
+_.iter = null;
+function AbstractMapEntry(){
+}
+
+_ = AbstractMapEntry.prototype = new Object_0;
+_.equals$ = function equals_5(other){
+  var entry;
+  if (instanceOf(other, Q$Map$Entry)) {
+    entry = other;
+    if (equalsWithNullCheck(this.getKey(), entry.getKey()) && equalsWithNullCheck(this.getValue(), entry.getValue())) {
+      return true;
+    }
+  }
+  return false;
+}
+;
+_.getClass$ = function getClass_75(){
+  return Ljava_util_AbstractMapEntry_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_6(){
+  var keyHash, valueHash;
+  keyHash = 0;
+  valueHash = 0;
+  this.getKey() != null && (keyHash = hashCode__devirtual$(this.getKey()));
+  this.getValue() != null && (valueHash = hashCode__devirtual$(this.getValue()));
+  return keyHash ^ valueHash;
+}
+;
+_.toString$ = function toString_10(){
+  return this.getKey() + '=' + this.getValue();
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map$Entry]);
+function AbstractHashMap$MapEntryNull_0(this$0){
+  this.this$0 = this$0;
+}
+
+function AbstractHashMap$MapEntryNull(){
+}
+
+_ = AbstractHashMap$MapEntryNull_0.prototype = AbstractHashMap$MapEntryNull.prototype = new AbstractMapEntry;
+_.getClass$ = function getClass_76(){
+  return Ljava_util_AbstractHashMap$MapEntryNull_2_classLit;
+}
+;
+_.getKey = function getKey_0(){
+  return null;
+}
+;
+_.getValue = function getValue_0(){
+  return this.this$0.nullSlot;
+}
+;
+_.setValue = function setValue_0(object){
+  return $putNullSlot(this.this$0, object);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map$Entry]);
+_.this$0 = null;
+function AbstractHashMap$MapEntryString_0(this$0, key){
+  this.this$0 = this$0;
+  this.key_0 = key;
+}
+
+function AbstractHashMap$MapEntryString(){
+}
+
+_ = AbstractHashMap$MapEntryString_0.prototype = AbstractHashMap$MapEntryString.prototype = new AbstractMapEntry;
+_.getClass$ = function getClass_77(){
+  return Ljava_util_AbstractHashMap$MapEntryString_2_classLit;
+}
+;
+_.getKey = function getKey_1(){
+  return this.key_0;
+}
+;
+_.getValue = function getValue_1(){
+  return $getStringValue(this.this$0, this.key_0);
+}
+;
+_.setValue = function setValue_1(object){
+  return $putStringValue(this.this$0, this.key_0, object);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map$Entry]);
+_.key_0 = null;
+_.this$0 = null;
+function checkIndex(index, size){
+  (index < 0 || index >= size) && indexOutOfBounds(index, size);
+}
+
+function indexOutOfBounds(index, size){
+  throw new IndexOutOfBoundsException_0('Index: ' + index + ', Size: ' + size);
+}
+
+function AbstractList(){
+}
+
+_ = AbstractList.prototype = new AbstractCollection;
+_.add = function add_0(obj){
+  $add_0(this, this.size_0(), obj);
+  return true;
+}
+;
+_.equals$ = function equals_6(o){
+  var elem, elemOther, iter, iterOther, other;
+  if (o === this) {
+    return true;
+  }
+  if (!instanceOf(o, Q$List)) {
+    return false;
+  }
+  other = o;
+  if (this.size_0() != other.size) {
+    return false;
+  }
+  iter = new AbstractList$IteratorImpl_0(this);
+  iterOther = new AbstractList$IteratorImpl_0(other);
+  while (iter.i < iter.this$0.size) {
+    elem = $next_0(iter);
+    elemOther = $next_0(iterOther);
+    if (!(elem == null?elemOther == null:equals__devirtual$(elem, elemOther))) {
+      return false;
+    }
+  }
+  return true;
+}
+;
+_.getClass$ = function getClass_78(){
+  return Ljava_util_AbstractList_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_7(){
+  var iter, k, obj;
+  k = 1;
+  iter = new AbstractList$IteratorImpl_0(this);
+  while (iter.i < iter.this$0.size) {
+    obj = $next_0(iter);
+    k = 31 * k + (obj == null?0:hashCode__devirtual$(obj));
+    k = ~~k;
+  }
+  return k;
+}
+;
+_.iterator = function iterator_1(){
+  return new AbstractList$IteratorImpl_0(this);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$List]);
+function $hasNext(this$static){
+  return this$static.i < this$static.this$0.size;
+}
+
+function $next_0(this$static){
+  if (this$static.i >= this$static.this$0.size) {
+    throw new NoSuchElementException_0;
+  }
+  return $get_1(this$static.this$0, this$static.i++);
+}
+
+function AbstractList$IteratorImpl_0(this$0){
+  this.this$0 = this$0;
+}
+
+function AbstractList$IteratorImpl(){
+}
+
+_ = AbstractList$IteratorImpl_0.prototype = AbstractList$IteratorImpl.prototype = new Object_0;
+_.getClass$ = function getClass_79(){
+  return Ljava_util_AbstractList$IteratorImpl_2_classLit;
+}
+;
+_.hasNext = function hasNext_1(){
+  return $hasNext(this);
+}
+;
+_.next = function next_2(){
+  return $next_0(this);
+}
+;
+_.i = 0;
+_.this$0 = null;
+function $iterator(this$static){
+  var outerIter;
+  outerIter = new AbstractHashMap$EntrySetIterator_0(this$static.val$entrySet.this$0);
+  return new AbstractMap$1$1_0(outerIter);
+}
+
+function AbstractMap$1_0(this$0, val$entrySet){
+  this.this$0 = this$0;
+  this.val$entrySet = val$entrySet;
+}
+
+function AbstractMap$1(){
+}
+
+_ = AbstractMap$1_0.prototype = AbstractMap$1.prototype = new AbstractSet;
+_.contains = function contains_2(key){
+  return $containsKey_0(this.this$0, key);
+}
+;
+_.getClass$ = function getClass_80(){
+  return Ljava_util_AbstractMap$1_2_classLit;
+}
+;
+_.iterator = function iterator_2(){
+  return $iterator(this);
+}
+;
+_.size_0 = function size_5(){
+  return this.val$entrySet.this$0.size;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Set]);
+_.this$0 = null;
+_.val$entrySet = null;
+function AbstractMap$1$1_0(val$outerIter){
+  this.val$outerIter = val$outerIter;
+}
+
+function AbstractMap$1$1(){
+}
+
+_ = AbstractMap$1$1_0.prototype = AbstractMap$1$1.prototype = new Object_0;
+_.getClass$ = function getClass_81(){
+  return Ljava_util_AbstractMap$1$1_2_classLit;
+}
+;
+_.hasNext = function hasNext_2(){
+  return $hasNext(this.val$outerIter.iter);
+}
+;
+--></script>
+<script><!--
+_.next = function next_3(){
+  var entry;
+  entry = $next_0(this.val$outerIter.iter);
+  return entry.getKey();
+}
+;
+_.val$outerIter = null;
+function $add(this$static, o){
+  setCheck(this$static.array, this$static.size++, o);
+  return true;
+}
+
+function $add_0(this$static, index, o){
+  (index < 0 || index > this$static.size) && indexOutOfBounds(index, this$static.size);
+  splice_1(this$static.array, index, 0, o);
+  ++this$static.size;
+}
+
+function $clear_0(this$static){
+  this$static.array = initDim(_3Ljava_lang_Object_2_classLit, makeCastMap([Q$Serializable]), Q$Object, 0, 0);
+  this$static.size = 0;
+}
+
+function $get_1(this$static, index){
+  checkIndex(index, this$static.size);
+  return this$static.array[index];
+}
+
+function $indexOf_0(this$static, o, index){
+  for (; index < this$static.size; ++index) {
+    if (equalsWithNullCheck(o, this$static.array[index])) {
+      return index;
+    }
+  }
+  return -1;
+}
+
+function $remove(this$static, index){
+  var previous;
+  previous = (checkIndex(index, this$static.size) , this$static.array[index]);
+  splice_0(this$static.array, index, 1);
+  --this$static.size;
+  return previous;
+}
+
+function $remove_0(this$static, o){
+  var i;
+  i = $indexOf_0(this$static, o, 0);
+  if (i == -1) {
+    return false;
+  }
+  $remove(this$static, i);
+  return true;
+}
+
+function ArrayList_0(){
+  this.array = initDim(_3Ljava_lang_Object_2_classLit, makeCastMap([Q$Serializable]), Q$Object, 0, 0);
+}
+
+function splice_0(array, index, deleteCount){
+  array.splice(index, deleteCount);
+}
+
+function splice_1(array, index, deleteCount, value){
+  array.splice(index, deleteCount, value);
+}
+
+function ArrayList(){
+}
+
+_ = ArrayList_0.prototype = ArrayList.prototype = new AbstractList;
+_.add = function add_1(o){
+  return $add(this, o);
+}
+;
+_.contains = function contains_3(o){
+  return $indexOf_0(this, o, 0) != -1;
+}
+;
+_.getClass$ = function getClass_82(){
+  return Ljava_util_ArrayList_2_classLit;
+}
+;
+_.size_0 = function size_6(){
+  return this.size;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$List]);
+_.size = 0;
+function $equals_0(value1, value2){
+  return maskUndefined(value1) === maskUndefined(value2) || value1 != null && equals__devirtual$(value1, value2);
+}
+
+function HashMap_0(){
+  this.hashCodeMap = [];
+  this.stringMap = {};
+  this.nullSlotLive = false;
+  this.nullSlot = null;
+  this.size = 0;
+}
+
+function HashMap(){
+}
+
+_ = HashMap_0.prototype = HashMap.prototype = new AbstractHashMap;
+_.getClass$ = function getClass_83(){
+  return Ljava_util_HashMap_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Map]);
+function HashSet_0(){
+  this.map = new HashMap_0;
+}
+
+function HashSet(){
+}
+
+_ = HashSet_0.prototype = HashSet.prototype = new AbstractSet;
+_.add = function add_2(o){
+  var old;
+  old = $put(this.map, o, this);
+  return old == null;
+}
+;
+_.contains = function contains_4(o){
+  return $containsKey_0(this.map, o);
+}
+;
+_.getClass$ = function getClass_84(){
+  return Ljava_util_HashSet_2_classLit;
+}
+;
+_.iterator = function iterator_3(){
+  return $iterator($keySet(this.map));
+}
+;
+_.size_0 = function size_7(){
+  return this.map.size;
+}
+;
+_.toString$ = function toString_11(){
+  return $toString($keySet(this.map));
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Set]);
+_.map = null;
+function MapEntryImpl_0(key, value){
+  this.key_0 = key;
+  this.value = value;
+}
+
+function MapEntryImpl(){
+}
+
+_ = MapEntryImpl_0.prototype = MapEntryImpl.prototype = new AbstractMapEntry;
+_.getClass$ = function getClass_85(){
+  return Ljava_util_MapEntryImpl_2_classLit;
+}
+;
+_.getKey = function getKey_2(){
+  return this.key_0;
+}
+;
+_.getValue = function getValue_2(){
+  return this.value;
+}
+;
+_.setValue = function setValue_2(value){
+  var old;
+  old = this.value;
+  this.value = value;
+  return old;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Map$Entry]);
+_.key_0 = null;
+_.value = null;
+function NoSuchElementException_0(){
+  $fillInStackTrace();
+}
+
+function NoSuchElementException(){
+}
+
+_ = NoSuchElementException_0.prototype = NoSuchElementException.prototype = new RuntimeException;
+_.getClass$ = function getClass_86(){
+  return Ljava_util_NoSuchElementException_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Exception, Q$RuntimeException, Q$Throwable]);
+function equalsWithNullCheck(a, b){
+  return maskUndefined(a) === maskUndefined(b) || a != null && equals__devirtual$(a, b);
+}
+
+function $getImage(this$static, path){
+  var image;
+  ++this$static.totalRequestsCount;
+  image = $doGetImage(this$static, path);
+  $addCallback(image, this$static.callback);
+  return image;
+}
+
+function AbstractAssetManager(){
+}
+
+_ = AbstractAssetManager.prototype = new Object_0;
+_.getClass$ = function getClass_87(){
+  return Lplayn_core_AbstractAssetManager_2_classLit;
+}
+;
+_.errorsCount = 0;
+_.successCount = 0;
+_.totalRequestsCount = 0;
+function AbstractAssetManager$1_0(this$0){
+  this.this$0 = this$0;
+}
+
+function AbstractAssetManager$1(){
+}
+
+_ = AbstractAssetManager$1_0.prototype = AbstractAssetManager$1.prototype = new Object_0;
+_.done = function done_1(resource){
+  ++this.this$0.successCount;
+}
+;
+_.error = function error_1(e){
+  ++this.this$0.errorsCount;
+}
+;
+_.getClass$ = function getClass_88(){
+  return Lplayn_core_AbstractAssetManager$1_2_classLit;
+}
+;
+_.this$0 = null;
+function $doGetImage(this$static, path){
+  var object, url, img;
+  if ((object = $get_0(this$static.cache, path)) == null) {
+    object = (url = this$static.pathPrefix + path , $getBundle(this$static, path) , img = $doc.createElement('img') , 'crossOrigin' in img && img.setAttribute('crossOrigin', 'anonymous') , img.src = url , new HtmlImage_0(img));
+    $put(this$static.cache, path, object);
+  }
+  return object;
+}
+
+function AbstractCachingAssetManager(){
+}
+
+_ = AbstractCachingAssetManager.prototype = new AbstractAssetManager;
+_.getClass$ = function getClass_89(){
+  return Lplayn_core_AbstractCachingAssetManager_2_classLit;
+}
+;
+function $isSet(this$static, flag){
+  return (this$static.flags & flag.bitmask) != 0;
+}
+
+function $setFlag(this$static, flag){
+  this$static.flags |= flag.bitmask;
+}
+
+function AbstractLayer_0(){
+  this.transform = this.createTransform();
+  this.alpha = 1;
+  $setFlag(this, ($clinit_AbstractLayer$Flag() , VISIBLE_1));
+}
+
+function AbstractLayer(){
+}
+
+_ = AbstractLayer.prototype = new Object_0;
+_.createTransform = function createTransform(){
+  return new StockInternalTransform_0;
+}
+;
+_.getClass$ = function getClass_90(){
+  return Lplayn_core_AbstractLayer_2_classLit;
+}
+;
+_.onAdd = function onAdd(){
+  !$isSet(this, ($clinit_AbstractLayer$Flag() , DESTROYED));
+}
+;
+_.onRemove = function onRemove(){
+}
+;
+_.setOrigin = function setOrigin(x, y){
+  this.originX = x;
+  this.originY = y;
+}
+;
+_.setTranslation = function setTranslation(x, y){
+  this.transform.setTranslation_0(x, y);
+}
+;
+_.alpha = 0;
+_.depth = 0;
+_.flags = 0;
+_.originX = 0;
+_.originY = 0;
+_.parent_0 = null;
+_.transform = null;
+function $clinit_AbstractLayer$Flag(){
+  $clinit_AbstractLayer$Flag = nullMethod;
+  DESTROYED = new AbstractLayer$Flag_0('DESTROYED', 1);
+  VISIBLE_1 = new AbstractLayer$Flag_0('VISIBLE', 2);
+  SHOWN = new AbstractLayer$Flag_0('SHOWN', 4);
+  $VALUES_3 = initValues(_3Lplayn_core_AbstractLayer$Flag_2_classLit, makeCastMap([Q$Serializable]), Q$AbstractLayer$Flag, [DESTROYED, VISIBLE_1, SHOWN]);
+}
+
+function AbstractLayer$Flag_0(enum$name, bitmask){
+  this.name_0 = enum$name;
+  this.bitmask = bitmask;
+}
+
+function values_3(){
+  $clinit_AbstractLayer$Flag();
+  return $VALUES_3;
+}
+
+function AbstractLayer$Flag(){
+}
+
+_ = AbstractLayer$Flag_0.prototype = AbstractLayer$Flag.prototype = new Enum;
+_.getClass$ = function getClass_91(){
+  return Lplayn_core_AbstractLayer$Flag_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparable, Q$Enum, Q$AbstractLayer$Flag]);
+_.bitmask = 0;
+var $VALUES_3, DESTROYED, SHOWN, VISIBLE_1;
+function CanvasSurface_0(canvas){
+  this.canvas = canvas;
+}
+
+function CanvasSurface(){
+}
+
+_ = CanvasSurface_0.prototype = CanvasSurface.prototype = new Object_0;
+_.fillRect_0 = function fillRect(x, y, width, height){
+  $fillRect_0(this.canvas, x, y, width, height);
+  return this;
+}
+;
+_.getClass$ = function getClass_92(){
+  return Lplayn_core_CanvasSurface_2_classLit;
+}
+;
+_.setFillColor = function setFillColor(color){
+  $setFillColor(this.canvas, color);
+  $setStrokeColor(this.canvas, color);
+  return this;
+}
+;
+_.canvas = null;
+function Events$Input$Impl(){
+}
+
+_ = Events$Input$Impl.prototype = new Object_0;
+_.addFields = function addFields(builder){
+  $append_5($append_11($append_8((builder.impl.string += 'time=' , builder), this.time), ', preventDefault='), this.preventDefault_0);
+}
+;
+_.getClass$ = function getClass_93(){
+  return Lplayn_core_Events$Input$Impl_2_classLit;
+}
+;
+_.name_1 = function name_1(){
+  return 'Events.Input';
+}
+;
+_.toString$ = function toString_12(){
+  var builder;
+  builder = $append_6(new StringBuilder_1(this.name_1()), 91);
+  this.addFields(builder);
+  return (builder.impl.string += ']' , builder).impl.string;
+}
+;
+_.preventDefault_0 = false;
+_.time = 0;
+function Events$Position$Impl_0(time, x, y){
+  this.time = time;
+  this.x = x;
+  this.y = y;
+}
+
+function Events$Position$Impl(){
+}
+
+_ = Events$Position$Impl.prototype = new Events$Input$Impl;
+_.addFields = function addFields_0(builder){
+  $append_5($append_11($append_8((builder.impl.string += 'time=' , builder), this.time), ', preventDefault='), this.preventDefault_0);
+  $append_9($append_11($append_9((builder.impl.string += ', x=' , builder), this.x), ', y='), this.y);
+}
+;
+_.getClass$ = function getClass_94(){
+  return Lplayn_core_Events$Position$Impl_2_classLit;
+}
+;
+_.name_1 = function name_2(){
+  return 'Events.Position';
+}
+;
+_.x = 0;
+_.y = 0;
+function $add_1(this$static, self_0, child){
+  var count, index;
+  count = this$static.children.size;
+  count == 0 || $get_1(this$static.children, count - 1).depth <= child.depth?(index = count):(index = $findInsertion(this$static, child.depth));
+  !!child.parent_0 && child.parent_0.remove(child);
+  $add_0(this$static.children, index, child);
+  child.parent_0 = self_0;
+  child.onAdd();
+  return index;
+}
+
+function $findChild(this$static, child, depth){
+  var c, ii, ll, startIdx;
+  startIdx = $findInsertion(this$static, depth);
+  for (ii = startIdx - 1; ii >= 0; --ii) {
+    c = $get_1(this$static.children, ii);
+    if (c == child) {
+      return ii;
+    }
+    if (c.depth != depth) {
+      break;
+    }
+  }
+  for (ii = startIdx , ll = this$static.children.size; ii < ll; ++ii) {
+    c = $get_1(this$static.children, ii);
+    if (c == child) {
+      return ii;
+    }
+    if (c.depth != depth) {
+      break;
+    }
+  }
+  return -1;
+}
+
+function $findInsertion(this$static, depth){
+  var high, low, mid, midDepth;
+  low = 0;
+  high = this$static.children.size - 1;
+  while (low <= high) {
+    mid = ~~(low + high) >>> 1;
+    midDepth = $get_1(this$static.children, mid).depth;
+    if (depth > midDepth) {
+      low = mid + 1;
+    }
+     else if (depth < midDepth) {
+      high = mid - 1;
+    }
+     else {
+      return mid;
+    }
+  }
+  return low;
+}
+
+function $onAdd(this$static){
+  var child, child$iterator;
+  for (child$iterator = new AbstractList$IteratorImpl_0(this$static.children); child$iterator.i < child$iterator.this$0.size;) {
+    child = $next_0(child$iterator);
+    child.onAdd();
+  }
+}
+
+function $onRemove(this$static){
+  var child, child$iterator;
+  for (child$iterator = new AbstractList$IteratorImpl_0(this$static.children); child$iterator.i < child$iterator.this$0.size;) {
+    child = $next_0(child$iterator);
+    child.onRemove();
+  }
+}
+
+function $remove_1(this$static, child){
+  var index, child_0;
+  index = $findChild(this$static, child, child.depth);
+  if (index < 0) {
+    throw new UnsupportedOperationException_1('Could not remove Layer because it is not a child of the GroupLayer');
+  }
+  child_0 = $remove(this$static.children, index);
+  child_0.onRemove();
+  child_0.parent_0 = null;
+}
+
+function GroupLayerImpl_0(){
+  this.children = new ArrayList_0;
+}
+
+function GroupLayerImpl(){
+}
+
+_ = GroupLayerImpl_0.prototype = GroupLayerImpl.prototype = new Object_0;
+_.getClass$ = function getClass_95(){
+  return Lplayn_core_GroupLayerImpl_2_classLit;
+}
+;
+function Mouse$ButtonEvent$Impl_0(time, x, y, button){
+  Events$Position$Impl_0.call(this, time, x, y);
+  this.button_0 = button;
+}
+
+function Mouse$ButtonEvent$Impl(){
+}
+
+_ = Mouse$ButtonEvent$Impl_0.prototype = Mouse$ButtonEvent$Impl.prototype = new Events$Position$Impl;
+_.addFields = function addFields_1(builder){
+  $append_5($append_11($append_8((builder.impl.string += 'time=' , builder), this.time), ', preventDefault='), this.preventDefault_0);
+  $append_9($append_11($append_9((builder.impl.string += ', x=' , builder), this.x), ', y='), this.y);
+  $append_10((builder.impl.string += ', button=' , builder), this.button_0);
+}
+;
+_.getClass$ = function getClass_96(){
+  return Lplayn_core_Mouse$ButtonEvent$Impl_2_classLit;
+}
+;
+_.name_1 = function name_3(){
+  return 'ButtonEvent';
+}
+;
+_.button_0 = 0;
+function Mouse$MotionEvent$Impl_0(time, x, y){
+  Events$Position$Impl_0.call(this, time, x, y);
+}
+
+function Mouse$MotionEvent$Impl(){
+}
+
+_ = Mouse$MotionEvent$Impl_0.prototype = Mouse$MotionEvent$Impl.prototype = new Events$Position$Impl;
+_.getClass$ = function getClass_97(){
+  return Lplayn_core_Mouse$MotionEvent$Impl_2_classLit;
+}
+;
+_.name_1 = function name_4(){
+  return 'MotionEvent';
+}
+;
+function Mouse$WheelEvent$Impl_0(time, velocity){
+  this.time = time;
+  this.velocity = velocity;
+}
+
+function Mouse$WheelEvent$Impl(){
+}
+
+_ = Mouse$WheelEvent$Impl_0.prototype = Mouse$WheelEvent$Impl.prototype = new Events$Input$Impl;
+_.addFields = function addFields_2(builder){
+  $append_5($append_11($append_8((builder.impl.string += 'time=' , builder), this.time), ', preventDefault='), this.preventDefault_0);
+  $append_9((builder.impl.string += ', velocity=' , builder), this.velocity);
+}
+;
+_.getClass$ = function getClass_98(){
+  return Lplayn_core_Mouse$WheelEvent$Impl_2_classLit;
+}
+;
+_.name_1 = function name_5(){
+  return 'WheelEvent';
+}
+;
+_.velocity = 0;
+function run(game){
+  $run(platform_0, game);
+}
+
+var platform_0 = null;
+function Pointer$Event$Impl_0(time, x, y){
+  Events$Position$Impl_0.call(this, time, x, y);
+}
+
+function Pointer$Event$Impl(){
+}
+
+_ = Pointer$Event$Impl_0.prototype = Pointer$Event$Impl.prototype = new Events$Position$Impl;
+_.getClass$ = function getClass_99(){
+  return Lplayn_core_Pointer$Event$Impl_2_classLit;
+}
+;
+_.name_1 = function name_6(){
+  return 'Pointer.Event';
+}
+;
+function AbstractTransform(){
+}
+
+_ = AbstractTransform.prototype = new Object_0;
+_.getClass$ = function getClass_100(){
+  return Lpythagoras_f_AbstractTransform_2_classLit;
+}
+;
+_.setTranslation_0 = function setTranslation_0(tx, ty){
+  this.setTx(tx);
+  this.setTy(ty);
+  return this;
+}
+;
+_.setTx = function setTx(tx){
+  throw new UnsupportedOperationException_0;
+}
+;
+_.setTy = function setTy(ty){
+  throw new UnsupportedOperationException_0;
+}
+;
+function $setTransform(this$static, m00, m01, m10, m11, tx, ty){
+  this$static.m00 = m00;
+  this$static.m01 = m01;
+  this$static.m10 = m10;
+  this$static.m11 = m11;
+  this$static.tx = tx;
+  this$static.ty = ty;
+  return this$static;
+}
+
+function AffineTransform(){
+}
+
+_ = AffineTransform.prototype = new AbstractTransform;
+_.getClass$ = function getClass_101(){
+  return Lpythagoras_f_AffineTransform_2_classLit;
+}
+;
+_.setTranslation_0 = function setTranslation_1(tx, ty){
+  this.tx = tx;
+  this.ty = ty;
+  return this;
+}
+;
+_.setTx = function setTx_0(tx){
+  this.tx = tx;
+  return this;
+}
+;
+_.setTy = function setTy_0(ty){
+  this.ty = ty;
+  return this;
+}
+;
+_.toString$ = function toString_13(){
+  return 'affine [' + toString_16(this.m00) + ' ' + toString_16(this.m01) + ' ' + toString_16(this.m10) + ' ' + toString_16(this.m11) + ' ' + new Vector_0(this.tx, this.ty) + ']';
+}
+;
+_.tx_0 = function tx_0(){
+  return this.tx;
+}
+;
+_.ty_0 = function ty_0(){
+  return this.ty;
+}
+;
+_.m00 = 0;
+_.m01 = 0;
+_.m10 = 0;
+_.m11 = 0;
+_.tx = 0;
+_.ty = 0;
+function $clinit_StockInternalTransform(){
+  $clinit_StockInternalTransform = nullMethod;
+  new StockInternalTransform_0;
+}
+
+function $concatenate(this$static, m00, m01, m10, m11, tx, ty, originX, originY){
+  multiply_0(this$static.m00, this$static.m01, this$static.m10, this$static.m11, this$static.tx, this$static.ty, 1, 0, 0, 1, originX, originY, this$static);
+  multiply_0(this$static.m00, this$static.m01, this$static.m10, this$static.m11, this$static.tx, this$static.ty, m00, m01, m10, m11, tx - originX, ty - originY, this$static);
+  multiply_0(this$static.m00, this$static.m01, this$static.m10, this$static.m11, this$static.tx, this$static.ty, 1, 0, 0, 1, -originX, -originY, this$static);
+  return this$static;
+}
+
+function StockInternalTransform_0(){
+  $clinit_StockInternalTransform();
+  this.m00 = 1;
+  this.m01 = 0;
+  this.m10 = 0;
+  this.m11 = 1;
+  this.tx = 0;
+  this.ty = 0;
+}
+
+function StockInternalTransform(){
+}
+
+_ = StockInternalTransform_0.prototype = StockInternalTransform.prototype = new AffineTransform;
+_.concatenate = function concatenate(other, originX, originY){
+  var ot;
+  ot = other;
+  return $concatenate(this, ot.m00, ot.m01, ot.m10, ot.m11, ot.tx, ot.ty, originX, originY);
+}
+;
+_.getClass$ = function getClass_102(){
+  return Lplayn_core_StockInternalTransform_2_classLit;
+}
+;
+_.m00_0 = function m00_0(){
+  return this.m00;
+}
+;
+_.m01_0 = function m01_0(){
+  return this.m01;
+}
+;
+_.m10_0 = function m10_0(){
+  return this.m10;
+}
+;
+_.m11_0 = function m11_0(){
+  return this.m11;
+}
+;
+_.set_0 = function set(other){
+  var ot;
+  ot = other;
+  $setTransform(this, ot.m00, ot.m01, ot.m10, ot.m11, ot.tx, ot.ty);
+  return this;
+}
+;
+function $clinit_TypedArrayBuilder(){
+  $clinit_TypedArrayBuilder = nullMethod;
+  getters = new HashMap_0;
+  $put(getters, Ljava_lang_Boolean_2_classLit, new TypedArrayBuilder$1_0);
+  $put(getters, Ljava_lang_Integer_2_classLit, new TypedArrayBuilder$2_0);
+  $put(getters, Ljava_lang_Double_2_classLit, new TypedArrayBuilder$3_0);
+  $put(getters, Ljava_lang_String_2_classLit, new TypedArrayBuilder$4_0);
+  $put(getters, Lplayn_core_Json$Object_2_classLit, new TypedArrayBuilder$5_0);
+}
+
+var getters;
+function TypedArrayBuilder$1_0(){
+}
+
+function TypedArrayBuilder$1(){
+}
+
+_ = TypedArrayBuilder$1_0.prototype = TypedArrayBuilder$1.prototype = new Object_0;
+_.getClass$ = function getClass_103(){
+  return Lplayn_core_TypedArrayBuilder$1_2_classLit;
+}
+;
+function TypedArrayBuilder$2_0(){
+}
+
+function TypedArrayBuilder$2(){
+}
+
+_ = TypedArrayBuilder$2_0.prototype = TypedArrayBuilder$2.prototype = new Object_0;
+_.getClass$ = function getClass_104(){
+  return Lplayn_core_TypedArrayBuilder$2_2_classLit;
+}
+;
+function TypedArrayBuilder$3_0(){
+}
+
+function TypedArrayBuilder$3(){
+}
+
+_ = TypedArrayBuilder$3_0.prototype = TypedArrayBuilder$3.prototype = new Object_0;
+_.getClass$ = function getClass_105(){
+  return Lplayn_core_TypedArrayBuilder$3_2_classLit;
+}
+;
+function TypedArrayBuilder$4_0(){
+}
+
+function TypedArrayBuilder$4(){
+}
+
+_ = TypedArrayBuilder$4_0.prototype = TypedArrayBuilder$4.prototype = new Object_0;
+_.getClass$ = function getClass_106(){
+  return Lplayn_core_TypedArrayBuilder$4_2_classLit;
+}
+;
+function TypedArrayBuilder$5_0(){
+}
+
+function TypedArrayBuilder$5(){
+}
+
+_ = TypedArrayBuilder$5_0.prototype = TypedArrayBuilder$5.prototype = new Object_0;
+_.getClass$ = function getClass_107(){
+  return Lplayn_core_TypedArrayBuilder$5_2_classLit;
+}
+;
+function nextPowerOfTwo(x){
+  var bit, count, highest, i;
+  bit = 32768;
+  highest = -1;
+  count = 0;
+  for (i = 15; i >= 0; --i , bit >>= 1) {
+    if ((x & bit) != 0) {
+      ++count;
+      highest == -1 && (highest = i);
+    }
+  }
+  if (count <= 1) {
+    return 0;
+  }
+  return 1 << highest + 1;
+}
+
+function LayerGL(){
+}
+
+_ = LayerGL.prototype = new AbstractLayer;
+_.getClass$ = function getClass_108(){
+  return Lplayn_core_gl_LayerGL_2_classLit;
+}
+;
+function $getBundle(this$static, collection){
+  var clientBundle, entry, entry$iterator, regExp;
+  clientBundle = null;
+  for (entry$iterator = new AbstractHashMap$EntrySetIterator_0((new AbstractHashMap$EntrySet_0(this$static.clientBundles)).this$0); $hasNext(entry$iterator.iter);) {
+    entry = $next_0(entry$iterator.iter);
+    regExp = entry.getKey();
+    !!$exec(new RegExp(regExp), collection) && (clientBundle = entry.getValue());
+  }
+  return clientBundle;
+}
+
+function HtmlAssetManager_0(){
+  this.callback = new AbstractAssetManager$1_0(this);
+  this.cache = new HashMap_0;
+  this.clientBundles = new HashMap_0;
+}
+
+function HtmlAssetManager(){
+}
+
+_ = HtmlAssetManager_0.prototype = HtmlAssetManager.prototype = new AbstractCachingAssetManager;
+_.getClass$ = function getClass_109(){
+  return Lplayn_html_HtmlAssetManager_2_classLit;
+}
+;
+_.pathPrefix = '';
+function HtmlAudio_0(){
+  new SoundController_0;
+}
+
+function maybeCreateAudioContext(){
+  try {
+    return new AudioContext;
+  }
+   catch (ignore) {
+  }
+  try {
+    return new webkitAudioContext;
+  }
+   catch (ignore) {
+  }
+  return null;
+}
+
+function HtmlAudio(){
+}
+
+_ = HtmlAudio_0.prototype = HtmlAudio.prototype = new Object_0;
+_.getClass$ = function getClass_110(){
+  return Lplayn_html_HtmlAudio_2_classLit;
+}
+;
+function $fillRect_0(this$static, x, y, w, h){
+  $fillRect(this$static.ctx, x, y, w, h);
+  return this$static;
+}
+
+function $setFillColor(this$static, color){
+  $setFillStyleWeb(this$static.ctx, cssColorString(color));
+  return this$static;
+}
+
+function $setStrokeColor(this$static, color){
+  $setStrokeStyleWeb(this$static.ctx, cssColorString(color));
+  return this$static;
+}
+
+function HtmlCanvas_0(canvas, width, height){
+  canvas.width = width;
+  canvas.height = height;
+  this.ctx = canvas.getContext('2d');
+}
+
+function HtmlCanvas(){
+}
+
+_ = HtmlCanvas_0.prototype = HtmlCanvas.prototype = new Object_0;
+_.getClass$ = function getClass_111(){
+  return Lplayn_html_HtmlCanvas_2_classLit;
+}
+;
+_.ctx = null;
+function HtmlGame$1_0(){
+}
+
+function HtmlGame$1(){
+}
+
+_ = HtmlGame$1_0.prototype = HtmlGame$1.prototype = new Object_0;
+_.getClass$ = function getClass_112(){
+  return Lplayn_html_HtmlGame$1_2_classLit;
+}
+;
+function HtmlGame$2_0(){
+}
+
+function HtmlGame$2(){
+}
+
+_ = HtmlGame$2_0.prototype = HtmlGame$2.prototype = new Object_0;
+_.getClass$ = function getClass_113(){
+  return Lplayn_html_HtmlGame$2_2_classLit;
+}
+;
+function HtmlGraphics_0(){
+  var doc;
+  new HashMap_0;
+  doc = $doc;
+  this.dummyCanvas = doc.createElement('canvas');
+  this.dummyCanvas.getContext('2d');
+  this.rootElement = doc.getElementById('playn-root');
+  !this.rootElement?(this.rootElement = doc.body):(this.rootElement.innerHTML = '' , undefined);
+  this.measureElement = doc.createElement('div');
+  this.measureElement.style['visibility'] = ($clinit_Style$Visibility() , 'hidden');
+  this.measureElement.style['position'] = ($clinit_Style$Position() , 'absolute');
+  this.measureElement.style['top'] = -500 + ($clinit_Style$Unit() , 'px');
+  this.measureElement.style['overflow'] = ($clinit_Style$Overflow() , 'visible');
+  $appendChild(this.rootElement, this.measureElement);
+}
+
+function cssColorString(color){
+  var a, b, g, r;
+  a = (~~color >> 24 & 255) / 255;
+  r = ~~color >> 16 & 255;
+  g = ~~color >> 8 & 255;
+  b = color & 255;
+  return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
+}
+
+function HtmlGraphics(){
+}
+
+_ = HtmlGraphics.prototype = new Object_0;
+_.getClass$ = function getClass_114(){
+  return Lplayn_html_HtmlGraphics_2_classLit;
+}
+;
+_.setSize = function setSize(width, height){
+  this.rootElement.style['width'] = width + ($clinit_Style$Unit() , 'px');
+  this.rootElement.style['height'] = height + 'px';
+}
+;
+_.dummyCanvas = null;
+_.measureElement = null;
+_.rootElement = null;
+function $setSize(this$static, width, height){
+  this$static.rootElement.style['width'] = width + ($clinit_Style$Unit() , 'px');
+  this$static.rootElement.style['height'] = height + 'px';
+  this$static.rootLayer.elem.style['width'] = width + 'px';
+  this$static.rootLayer.elem.style['height'] = height + 'px';
+}
+
+function HtmlGraphicsDom_0(){
+  var div;
+  HtmlGraphics_0.call(this);
+  div = $doc.createElement('div');
+  div.style['overflow'] = ($clinit_Style$Overflow() , 'hidden');
+  $appendChild(this.rootElement, div);
+  this.rootLayer = new HtmlGroupLayerDom_0(div);
+  $setSize(this, 640, 480);
+}
+
+function HtmlGraphicsDom(){
+}
+
+_ = HtmlGraphicsDom_0.prototype = HtmlGraphicsDom.prototype = new HtmlGraphics;
+_.createImageLayer = function createImageLayer(img){
+  return new HtmlImageLayerDom_0(img);
+}
+;
+_.createSurfaceLayer = function createSurfaceLayer(width, height){
+  return new HtmlSurfaceLayerDom_0(width, height);
+}
+;
+_.getClass$ = function getClass_115(){
+  return Lplayn_html_HtmlGraphicsDom_2_classLit;
+}
+;
+_.getRootElement = function getRootElement(){
+  return this.rootLayer.elem;
+}
+;
+_.rootLayer_0 = function rootLayer(){
+  return this.rootLayer;
+}
+;
+_.setSize = function setSize_0(width, height){
+  $setSize(this, width, height);
+}
+;
+_.updateLayers = function updateLayers(){
+  $update_2(this.rootLayer);
+}
+;
+_.width_1 = function width_0(){
+  return this.rootLayer.elem.offsetWidth || 0;
+}
+;
+_.rootLayer = null;
+function $bindFramebuffer_0(this$static, fbuf, width, height, force){
+  if (force || this$static.lastFBuf != fbuf) {
+    $flush(this$static);
+    this$static.lastFBuf = fbuf;
+    $bindFramebuffer(this$static.gl, 36160, fbuf);
+    $viewport(this$static.gl, 0, 0, width, height);
+    this$static.screenWidth = width;
+    this$static.screenHeight = height;
+  }
+}
+
+function $createTexture(this$static, repeatX, repeatY){
+  var tex;
+  tex = this$static.gl.createTexture();
+  $bindTexture(this$static.gl, 3553, tex);
+  this$static.gl.texParameteri(3553, 10240, 9729);
+  this$static.gl.texParameteri(3553, 10241, 9729);
+  $texParameteri(this$static.gl, 3553, 10242, repeatX?10497:33071);
+  $texParameteri(this$static.gl, 3553, 10243, repeatY?10497:33071);
+  return tex;
+}
+
+function $drawTexture(this$static, tex, texWidth, texHeight, local, dy, dw, dh, repeatX, repeatY, alpha){
+  var sh, sw;
+  sw = repeatX?dw:texWidth;
+  sh = repeatY?dh:texHeight;
+  $drawTexture_0(this$static, tex, texWidth, texHeight, local, 0, dy, dw, dh, 0, 0, sw, sh, alpha);
+}
+
+function $drawTexture_0(this$static, tex, texWidth, texHeight, local, dx, dy, dw, dh, sx, sy, sw, sh, alpha){
+  var idx;
+  $prepare_1(this$static.texShader, tex, alpha);
+  sx /= texWidth;
+  sw /= texWidth;
+  sy /= texHeight;
+  sh /= texHeight;
+  idx = $beginPrimitive(this$static.texShader);
+  $buildVertex(this$static.texShader, local, dx, dy, sx, sy);
+  $buildVertex(this$static.texShader, local, dx + dw, dy, sx + sw, sy);
+  $buildVertex(this$static.texShader, local, dx, dy + dh, sx, sy + sh);
+  $buildVertex(this$static.texShader, local, dx + dw, dy + dh, sx + sw, sy + sh);
+  $addElement(this$static.texShader, idx);
+  $addElement(this$static.texShader, idx + 1);
+  $addElement(this$static.texShader, idx + 2);
+  $addElement(this$static.texShader, idx + 1);
+  $addElement(this$static.texShader, idx + 3);
+  $addElement(this$static.texShader, idx + 2);
+}
+
+function $fillRect_1(this$static, local, dx, dy, dw, dh, color){
+  var idx;
+  $prepare_0(this$static.colorShader, color);
+  idx = $beginPrimitive(this$static.colorShader);
+  $buildVertex(this$static.colorShader, local, dx, dy, 0, 0);
+  $buildVertex(this$static.colorShader, local, dx + dw, dy, 0, 0);
+  $buildVertex(this$static.colorShader, local, dx, dy + dh, 0, 0);
+  $buildVertex(this$static.colorShader, local, dx + dw, dy + dh, 0, 0);
+  $addElement(this$static.colorShader, idx);
+  $addElement(this$static.colorShader, idx + 1);
+  $addElement(this$static.colorShader, idx + 2);
+  $addElement(this$static.colorShader, idx + 1);
+  $addElement(this$static.colorShader, idx + 3);
+  $addElement(this$static.colorShader, idx + 2);
+}
+
+function $flush(this$static){
+  if (this$static.curShader) {
+    this$static.curShader.flush();
+    this$static.curShader = null;
+  }
+}
+
+function $giveUp(this$static){
+  $removeChild(this$static.rootElement, this$static.canvas);
+  throw new RuntimeException_0;
+}
+
+function $setSize_0(this$static, width, height){
+  this$static.rootElement.style['width'] = width + ($clinit_Style$Unit() , 'px');
+  this$static.rootElement.style['height'] = height + 'px';
+  $setWidth(this$static.canvas, width);
+  $setHeight(this$static.canvas, height);
+  $bindFramebuffer_0(this$static, null, width, height, true);
+}
+
+--></script>
+<script><!--
+function $tryBasicGlCalls(this$static){
+  var $e0, e, err, pixelData, t, testFloat32Array, testInt32Array, testUint16Array, testUint8Array;
+  try {
+    testFloat32Array = create(toJsArray(initValues(_3F_classLit, makeCastMap([Q$Serializable]), -1, [0, 1, 2])));
+    if (testFloat32Array[0] != 0 || testFloat32Array[1] != 1 || testFloat32Array[2] != 2) {
+      throw new RuntimeException_1('Typed Float32Array check failed');
+    }
+    testInt32Array = create_0(toJsArray_0(initValues(_3I_classLit, makeCastMap([Q$Serializable]), -1, [0, 1, 2])));
+    if (testInt32Array[0] != 0 || testInt32Array[1] != 1 || testInt32Array[2] != 2) {
+      throw new RuntimeException_1('Typed Int32Array check failed');
+    }
+    testUint16Array = create_1(toJsArray_0(initValues(_3I_classLit, makeCastMap([Q$Serializable]), -1, [0, 1, 2])));
+    if (testUint16Array[0] != 0 || testUint16Array[1] != 1 || testUint16Array[2] != 2) {
+      throw new RuntimeException_1('Typed Uint16Array check failed');
+    }
+    testUint8Array = create_2(toJsArray_0(initValues(_3I_classLit, makeCastMap([Q$Serializable]), -1, [0, 1, 2])));
+    if (testUint8Array[0] != 0 || testUint8Array[1] != 1 || testUint8Array[2] != 2) {
+      throw new RuntimeException_1('Typed Uint8Array check failed');
+    }
+    $bindFramebuffer_0(this$static, null, this$static.canvas.width, this$static.canvas.height, false);
+    this$static.gl.clearColor(1, 1, 1, 1);
+    err = this$static.gl.getError();
+    if (err != 0) {
+      throw new RuntimeException_1('Read back GL test failed to clear color (error ' + err + ')');
+    }
+    $updateLayers(this$static);
+    pixelData = new Uint8Array(4);
+    $readPixels(this$static.gl, 0, 0, 1, 1, 6408, 5121, pixelData);
+    if (pixelData[0] != 255 || pixelData[1] != 255 || pixelData[2] != 255) {
+      throw new RuntimeException_1('Read back GL test failed to read back correct color');
+    }
+  }
+   catch ($e0) {
+    $e0 = caught($e0);
+    if (instanceOf($e0, Q$RuntimeException)) {
+      e = $e0;
+      'Basic GL check failed: ' + e.getMessage();
+      return false;
+    }
+     else if (instanceOf($e0, Q$Throwable)) {
+      t = $e0;
+      'Basic GL check failed with an unknown error: ' + t.getMessage();
+      return false;
+    }
+     else 
+      throw $e0;
+  }
+  return true;
+}
+
+function $tryCreateContext(this$static){
+  this$static.gl = getContext(this$static.canvas, null);
+  if (!this$static.gl) {
+    return false;
+  }
+  return this$static.gl.getError() == 0;
+}
+
+function $updateLayers(this$static){
+  $bindFramebuffer_0(this$static, null, this$static.canvas.width, this$static.canvas.height, false);
+  this$static.gl.clear(16384);
+  $paint(this$static.rootLayer, ($clinit_HtmlInternalTransform() , IDENTITY), 1);
+  $useShader(this$static, null);
+}
+
+function $updateTexture(this$static, tex, img){
+  $bindTexture(this$static.gl, 3553, tex);
+  $texImage2D_0(this$static.gl, 3553, 0, 6408, 6408, 5121, img);
+}
+
+function $useShader(this$static, shader){
+  if (this$static.curShader != shader) {
+    $flush(this$static);
+    this$static.curShader = shader;
+    return true;
+  }
+  return false;
+}
+
+function HtmlGraphicsGL_0(){
+  HtmlGraphics_0.call(this);
+  this.rootLayer = new HtmlGroupLayerGL_0(this);
+  this.canvas = $doc.createElement('canvas');
+  $appendChild(this.rootElement, this.canvas);
+  $tryCreateContext(this) || $giveUp(this);
+  this.gl.disable(2884);
+  this.gl.enable(3042);
+  this.gl.blendEquation(32774);
+  this.gl.blendFuncSeparate(770, 771, 770, 772);
+  $tryBasicGlCalls(this) || $giveUp(this);
+  this.texShader = new HtmlGraphicsGL$TextureShader_0(this);
+  this.colorShader = new HtmlGraphicsGL$ColorShader_0(this);
+  $setSize_0(this, 640, 480);
+}
+
+function HtmlGraphicsGL(){
+}
+
+_ = HtmlGraphicsGL_0.prototype = HtmlGraphicsGL.prototype = new HtmlGraphics;
+_.createImageLayer = function createImageLayer_0(img){
+  return new HtmlImageLayerGL_0(this, img);
+}
+;
+_.createSurfaceLayer = function createSurfaceLayer_0(width, height){
+  return new HtmlSurfaceLayerGL_0(this, width, height);
+}
+;
+_.getClass$ = function getClass_116(){
+  return Lplayn_html_HtmlGraphicsGL_2_classLit;
+}
+;
+_.getRootElement = function getRootElement_0(){
+  return this.canvas;
+}
+;
+_.rootLayer_0 = function rootLayer_0(){
+  return this.rootLayer;
+}
+;
+_.setSize = function setSize_1(width, height){
+  $setSize_0(this, width, height);
+}
+;
+_.updateLayers = function updateLayers_0(){
+  $updateLayers(this);
+}
+;
+_.width_1 = function width_1(){
+  return this.canvas.offsetWidth || 0;
+}
+;
+_.canvas = null;
+_.colorShader = null;
+_.curShader = null;
+_.gl = null;
+_.lastFBuf = null;
+_.rootLayer = null;
+_.screenHeight = 0;
+_.screenWidth = 0;
+_.texShader = null;
+function $addElement(this$static, index){
+  this$static.elementData[this$static.elementOffset++] = index;
+}
+
+function $beginPrimitive(this$static){
+  var vertIdx;
+  vertIdx = ~~(this$static.vertexOffset / 10);
+  if (vertIdx + 4 > 4 || this$static.elementOffset + 6 > 6) {
+    this$static.flush();
+    return 0;
+  }
+  return vertIdx;
+}
+
+function $buildVertex(this$static, local, dx, dy, sx, sy){
+  $set_0(this$static.vertexData, local.matrix, this$static.vertexOffset);
+  this$static.vertexData[this$static.vertexOffset + 6] = dx;
+  this$static.vertexData[this$static.vertexOffset + 7] = dy;
+  this$static.vertexData[this$static.vertexOffset + 8] = sx;
+  this$static.vertexData[this$static.vertexOffset + 9] = sy;
+  this$static.vertexOffset += 10;
+}
+
+function $flush_0(this$static){
+  if (this$static.vertexOffset == 0) {
+    return;
+  }
+  $bufferData(this$static.this$0_0.gl, 34962, this$static.vertexData, 35040);
+  $bufferData(this$static.this$0_0.gl, 34963, this$static.elementData, 35040);
+  $drawElements(this$static.this$0_0.gl, 4, this$static.elementOffset, 5123, 0);
+  this$static.vertexOffset = this$static.elementOffset = 0;
+}
+
+function $prepare(this$static){
+  if ($useShader(this$static.this$0_0, this$static)) {
+    $useProgram(this$static.this$0_0.gl, this$static.program);
+    $uniform2fv(this$static.this$0_0.gl, this$static.uScreenSizeLoc, toJsArray(initValues(_3F_classLit, makeCastMap([Q$Serializable]), -1, [this$static.this$0_0.screenWidth, this$static.this$0_0.screenHeight])));
+    $bindBuffer(this$static.this$0_0.gl, 34962, this$static.vertexBuffer);
+    $bindBuffer(this$static.this$0_0.gl, 34963, this$static.elementBuffer);
+    $enableVertexAttribArray(this$static.this$0_0.gl, this$static.aMatrix);
+    $enableVertexAttribArray(this$static.this$0_0.gl, this$static.aTranslation);
+    $enableVertexAttribArray(this$static.this$0_0.gl, this$static.aPosition);
+    this$static.aTexture != -1 && $enableVertexAttribArray(this$static.this$0_0.gl, this$static.aTexture);
+    $vertexAttribPointer(this$static.this$0_0.gl, this$static.aMatrix, 4, 5126, false, 40, 0);
+    $vertexAttribPointer(this$static.this$0_0.gl, this$static.aTranslation, 2, 5126, false, 40, 16);
+    $vertexAttribPointer(this$static.this$0_0.gl, this$static.aPosition, 2, 5126, false, 40, 24);
+    this$static.aTexture != -1 && $vertexAttribPointer(this$static.this$0_0.gl, this$static.aTexture, 2, 5126, false, 40, 32);
+    return true;
+  }
+  return false;
+}
+
+function HtmlGraphicsGL$Shader_0(this$0, fragmentShader){
+  this.this$0_0 = this$0;
+  this.vertexData = new Float32Array(40);
+  this.elementData = new Uint16Array(6);
+  this.program = createShaderProgram(this$0.gl, fragmentShader);
+  this.uScreenSizeLoc = $getUniformLocation(this$0.gl, this.program, 'u_ScreenSize');
+  this.aMatrix = $getAttribLocation(this$0.gl, this.program, 'a_Matrix');
+  this.aTranslation = $getAttribLocation(this$0.gl, this.program, 'a_Translation');
+  this.aPosition = $getAttribLocation(this$0.gl, this.program, 'a_Position');
+  this.aTexture = $getAttribLocation(this$0.gl, this.program, 'a_Texture');
+  this.vertexBuffer = this$0.gl.createBuffer();
+  this.elementBuffer = this$0.gl.createBuffer();
+}
+
+function HtmlGraphicsGL$Shader(){
+}
+
+_ = HtmlGraphicsGL$Shader.prototype = new Object_0;
+_.flush = function flush(){
+  $flush_0(this);
+}
+;
+_.getClass$ = function getClass_117(){
+  return Lplayn_html_HtmlGraphicsGL$Shader_2_classLit;
+}
+;
+_.aMatrix = 0;
+_.aPosition = 0;
+_.aTexture = 0;
+_.aTranslation = 0;
+_.elementBuffer = null;
+_.elementOffset = 0;
+_.program = null;
+_.this$0_0 = null;
+_.uScreenSizeLoc = null;
+_.vertexBuffer = null;
+_.vertexOffset = 0;
+function $prepare_0(this$static, color){
+  $prepare(this$static);
+  if (color == this$static.lastColor && 1 == this$static.lastAlpha) {
+    return;
+  }
+  $flush_0(this$static);
+  $uniform1f(this$static.this$0.gl, this$static.uAlpha, 1);
+  this$static.lastAlpha = 1;
+  this$static.colors[3] = (~~color >> 24 & 255) / 255;
+  this$static.colors[0] = (~~color >> 16 & 255) / 255;
+  this$static.colors[1] = (~~color >> 8 & 255) / 255;
+  this$static.colors[2] = (color & 255) / 255;
+  $uniform4fv(this$static.this$0.gl, this$static.uColor, this$static.colors);
+  this$static.lastColor = color;
+}
+
+function HtmlGraphicsGL$ColorShader_0(this$0){
+  this.this$0 = this$0;
+  HtmlGraphicsGL$Shader_0.call(this, this$0, '#ifdef GL_ES\nprecision highp float;\n#endif\n\nuniform vec4 u_Color;\n\nuniform float u_Alpha;\n\nvoid main(void) {\n  gl_FragColor = vec4(u_Color.rgb, u_Color.a * u_Alpha);\n}\n');
+  this.colors = new Float32Array(4);
+  this.uColor = $getUniformLocation(this$0.gl, this.program, 'u_Color');
+  this.uAlpha = $getUniformLocation(this$0.gl, this.program, 'u_Alpha');
+}
+
+function HtmlGraphicsGL$ColorShader(){
+}
+
+_ = HtmlGraphicsGL$ColorShader_0.prototype = HtmlGraphicsGL$ColorShader.prototype = new HtmlGraphicsGL$Shader;
+_.getClass$ = function getClass_118(){
+  return Lplayn_html_HtmlGraphicsGL$ColorShader_2_classLit;
+}
+;
+_.lastAlpha = 0;
+_.lastColor = 0;
+_.this$0 = null;
+_.uAlpha = null;
+_.uColor = null;
+function $prepare_1(this$static, tex, alpha){
+  if ($prepare(this$static)) {
+    this$static.this$0.gl.activeTexture(33984);
+    $uniform1i(this$static.this$0.gl, this$static.uTexture, 0);
+  }
+  if (tex == this$static.lastTex && alpha == this$static.lastAlpha) {
+    return;
+  }
+  $bindTexture(this$static.this$0.gl, 3553, this$static.lastTex);
+  $flush_0(this$static);
+  $uniform1f(this$static.this$0.gl, this$static.uAlpha, alpha);
+  this$static.lastAlpha = alpha;
+  this$static.lastTex = tex;
+}
+
+function HtmlGraphicsGL$TextureShader_0(this$0){
+  this.this$0 = this$0;
+  HtmlGraphicsGL$Shader_0.call(this, this$0, '#ifdef GL_ES\nprecision highp float;\n#endif\n\nuniform sampler2D u_Texture;\n\nvarying vec2 v_TexCoord;\n\nuniform float u_Alpha;\n\nvoid main(void) {\n  vec4 textureColor = texture2D(u_Texture, v_TexCoord);\n  gl_FragColor = vec4(textureColor.rgb, textureColor.a * u_Alpha);\n}\n');
+  this.uTexture = $getUniformLocation(this$0.gl, this.program, 'u_Texture');
+  this.uAlpha = $getUniformLocation(this$0.gl, this.program, 'u_Alpha');
+}
+
+function HtmlGraphicsGL$TextureShader(){
+}
+
+_ = HtmlGraphicsGL$TextureShader_0.prototype = HtmlGraphicsGL$TextureShader.prototype = new HtmlGraphicsGL$Shader;
+_.flush = function flush_0(){
+  $bindTexture(this.this$0.gl, 3553, this.lastTex);
+  $flush_0(this);
+}
+;
+_.getClass$ = function getClass_119(){
+  return Lplayn_html_HtmlGraphicsGL$TextureShader_2_classLit;
+}
+;
+_.lastAlpha = 0;
+_.lastTex = null;
+_.this$0 = null;
+_.uAlpha = null;
+_.uTexture = null;
+function $clinit_HtmlLayerDom(){
+  $clinit_HtmlLayerDom = nullMethod;
+  var i, prefix;
+  PREFIXES = initValues(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable]), Q$String, ['Moz', 'webkit', 'ms', 'O']);
+  i = 0;
+  for (; i < PREFIXES.length; ++i) {
+    prefix = PREFIXES[i];
+    if (document.body.style[prefix + 'Transform'] !== undefined) {
+      transformName = prefix + 'Transform';
+      transformOriginName = prefix + 'TransformOrigin';
+      break;
+    }
+  }
+  if (i == PREFIXES.length) {
+    transformName = 'transform';
+    transformOriginName = 'transformOrigin';
+  }
+  supports3d = $equals('webkitTransform', transformName);
+  translateSuffix = $equals('MozTransform', transformName)?'px':'';
+}
+
+function $css(x){
+  return abs(x) < 0.0010000000474974513?'0':'' + x;
+}
+
+function $update_1(this$static){
+  var m00, m01, m10, m11, m20, m21, matrix;
+  if (!$isSet(this$static, ($clinit_AbstractLayer$Flag() , SHOWN))) {
+    $setFlag(this$static, SHOWN);
+    this$static.elem.style['visibility'] = ($clinit_Style$Visibility() , 'visible');
+  }
+  m00 = this$static.transform.m00_0();
+  m01 = this$static.transform.m01_0();
+  m10 = this$static.transform.m10_0();
+  m11 = this$static.transform.m11_0();
+  m20 = this$static.transform.tx_0();
+  m21 = this$static.transform.ty_0();
+  supports3d?(matrix = 'matrix3d(' + (abs(m00) < 0.0010000000474974513?'0':'' + m00) + ',' + (abs(m01) < 0.0010000000474974513?'0':'' + m01) + ',0,0,' + (abs(m10) < 0.0010000000474974513?'0':'' + m10) + ',' + (abs(m11) < 0.0010000000474974513?'0':'' + m11) + ',0,0,0,0,1,0,' + ((abs(m20) < 0.0010000000474974513?'0':'' + m20) + translateSuffix) + ',' + ((abs(m21) < 0.0010000000474974513?'0':'' + m21) + translateSuffix) + ',0,1)'):(matrix = 'matrix(' + (abs(m00) < 0.0010000000474974513?'0':'' + m00) + ',' + (abs(m01) < 0.0010000000474974513?'0':'' + m01) + ',' + (abs(m10) < 0.0010000000474974513?'0':'' + m10) + ',' + (abs(m11) < 0.0010000000474974513?'0':'' + m11) + ', ' + ((abs(m20) < 0.0010000000474974513?'0':'' + m20) + translateSuffix) + ',' + ((abs(m21) < 0.0010000000474974513?'0':'' + m21) + translateSuffix) + ')');
+  matrix += ' translate(' + $css(-this$static.originX) + 'px,' + $css(-this$static.originY) + 'px)';
+  this$static.elem.style[transformName] = matrix;
+}
+
+function HtmlLayerDom_0(elem){
+  AbstractLayer_0.call(this);
+  this.elem = elem;
+  elem.style['position'] = ($clinit_Style$Position() , 'absolute');
+  elem.style['visibility'] = ($clinit_Style$Visibility() , 'hidden');
+  elem.style[transformOriginName] = '0 0';
+}
+
+function HtmlLayerDom(){
+}
+
+_ = HtmlLayerDom.prototype = new AbstractLayer;
+_.createTransform = function createTransform_0(){
+  return ($clinit_HtmlPlatform() , hasTypedArraySupport)?new HtmlInternalTransform_0:new StockInternalTransform_0;
+}
+;
+_.getClass$ = function getClass_120(){
+  return Lplayn_html_HtmlLayerDom_2_classLit;
+}
+;
+_.setOrigin = function setOrigin_0(x, y){
+  this.originX = x;
+  this.originY = y;
+}
+;
+_.update = function update(){
+  $update_1(this);
+}
+;
+_.elem = null;
+var PREFIXES, supports3d = false, transformName = null, transformOriginName = null, translateSuffix = null;
+function $update_2(this$static){
+  var child, child$iterator;
+  $update_1(this$static);
+  for (child$iterator = new AbstractList$IteratorImpl_0(this$static.impl.children); child$iterator.i < child$iterator.this$0.size;) {
+    child = $next_0(child$iterator);
+    child.update();
+  }
+}
+
+function HtmlGroupLayerDom_0(elem){
+  $clinit_HtmlLayerDom();
+  HtmlLayerDom_0.call(this, elem);
+  this.impl = new GroupLayerImpl_0;
+}
+
+function HtmlGroupLayerDom(){
+}
+
+_ = HtmlGroupLayerDom_0.prototype = HtmlGroupLayerDom.prototype = new HtmlLayerDom;
+_.add_0 = function add_3(layer){
+  var hlayer, index, refChild, size;
+  hlayer = layer;
+  size = this.impl.children.size;
+  index = $add_1(this.impl, this, hlayer);
+  if (index == size) {
+    $appendChild(this.elem, hlayer.elem);
+  }
+   else {
+    refChild = $getChild(this.elem, index);
+    $insertBefore(this.elem, hlayer.elem, refChild);
+  }
+}
+;
+_.getClass$ = function getClass_121(){
+  return Lplayn_html_HtmlGroupLayerDom_2_classLit;
+}
+;
+_.onAdd = function onAdd_0(){
+  !$isSet(this, ($clinit_AbstractLayer$Flag() , DESTROYED));
+  $onAdd(this.impl);
+}
+;
+_.onRemove = function onRemove_0(){
+  $onRemove(this.impl);
+}
+;
+_.remove = function remove(layer){
+  var hlayer;
+  hlayer = layer;
+  $remove_1(this.impl, hlayer);
+  $removeChild(this.elem, hlayer.elem);
+}
+;
+_.update = function update_0(){
+  $update_2(this);
+}
+;
+function HtmlLayerGL_0(gfx){
+  AbstractLayer_0.call(this);
+  this.savedLocal = this.createTransform();
+  this.gfx = gfx;
+}
+
+function HtmlLayerGL(){
+}
+
+_ = HtmlLayerGL.prototype = new LayerGL;
+_.createTransform = function createTransform_1(){
+  return new HtmlInternalTransform_0;
+}
+;
+_.getClass$ = function getClass_122(){
+  return Lplayn_html_HtmlLayerGL_2_classLit;
+}
+;
+_.gfx = null;
+function $paint(this$static, parentTransform, parentAlpha){
+  var child, child$iterator;
+  if (!$isSet(this$static, ($clinit_AbstractLayer$Flag() , VISIBLE_1)))
+    return;
+  for (child$iterator = new AbstractList$IteratorImpl_0(this$static.impl.children); child$iterator.i < child$iterator.this$0.size;) {
+    child = $next_0(child$iterator);
+    child.paint((this$static.savedLocal.set_0(parentTransform) , this$static.savedLocal.concatenate(this$static.transform, this$static.originX, this$static.originY)), parentAlpha * this$static.alpha);
+  }
+}
+
+function HtmlGroupLayerGL_0(gfx){
+  HtmlLayerGL_0.call(this, gfx);
+  this.impl = new GroupLayerImpl_0;
+}
+
+function HtmlGroupLayerGL(){
+}
+
+_ = HtmlGroupLayerGL_0.prototype = HtmlGroupLayerGL.prototype = new HtmlLayerGL;
+_.add_0 = function add_4(layer){
+  $add_1(this.impl, this, layer);
+}
+;
+_.getClass$ = function getClass_123(){
+  return Lplayn_html_HtmlGroupLayerGL_2_classLit;
+}
+;
+_.onAdd = function onAdd_1(){
+  !$isSet(this, ($clinit_AbstractLayer$Flag() , DESTROYED));
+  $onAdd(this.impl);
+}
+;
+_.onRemove = function onRemove_1(){
+  $onRemove(this.impl);
+}
+;
+_.paint = function paint(parentTransform, parentAlpha){
+  $paint(this, parentTransform, parentAlpha);
+}
+;
+_.remove = function remove_0(layer){
+  $remove_1(this.impl, layer);
+}
+;
+function $addCallback(this$static, callback){
+  if (this$static.img.complete) {
+    callback.done(this$static);
+  }
+   else {
+    addEventListener_0(this$static.img, 'load', new HtmlImage$1_0(this$static, callback), false);
+    addEventListener_0(this$static.img, 'error', new HtmlImage$2_0(this$static, callback), false);
+  }
+}
+
+function $ensureTexture(this$static, gfx, repeatX, repeatY){
+  if (this$static.img.complete) {
+    if (repeatX || repeatY) {
+      $scaleTexture(this$static, gfx, repeatX, repeatY);
+      return this$static.pow2tex;
+    }
+     else {
+      $loadTexture(this$static, gfx);
+      return this$static.tex;
+    }
+  }
+  return null;
+}
+
+function $height(this$static){
+  return !this$static.img?0:this$static.img.height;
+}
+
+function $loadTexture(this$static, gfx){
+  if (this$static.tex) {
+    return;
+  }
+  this$static.tex = $createTexture(gfx, false, false);
+  $updateTexture(gfx, this$static.tex, this$static.img);
+}
+
+function $scaleTexture(this$static, gfx, repeatX, repeatY){
+  var fbuf, height, width;
+  if (this$static.pow2tex) {
+    return;
+  }
+  width = nextPowerOfTwo(!this$static.img?0:this$static.img.width);
+  height = nextPowerOfTwo(!this$static.img?0:this$static.img.height);
+  if (width == 0 && height == 0) {
+    this$static.pow2tex = $createTexture(gfx, repeatX, repeatY);
+    $updateTexture(gfx, this$static.pow2tex, this$static.img);
+    return;
+  }
+  $loadTexture(this$static, gfx);
+  width == 0 && (width = !this$static.img?0:this$static.img.width);
+  height == 0 && (height = !this$static.img?0:this$static.img.height);
+  this$static.pow2tex = $createTexture(gfx, repeatX, repeatY);
+  $bindTexture(gfx.gl, 3553, this$static.pow2tex);
+  $texImage2D(gfx.gl, 3553, 0, 6408, width, height, 0, 6408, 5121, null);
+  fbuf = gfx.gl.createFramebuffer();
+  $bindFramebuffer_0(gfx, fbuf, width, height, false);
+  $framebufferTexture2D(gfx.gl, 36160, 36064, 3553, this$static.pow2tex, 0);
+  $bindTexture(gfx.gl, 3553, this$static.pow2tex);
+  $drawTexture(gfx, this$static.tex, !this$static.img?0:this$static.img.width, !this$static.img?0:this$static.img.height, ($clinit_HtmlInternalTransform() , IDENTITY), height, width, -height, false, false, 1);
+  $flush(gfx);
+  $bindFramebuffer_0(gfx, null, gfx.canvas.width, gfx.canvas.height, false);
+  $deleteFramebuffer(gfx.gl, fbuf);
+}
+
+function $width(this$static){
+  return !this$static.img?0:this$static.img.width;
+}
+
+function HtmlImage_0(img){
+  this.img = img;
+}
+
+function HtmlImage(){
+}
+
+_ = HtmlImage_0.prototype = HtmlImage.prototype = new Object_0;
+_.getClass$ = function getClass_124(){
+  return Lplayn_html_HtmlImage_2_classLit;
+}
+;
+_.img = null;
+_.pow2tex = null;
+_.tex = null;
+function HtmlImage$1_0(this$0, val$callback){
+  this.this$0 = this$0;
+  this.val$callback = val$callback;
+}
+
+function HtmlImage$1(){
+}
+
+_ = HtmlImage$1_0.prototype = HtmlImage$1.prototype = new Object_0;
+_.getClass$ = function getClass_125(){
+  return Lplayn_html_HtmlImage$1_2_classLit;
+}
+;
+_.handleEvent = function handleEvent(evt){
+  this.val$callback.done(this.this$0);
+}
+;
+_.this$0 = null;
+_.val$callback = null;
+function HtmlImage$2_0(this$0, val$callback){
+  this.this$0 = this$0;
+  this.val$callback = val$callback;
+}
+
+function HtmlImage$2(){
+}
+
+_ = HtmlImage$2_0.prototype = HtmlImage$2.prototype = new Object_0;
+_.getClass$ = function getClass_126(){
+  return Lplayn_html_HtmlImage$2_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_0(evt){
+  this.val$callback.error(new RuntimeException_1('Error loading image ' + this.this$0.img.src));
+}
+;
+_.this$0 = null;
+_.val$callback = null;
+function $applyBackgroundSize(this$static){
+  var backHeight, backWidth, hratio, repeat, size, style, wratio;
+  style = this$static.elem.style;
+  repeat = this$static.repeatX?'repeat-x ':'';
+  repeat += this$static.repeatY?'repeat-y':'';
+  style['backgroundRepeat'] = repeat;
+  if (this$static.sourceRectSet) {
+    wratio = this$static.widthSet?this$static.width_0 / this$static.sw:$width(this$static.htmlImage) / this$static.sw;
+    hratio = this$static.heightSet?this$static.height_0 / this$static.sh:$height(this$static.htmlImage) / this$static.sh;
+    wratio == 0 && (wratio = 1);
+    hratio == 0 && (hratio = 1);
+    backWidth = $width(this$static.htmlImage) * wratio;
+    backHeight = $height(this$static.htmlImage) * hratio;
+    style['backgroundSize'] = backWidth + 'px ' + backHeight + 'px';
+    style['backgroundPosition'] = -this$static.sx * wratio + 'px ' + -this$static.sy * hratio + 'px';
+  }
+   else {
+    size = this$static.repeatX?$width(this$static.htmlImage) + 'px ':'100% ';
+    size += this$static.repeatY?$height(this$static.htmlImage) + 'px':'100%';
+    style['backgroundSize'] = size;
+    style['backgroundPosition'] = '';
+  }
+}
+
+function $applySize(this$static){
+  var style;
+  style = this$static.elem.style;
+  style['width'] = (this$static.widthSet?this$static.width_0:this$static.htmlImage.img.width) + ($clinit_Style$Unit() , 'px');
+  style['height'] = (this$static.heightSet?this$static.height_0:this$static.htmlImage.img.height) + 'px';
+  this$static.sourceRectSet && $applyBackgroundSize(this$static);
+}
+
+function $setImage(this$static, img){
+  var imgElem;
+  if (this$static.htmlImage == img) {
+    return;
+  }
+  this$static.htmlImage = img;
+  imgElem = this$static.htmlImage.img;
+  this$static.elem.style['backgroundImage'] = 'url(' + imgElem.src + ')';
+  this$static.elem.style['overflow'] = ($clinit_Style$Overflow() , 'hidden');
+  $addCallback(img, new HtmlImageLayerDom$1_0(this$static));
+}
+
+function HtmlImageLayerDom_0(img){
+  $clinit_HtmlLayerDom();
+  HtmlLayerDom_0.call(this, $doc.createElement('div'));
+  this.repeatX = false;
+  $applyBackgroundSize(this);
+  this.repeatY = false;
+  $applyBackgroundSize(this);
+  $setImage(this, img);
+}
+
+function HtmlImageLayerDom(){
+}
+
+_ = HtmlImageLayerDom_0.prototype = HtmlImageLayerDom.prototype = new HtmlLayerDom;
+_.getClass$ = function getClass_127(){
+  return Lplayn_html_HtmlImageLayerDom_2_classLit;
+}
+;
+_.height_0 = 0;
+_.heightSet = false;
+_.htmlImage = null;
+_.repeatX = false;
+_.repeatY = false;
+_.sh = 0;
+_.sourceRectSet = false;
+_.sw = 0;
+_.sx = 0;
+_.sy = 0;
+_.width_0 = 0;
+_.widthSet = false;
+function HtmlImageLayerDom$1_0(this$0){
+  this.this$0 = this$0;
+}
+
+function HtmlImageLayerDom$1(){
+}
+
+_ = HtmlImageLayerDom$1_0.prototype = HtmlImageLayerDom$1.prototype = new Object_0;
+_.done = function done_2(resource){
+  $applySize(this.this$0);
+  $applyBackgroundSize(this.this$0);
+}
+;
+_.error = function error_2(err){
+}
+;
+_.getClass$ = function getClass_128(){
+  return Lplayn_html_HtmlImageLayerDom$1_2_classLit;
+}
+;
+_.this$0 = null;
+function HtmlImageLayerGL_0(gfx, img){
+  HtmlLayerGL_0.call(this, gfx);
+  this.img = img;
+}
+
+function HtmlImageLayerGL(){
+}
+
+_ = HtmlImageLayerGL_0.prototype = HtmlImageLayerGL.prototype = new HtmlLayerGL;
+_.getClass$ = function getClass_129(){
+  return Lplayn_html_HtmlImageLayerGL_2_classLit;
+}
+;
+_.paint = function paint_0(parentTransform, parentAlpha){
+  var childAlpha, elem, height, tex, width, xform;
+  if (!$isSet(this, ($clinit_AbstractLayer$Flag() , VISIBLE_1)))
+    return;
+  tex = $ensureTexture(this.img, this.gfx, this.repeatX, this.repeatY);
+  if (tex) {
+    elem = this.img.img;
+    xform = (this.savedLocal.set_0(parentTransform) , this.savedLocal.concatenate(this.transform, this.originX, this.originY));
+    childAlpha = parentAlpha * this.alpha;
+    width = this.widthSet?this.width_0:elem.width;
+    height = this.heightSet?this.height_0:elem.height;
+    this.sourceRectSet?$drawTexture_0(this.gfx, tex, $width(this.img), $height(this.img), xform, 0, 0, width, height, this.sx, this.sy, this.sw, this.sh, childAlpha):$drawTexture(this.gfx, tex, $width(this.img), $height(this.img), xform, 0, width, height, this.repeatX, this.repeatY, childAlpha);
+  }
+}
+;
+_.height_0 = 0;
+_.heightSet = false;
+_.img = null;
+_.repeatX = false;
+_.repeatY = false;
+_.sh = 0;
+_.sourceRectSet = false;
+_.sw = 0;
+_.sx = 0;
+_.sy = 0;
+_.width_0 = 0;
+_.widthSet = false;
+function $captureEvent(elem, eventName, handler){
+  $clinit_HtmlPlatform();
+  addEventListener_0(!elem?$doc:elem, eventName, handler, true);
+}
+
+function $capturePageEvent(eventName, handler){
+  $clinit_HtmlPlatform();
+  captureEvent(eventName, new HtmlInput$1_0(handler));
+}
+
+function getRelativeX(e, target){
+  return (e.clientX || 0) - $getAbsoluteLeft(target) + $getScrollLeft(target) + $getScrollLeft(target.ownerDocument.body);
+}
+
+function getRelativeY(e, target){
+  return (e.clientY || 0) - $getAbsoluteTop(target) + (target.scrollTop || 0) + (target.ownerDocument.body.scrollTop || 0);
+}
+
+function HtmlInput(){
+}
+
+_ = HtmlInput.prototype = new Object_0;
+_.getClass$ = function getClass_130(){
+  return Lplayn_html_HtmlInput_2_classLit;
+}
+;
+function HtmlInput$1_0(val$handler){
+  this.val$handler = val$handler;
+}
+
+function HtmlInput$1(){
+}
+
+_ = HtmlInput$1_0.prototype = HtmlInput$1.prototype = new Object_0;
+_.getClass$ = function getClass_131(){
+  return Lplayn_html_HtmlInput$1_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_1(evt){
+  this.val$handler.handleEvent(evt);
+}
+;
+_.val$handler = null;
+function $clinit_HtmlInternalTransform(){
+  $clinit_HtmlInternalTransform = nullMethod;
+  IDENTITY = new HtmlInternalTransform_0;
+}
+
+function $concatenate_0(this$static, m00, m01, m10, m11, tx, ty, originX, originY){
+  multiply(this$static.matrix[0], this$static.matrix[1], this$static.matrix[2], this$static.matrix[3], this$static.matrix[4], this$static.matrix[5], 1, 0, 0, 1, originX, originY, this$static);
+  multiply(this$static.matrix[0], this$static.matrix[1], this$static.matrix[2], this$static.matrix[3], this$static.matrix[4], this$static.matrix[5], m00, m01, m10, m11, tx - originX, ty - originY, this$static);
+  multiply(this$static.matrix[0], this$static.matrix[1], this$static.matrix[2], this$static.matrix[3], this$static.matrix[4], this$static.matrix[5], 1, 0, 0, 1, -originX, -originY, this$static);
+  return this$static;
+}
+
+function HtmlInternalTransform_0(){
+  $clinit_HtmlInternalTransform();
+  HtmlInternalTransform_1.call(this, initValues(_3F_classLit, makeCastMap([Q$Serializable]), -1, [1, 0, 0, 1, 0, 0]));
+}
+
+function HtmlInternalTransform_1(matrix){
+  HtmlInternalTransform_2.call(this, create(toJsArray(matrix)));
+}
+
+function HtmlInternalTransform_2(matrix){
+  this.matrix = matrix;
+}
+
+function multiply(am00, am01, am10, am11, atx, aty, bm00, bm01, bm10, bm11, btx, bty, into){
+  $set_1(into.matrix, toJsArray(initValues(_3F_classLit, makeCastMap([Q$Serializable]), -1, [am00 * bm00 + am10 * bm01, am01 * bm00 + am11 * bm01, am00 * bm10 + am10 * bm11, am01 * bm10 + am11 * bm11, am00 * btx + am10 * bty + atx, am01 * btx + am11 * bty + aty])), 0);
+  return into;
+}
+
+function HtmlInternalTransform(){
+}
+
+_ = HtmlInternalTransform_0.prototype = HtmlInternalTransform.prototype = new AbstractTransform;
+_.concatenate = function concatenate_0(other, originX, originY){
+  var ot;
+  ot = other;
+  return $concatenate_0(this, ot.matrix[0], ot.matrix[1], ot.matrix[2], ot.matrix[3], ot.matrix[4], ot.matrix[5], originX, originY);
+}
+;
+_.getClass$ = function getClass_132(){
+  return Lplayn_html_HtmlInternalTransform_2_classLit;
+}
+;
+_.m00_0 = function m00_1(){
+  return this.matrix[0];
+}
+;
+_.m01_0 = function m01_1(){
+  return this.matrix[1];
+}
+;
+_.m10_0 = function m10_1(){
+  return this.matrix[2];
+}
+;
+_.m11_0 = function m11_1(){
+  return this.matrix[3];
+}
+;
+_.set_0 = function set_0(other){
+  $set(this.matrix, other.matrix);
+  return this;
+}
+;
+_.setTranslation_0 = function setTranslation_2(tx, ty){
+  this.matrix[4] = tx;
+  this.matrix[5] = ty;
+  return this;
+}
+;
+_.setTx = function setTx_1(tx){
+  return this.matrix[4] = tx , this;
+}
+;
+_.setTy = function setTy_1(ty){
+  return this.matrix[5] = ty , this;
+}
+;
+_.toString$ = function toString_14(){
+  return 'affine [' + toString_16(this.matrix[0]) + ' ' + toString_16(this.matrix[1]) + ' ' + toString_16(this.matrix[2]) + ' ' + toString_16(this.matrix[3]) + ' ' + new Vector_0(this.matrix[4], this.matrix[5]) + ']';
+}
+;
+_.tx_0 = function tx_1(){
+  return this.matrix[4];
+}
+;
+_.ty_0 = function ty_1(){
+  return this.matrix[5];
+}
+;
+_.matrix = null;
+var IDENTITY;
+function $clinit_HtmlJson(){
+  $clinit_HtmlJson = nullMethod;
+  $clinit_TypedArrayBuilder();
+}
+
+function HtmlKeyboard$1_0(){
+}
+
+function HtmlKeyboard$1(){
+}
+
+_ = HtmlKeyboard$1_0.prototype = HtmlKeyboard$1.prototype = new Object_0;
+_.getClass$ = function getClass_133(){
+  return Lplayn_html_HtmlKeyboard$1_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_2(nativeEvent){
+}
+;
+function HtmlKeyboard$2_0(){
+}
+
+function HtmlKeyboard$2(){
+}
+
+--></script>
+<script><!--
+_ = HtmlKeyboard$2_0.prototype = HtmlKeyboard$2.prototype = new Object_0;
+_.getClass$ = function getClass_134(){
+  return Lplayn_html_HtmlKeyboard$2_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_3(nativeEvent){
+}
+;
+function $error(e){
+  !!e && $printStackTrace(e);
+}
+
+function $setListener(this$static, listener){
+  this$static.listener = listener;
+}
+
+function HtmlMouse_0(rootElement){
+  $captureEvent(rootElement, 'mousedown', new HtmlMouse$1_0(this, rootElement));
+  $capturePageEvent('mouseup', new HtmlMouse$2_0(this, rootElement));
+  $capturePageEvent('mousemove', new HtmlMouse$3_0(this, rootElement));
+  $captureEvent(rootElement, 'mousemove', new HtmlMouse$4_0(this, rootElement));
+  $captureEvent(rootElement, getMouseWheelEvent(), new HtmlMouse$5_0(this));
+}
+
+function getMouseButton(evt){
+  switch ($eventGetButton(evt)) {
+    case 1:
+      return 0;
+    case 4:
+      return 1;
+    case 2:
+      return 2;
+    default:return $eventGetButton(evt);
+  }
+}
+
+function getMouseWheelEvent(){
+  if (navigator.userAgent.toLowerCase().indexOf('firefox') != -1) {
+    return 'DOMMouseScroll';
+  }
+   else {
+    return 'mousewheel';
+  }
+}
+
+function getMouseWheelVelocity(evt){
+  var delta = 0;
+  var agentInfo = ($clinit_HtmlPlatform() , agentInfo_0);
+  if (agentInfo.isFirefox) {
+    agentInfo.isMacOS?(delta = 1 * evt.detail):(delta = 1 * evt.detail / 3);
+  }
+   else if (agentInfo.isOpera) {
+    agentInfo.isLinux?(delta = -1 * evt.wheelDelta / 80):(delta = -1 * evt.wheelDelta / 40);
+  }
+   else if (agentInfo.isChrome || agentInfo.isSafari) {
+    delta = -1 * evt.wheelDelta / 120;
+    Math.abs(delta) < 1 && (agentInfo.isWindows?(delta = -1 * evt.wheelDelta):agentInfo.isMacOS && (delta = -1 * evt.wheelDelta / 3));
+  }
+  return delta;
+}
+
+function HtmlMouse(){
+}
+
+_ = HtmlMouse_0.prototype = HtmlMouse.prototype = new HtmlInput;
+_.getClass$ = function getClass_135(){
+  return Lplayn_html_HtmlMouse_2_classLit;
+}
+;
+_.inDragSequence = false;
+_.listener = null;
+function HtmlMouse$1_0(this$0, val$rootElement){
+  this.this$0 = this$0;
+  this.val$rootElement = val$rootElement;
+}
+
+function HtmlMouse$1(){
+}
+
+_ = HtmlMouse$1_0.prototype = HtmlMouse$1.prototype = new Object_0;
+_.getClass$ = function getClass_136(){
+  return Lplayn_html_HtmlMouse$1_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_4(nativeEvent){
+  var event_0;
+  if (this.this$0.listener) {
+    this.this$0.inDragSequence = true;
+    event_0 = new Mouse$ButtonEvent$Impl_0(currentTimeMillis(), getRelativeX(nativeEvent, this.val$rootElement), getRelativeY(nativeEvent, this.val$rootElement), getMouseButton(nativeEvent));
+    $onMouseDown(this.this$0.listener, event_0);
+    event_0.preventDefault_0 && (nativeEvent.preventDefault() , undefined);
+  }
+}
+;
+_.this$0 = null;
+_.val$rootElement = null;
+function HtmlMouse$2_0(this$0, val$rootElement){
+  this.this$0 = this$0;
+  this.val$rootElement = val$rootElement;
+}
+
+function HtmlMouse$2(){
+}
+
+_ = HtmlMouse$2_0.prototype = HtmlMouse$2.prototype = new Object_0;
+_.getClass$ = function getClass_137(){
+  return Lplayn_html_HtmlMouse$2_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_5(nativeEvent){
+  var event_0;
+  if (!!this.this$0.listener && this.this$0.inDragSequence) {
+    this.this$0.inDragSequence = false;
+    event_0 = new Mouse$ButtonEvent$Impl_0(currentTimeMillis(), getRelativeX(nativeEvent, this.val$rootElement), getRelativeY(nativeEvent, this.val$rootElement), getMouseButton(nativeEvent));
+    event_0.preventDefault_0 && (nativeEvent.preventDefault() , undefined);
+  }
+}
+;
+_.this$0 = null;
+_.val$rootElement = null;
+function HtmlMouse$3_0(this$0, val$rootElement){
+  this.this$0 = this$0;
+  this.val$rootElement = val$rootElement;
+}
+
+function HtmlMouse$3(){
+}
+
+_ = HtmlMouse$3_0.prototype = HtmlMouse$3.prototype = new Object_0;
+_.getClass$ = function getClass_138(){
+  return Lplayn_html_HtmlMouse$3_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_6(nativeEvent){
+  var event_0;
+  if (!!this.this$0.listener && this.this$0.inDragSequence) {
+    event_0 = new Mouse$MotionEvent$Impl_0(currentTimeMillis(), getRelativeX(nativeEvent, this.val$rootElement), getRelativeY(nativeEvent, this.val$rootElement));
+    $onMouseMove(this.this$0.listener, event_0);
+    event_0.preventDefault_0 && (nativeEvent.preventDefault() , undefined);
+  }
+}
+;
+_.this$0 = null;
+_.val$rootElement = null;
+function HtmlMouse$4_0(this$0, val$rootElement){
+  this.this$0 = this$0;
+  this.val$rootElement = val$rootElement;
+}
+
+function HtmlMouse$4(){
+}
+
+_ = HtmlMouse$4_0.prototype = HtmlMouse$4.prototype = new Object_0;
+_.getClass$ = function getClass_139(){
+  return Lplayn_html_HtmlMouse$4_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_7(nativeEvent){
+  var event_0;
+  if (!!this.this$0.listener && !this.this$0.inDragSequence) {
+    event_0 = new Mouse$MotionEvent$Impl_0(currentTimeMillis(), getRelativeX(nativeEvent, this.val$rootElement), getRelativeY(nativeEvent, this.val$rootElement));
+    $onMouseMove(this.this$0.listener, event_0);
+    event_0.preventDefault_0 && (nativeEvent.preventDefault() , undefined);
+  }
+}
+;
+_.this$0 = null;
+_.val$rootElement = null;
+function HtmlMouse$5_0(this$0){
+  this.this$0 = this$0;
+}
+
+function HtmlMouse$5(){
+}
+
+_ = HtmlMouse$5_0.prototype = HtmlMouse$5.prototype = new Object_0;
+_.getClass$ = function getClass_140(){
+  return Lplayn_html_HtmlMouse$5_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_8(nativeEvent){
+  var event_0;
+  if (this.this$0.listener) {
+    event_0 = new Mouse$WheelEvent$Impl_0(currentTimeMillis(), getMouseWheelVelocity(nativeEvent));
+    event_0.preventDefault_0 && (nativeEvent.preventDefault() , undefined);
+  }
+}
+;
+_.this$0 = null;
+function $clinit_HtmlPlatform(){
+  var userAgent;
+  $clinit_HtmlPlatform = nullMethod;
+  hasTypedArraySupport = typeof Float32Array != 'undefined';
+  agentInfo_0 = (userAgent = navigator.userAgent.toLowerCase() , {isFirefox:userAgent.indexOf('firefox') != -1, isChrome:userAgent.indexOf('chrome') != -1, isSafari:userAgent.indexOf('safari') != -1, isOpera:userAgent.indexOf('opera') != -1, isIE:userAgent.indexOf('msie') != -1, isMacOS:userAgent.indexOf('mac') != -1, isLinux:userAgent.indexOf('linux') != -1, isWindows:userAgent.indexOf('win') != -1});
+}
+
+function $requestAnimationFrame(callback){
+  var fn = function(){
+    callback.fire();
+  }
+  ;
+  $wnd.requestAnimationFrame?$wnd.requestAnimationFrame(fn):$wnd.mozRequestAnimationFrame?$wnd.mozRequestAnimationFrame(fn):$wnd.webkitRequestAnimationFrame?$wnd.webkitRequestAnimationFrame(fn):$wnd.setTimeout(fn, 20);
+}
+
+function $run(this$static, game){
+  var titleImage;
+  platform_0.graphics.setSize(800, 480);
+  game.bgSurfaceLayer = platform_0.graphics.createSurfaceLayer(800, 480);
+  platform_0.graphics.rootLayer_0().add_0(game.bgSurfaceLayer);
+  $initBackground(game.bgSurfaceLayer);
+  titleImage = $getImage(platform_0.assetManager, 'images/title.png');
+  game.titleLayer = platform_0.graphics.createImageLayer(titleImage);
+  platform_0.graphics.rootLayer_0().add_0(game.titleLayer);
+  game.paddle = new Paddle_0;
+  game.ball = new Ball_0;
+  game.brickManager = new BrickManager_0;
+  $loadAssets_0(game.paddle);
+  $loadAssets(game.ball);
+  platform_0.mouse?$setListener(platform_0.mouse, new BreakN$1_0(game)):$setListener_0(platform_0.pointer, new BreakN$2_0(game));
+  this$static.paintCallback = new HtmlPlatform$1_0(this$static, game);
+  $requestAnimationFrame(this$static.paintCallback);
+}
+
+function HtmlPlatform_0(){
+  var $e0, $e1, e, useGlFromFlag, renderer;
+  this.assetManager = new HtmlAssetManager_0;
+  new HtmlAudio_0;
+  $clinit_HtmlJson();
+  new HtmlStorage_0;
+  try {
+    try {
+      this.graphics = (useGlFromFlag = (renderer = (ensureParameterMap() , $get_0(paramMap, 'renderer')) , renderer == null || $equals('gl', renderer)) , useGlFromFlag && !!$wnd.WebGLRenderingContext && (!/Chrome/.test(navigator.userAgent) || !/OS X 10_5/.test(navigator.userAgent)))?new HtmlGraphicsGL_0:new HtmlGraphicsDom_0;
+    }
+     catch ($e1) {
+      $e1 = caught($e1);
+      if (instanceOf($e1, Q$RuntimeException)) {
+        this.graphics = new HtmlGraphicsDom_0;
+      }
+       else 
+        throw $e1;
+    }
+    this.pointer = new HtmlPointer_0(this.graphics.getRootElement());
+    this.mouse = new HtmlMouse_0(this.graphics.getRootElement());
+    new HtmlTouch_0(this.graphics.getRootElement());
+  }
+   catch ($e0) {
+    $e0 = caught($e0);
+    if (instanceOf($e0, Q$Throwable)) {
+      e = $e0;
+      !!e && $printStackTrace(e);
+      alert_0('failed to init(): ' + e.getMessage());
+    }
+     else 
+      throw $e0;
+  }
+}
+
+function addEventListener_0(target, name_0, handler, capture){
+  $clinit_HtmlPlatform();
+  target.addEventListener(name_0, function(e){
+    handler.handleEvent(e);
+  }
+  , capture);
+}
+
+function captureEvent(name_0, handler){
+  $clinit_HtmlPlatform();
+  addEventListener_0($doc, name_0, handler, true);
+}
+
+function register(){
+  $clinit_HtmlPlatform();
+  var platform;
+  platform = new HtmlPlatform_0;
+  platform_0 = platform;
+  getRandom();
+  maybeCreateAudioContext();
+  captureEvent('keydown', new HtmlKeyboard$1_0);
+  captureEvent('keyup', new HtmlKeyboard$2_0);
+  return platform;
+}
+
+function HtmlPlatform(){
+}
+
+_ = HtmlPlatform_0.prototype = HtmlPlatform.prototype = new Object_0;
+_.getClass$ = function getClass_141(){
+  return Lplayn_html_HtmlPlatform_2_classLit;
+}
+;
+_.graphics = null;
+_.mouse = null;
+_.paintCallback = null;
+_.pointer = null;
+var agentInfo_0, hasTypedArraySupport;
+function HtmlPlatform$1_0(this$0, val$game){
+  this.this$0 = this$0;
+  this.val$updateRate = 25;
+  this.val$game = val$game;
+  this.accum = this.val$updateRate;
+}
+
+function HtmlPlatform$1(){
+}
+
+_ = HtmlPlatform$1_0.prototype = HtmlPlatform$1.prototype = new Object_0;
+_.fire = function fire(){
+  var delta, now;
+  $requestAnimationFrame(this.this$0.paintCallback);
+  now = currentTimeMillis();
+  delta = now - this.lastTime;
+  delta > 100 && (delta = 100);
+  this.lastTime = now;
+  if (this.val$updateRate == 0) {
+    $update_0(this.val$game, delta);
+    this.accum = 0;
+  }
+   else {
+    this.accum += delta;
+    while (this.accum > this.val$updateRate) {
+      $update_0(this.val$game, this.val$updateRate);
+      this.accum -= this.val$updateRate;
+    }
+  }
+  this.this$0.graphics.updateLayers();
+}
+;
+_.getClass$ = function getClass_142(){
+  return Lplayn_html_HtmlPlatform$1_2_classLit;
+}
+;
+_.lastTime = 0;
+_.this$0 = null;
+_.val$game = null;
+_.val$updateRate = 0;
+function $clinit_HtmlPlatform$Mode(){
+  $clinit_HtmlPlatform$Mode = nullMethod;
+  WEBGL = new HtmlPlatform$Mode$1_0;
+  CANVAS = new HtmlPlatform$Mode$2_0;
+  AUTODETECT = new HtmlPlatform$Mode$3_0;
+  $VALUES_4 = initValues(_3Lplayn_html_HtmlPlatform$Mode_2_classLit, makeCastMap([Q$Serializable]), Q$HtmlPlatform$Mode, [WEBGL, CANVAS, AUTODETECT]);
+}
+
+function values_4(){
+  $clinit_HtmlPlatform$Mode();
+  return $VALUES_4;
+}
+
+function HtmlPlatform$Mode(){
+}
+
+_ = HtmlPlatform$Mode.prototype = new Enum;
+_.getClass$ = function getClass_143(){
+  return Lplayn_html_HtmlPlatform$Mode_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparable, Q$Enum, Q$HtmlPlatform$Mode]);
+var $VALUES_4, AUTODETECT, CANVAS, WEBGL;
+function HtmlPlatform$Mode$1_0(){
+  this.name_0 = 'WEBGL';
+}
+
+function HtmlPlatform$Mode$1(){
+}
+
+_ = HtmlPlatform$Mode$1_0.prototype = HtmlPlatform$Mode$1.prototype = new HtmlPlatform$Mode;
+_.getClass$ = function getClass_144(){
+  return Lplayn_html_HtmlPlatform$Mode$1_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparable, Q$Enum, Q$HtmlPlatform$Mode]);
+function HtmlPlatform$Mode$2_0(){
+  this.name_0 = 'CANVAS';
+}
+
+function HtmlPlatform$Mode$2(){
+}
+
+_ = HtmlPlatform$Mode$2_0.prototype = HtmlPlatform$Mode$2.prototype = new HtmlPlatform$Mode;
+_.getClass$ = function getClass_145(){
+  return Lplayn_html_HtmlPlatform$Mode$2_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparable, Q$Enum, Q$HtmlPlatform$Mode]);
+function HtmlPlatform$Mode$3_0(){
+  this.name_0 = 'AUTODETECT';
+}
+
+function HtmlPlatform$Mode$3(){
+}
+
+_ = HtmlPlatform$Mode$3_0.prototype = HtmlPlatform$Mode$3.prototype = new HtmlPlatform$Mode;
+_.getClass$ = function getClass_146(){
+  return Lplayn_html_HtmlPlatform$Mode$3_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$Serializable, Q$Comparable, Q$Enum, Q$HtmlPlatform$Mode]);
+function $setListener_0(this$static, listener){
+  this$static.listener = listener;
+}
+
+function HtmlPointer_0(rootElement){
+  !impl && (impl = new TouchEvent$TouchSupportDetector_0);
+  if (impl.isSupported) {
+    $captureEvent(rootElement, 'touchstart', new HtmlPointer$1_0(this, rootElement));
+    $capturePageEvent('touchend', new HtmlPointer$2_0(this, rootElement));
+    $capturePageEvent('touchmove', new HtmlPointer$3_0(this, rootElement));
+  }
+   else {
+    $captureEvent(rootElement, 'mousedown', new HtmlPointer$4_0(this, rootElement));
+    $capturePageEvent('mouseup', new HtmlPointer$5_0(this, rootElement));
+    $capturePageEvent('mousemove', new HtmlPointer$6_0(this, rootElement));
+  }
+}
+
+function HtmlPointer(){
+}
+
+_ = HtmlPointer_0.prototype = HtmlPointer.prototype = new HtmlInput;
+_.getClass$ = function getClass_147(){
+  return Lplayn_html_HtmlPointer_2_classLit;
+}
+;
+_.inDragSequence = false;
+_.listener = null;
+function HtmlPointer$1_0(this$0, val$rootElement){
+  this.this$0 = this$0;
+  this.val$rootElement = val$rootElement;
+}
+
+function HtmlPointer$1(){
+}
+
+_ = HtmlPointer$1_0.prototype = HtmlPointer$1.prototype = new Object_0;
+_.getClass$ = function getClass_148(){
+  return Lplayn_html_HtmlPointer$1_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_9(nativeEvent){
+  var event_0, touch, x, y;
+  if (this.this$0.listener) {
+    if (nativeEvent.changedTouches.length > 0) {
+      this.this$0.inDragSequence = true;
+      touch = nativeEvent.changedTouches[0];
+      x = $getRelativeX(touch, this.val$rootElement);
+      y = $getRelativeY(touch, this.val$rootElement);
+      event_0 = new Pointer$Event$Impl_0(currentTimeMillis(), x, y);
+      $onPointerStart(this.this$0.listener, event_0);
+      event_0.preventDefault_0 && (nativeEvent.preventDefault() , undefined);
+    }
+  }
+}
+;
+_.this$0 = null;
+_.val$rootElement = null;
+function HtmlPointer$2_0(this$0, val$rootElement){
+  this.this$0 = this$0;
+  this.val$rootElement = val$rootElement;
+}
+
+function HtmlPointer$2(){
+}
+
+_ = HtmlPointer$2_0.prototype = HtmlPointer$2.prototype = new Object_0;
+_.getClass$ = function getClass_149(){
+  return Lplayn_html_HtmlPointer$2_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_10(nativeEvent){
+  var event_0, touch, x, y;
+  if (!!this.this$0.listener && this.this$0.inDragSequence) {
+    if (nativeEvent.changedTouches.length > 0) {
+      this.this$0.inDragSequence = false;
+      touch = nativeEvent.changedTouches[0];
+      x = $getRelativeX(touch, this.val$rootElement);
+      y = $getRelativeY(touch, this.val$rootElement);
+      event_0 = new Pointer$Event$Impl_0(currentTimeMillis(), x, y);
+      event_0.preventDefault_0 && (nativeEvent.preventDefault() , undefined);
+    }
+  }
+}
+;
+_.this$0 = null;
+_.val$rootElement = null;
+function HtmlPointer$3_0(this$0, val$rootElement){
+  this.this$0 = this$0;
+  this.val$rootElement = val$rootElement;
+}
+
+function HtmlPointer$3(){
+}
+
+_ = HtmlPointer$3_0.prototype = HtmlPointer$3.prototype = new Object_0;
+_.getClass$ = function getClass_150(){
+  return Lplayn_html_HtmlPointer$3_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_11(nativeEvent){
+  var event_0, touch, x, y;
+  if (!!this.this$0.listener && this.this$0.inDragSequence) {
+    if (nativeEvent.changedTouches.length > 0) {
+      touch = nativeEvent.changedTouches[0];
+      x = $getRelativeX(touch, this.val$rootElement);
+      y = $getRelativeY(touch, this.val$rootElement);
+      event_0 = new Pointer$Event$Impl_0(currentTimeMillis(), x, y);
+      $onPointerDrag(this.this$0.listener, event_0);
+      event_0.preventDefault_0 && (nativeEvent.preventDefault() , undefined);
+    }
+  }
+}
+;
+_.this$0 = null;
+_.val$rootElement = null;
+function HtmlPointer$4_0(this$0, val$rootElement){
+  this.this$0 = this$0;
+  this.val$rootElement = val$rootElement;
+}
+
+function HtmlPointer$4(){
+}
+
+_ = HtmlPointer$4_0.prototype = HtmlPointer$4.prototype = new Object_0;
+_.getClass$ = function getClass_151(){
+  return Lplayn_html_HtmlPointer$4_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_12(nativeEvent){
+  var event_0;
+  if (this.this$0.listener) {
+    this.this$0.inDragSequence = true;
+    event_0 = new Pointer$Event$Impl_0(currentTimeMillis(), getRelativeX(nativeEvent, this.val$rootElement), getRelativeY(nativeEvent, this.val$rootElement));
+    $onPointerStart(this.this$0.listener, event_0);
+    event_0.preventDefault_0 && (nativeEvent.preventDefault() , undefined);
+  }
+}
+;
+_.this$0 = null;
+_.val$rootElement = null;
+function HtmlPointer$5_0(this$0, val$rootElement){
+  this.this$0 = this$0;
+  this.val$rootElement = val$rootElement;
+}
+
+function HtmlPointer$5(){
+}
+
+_ = HtmlPointer$5_0.prototype = HtmlPointer$5.prototype = new Object_0;
+_.getClass$ = function getClass_152(){
+  return Lplayn_html_HtmlPointer$5_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_13(nativeEvent){
+  var event_0;
+  if (!!this.this$0.listener && this.this$0.inDragSequence) {
+    this.this$0.inDragSequence = false;
+    event_0 = new Pointer$Event$Impl_0(currentTimeMillis(), getRelativeX(nativeEvent, this.val$rootElement), getRelativeY(nativeEvent, this.val$rootElement));
+    event_0.preventDefault_0 && (nativeEvent.preventDefault() , undefined);
+  }
+}
+;
+_.this$0 = null;
+_.val$rootElement = null;
+function HtmlPointer$6_0(this$0, val$rootElement){
+  this.this$0 = this$0;
+  this.val$rootElement = val$rootElement;
+}
+
+function HtmlPointer$6(){
+}
+
+_ = HtmlPointer$6_0.prototype = HtmlPointer$6.prototype = new Object_0;
+_.getClass$ = function getClass_153(){
+  return Lplayn_html_HtmlPointer$6_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_14(nativeEvent){
+  var event_0;
+  if (!!this.this$0.listener && this.this$0.inDragSequence) {
+    event_0 = new Pointer$Event$Impl_0(currentTimeMillis(), getRelativeX(nativeEvent, this.val$rootElement), getRelativeY(nativeEvent, this.val$rootElement));
+    $onPointerDrag(this.this$0.listener, event_0);
+    event_0.preventDefault_0 && (nativeEvent.preventDefault() , undefined);
+  }
+}
+;
+_.this$0 = null;
+_.val$rootElement = null;
+function HtmlStorage_0(){
+  var storage;
+  storage = getLocalStorageIfSupported();
+  storage?new StorageMap_0(storage):new HashMap_0;
+}
+
+function HtmlStorage(){
+}
+
+_ = HtmlStorage_0.prototype = HtmlStorage.prototype = new Object_0;
+_.getClass$ = function getClass_154(){
+  return Lplayn_html_HtmlStorage_2_classLit;
+}
+;
+function HtmlSurfaceGL_0(gfx, fbuf, width, height){
+  this.transformStack = new ArrayList_0;
+  this.gfx = gfx;
+  this.fbuf = fbuf;
+  this.width_0 = width;
+  this.height_0 = height;
+  $add(this.transformStack, new HtmlInternalTransform_0);
+}
+
+function HtmlSurfaceGL(){
+}
+
+_ = HtmlSurfaceGL_0.prototype = HtmlSurfaceGL.prototype = new Object_0;
+_.fillRect_0 = function fillRect_0(x, y, width, height){
+  $bindFramebuffer_0(this.gfx, this.fbuf, this.width_0, this.height_0, false);
+  $fillRect_1(this.gfx, $get_1(this.transformStack, this.transformStack.size - 1), x, y, width, height, this.fillColor);
+  return this;
+}
+;
+_.getClass$ = function getClass_155(){
+  return Lplayn_html_HtmlSurfaceGL_2_classLit;
+}
+;
+_.setFillColor = function setFillColor_0(color){
+  this.fillColor = color;
+  return this;
+}
+;
+_.fbuf = null;
+_.fillColor = 0;
+_.gfx = null;
+_.height_0 = 0;
+_.width_0 = 0;
+function HtmlSurfaceLayerDom_0(width, height){
+  $clinit_HtmlLayerDom();
+  HtmlLayerDom_0.call(this, $doc.createElement('canvas'));
+  $setWidth(this.elem, width);
+  $setHeight(this.elem, height);
+  this.surface = new CanvasSurface_0(new HtmlCanvas_0(this.elem, width, height));
+}
+
+function HtmlSurfaceLayerDom(){
+}
+
+_ = HtmlSurfaceLayerDom_0.prototype = HtmlSurfaceLayerDom.prototype = new HtmlLayerDom;
+_.getClass$ = function getClass_156(){
+  return Lplayn_html_HtmlSurfaceLayerDom_2_classLit;
+}
+;
+_.surface_0 = function surface(){
+  return this.surface;
+}
+;
+_.surface = null;
+function HtmlSurfaceLayerGL_0(gfx, width, height){
+  var gl;
+  HtmlLayerGL_0.call(this, gfx);
+  this.width_0 = width;
+  this.height_0 = height;
+  $flush(gfx);
+  gl = gfx.gl;
+  this.tex = $createTexture(gfx, false, false);
+  gl.texImage2D(3553, 0, 6408, width, height, 0, 6408, 5121, null);
+  this.fbuf = gl.createFramebuffer();
+  $bindFramebuffer(gl, 36160, this.fbuf);
+  $framebufferTexture2D(gl, 36160, 36064, 3553, this.tex, 0);
+  gl.bindTexture(3553, null);
+  $bindFramebuffer_0(gfx, null, gfx.canvas.width, gfx.canvas.height, false);
+  this.surface = new HtmlSurfaceGL_0(gfx, this.fbuf, width, height);
+}
+
+function HtmlSurfaceLayerGL(){
+}
+
+_ = HtmlSurfaceLayerGL_0.prototype = HtmlSurfaceLayerGL.prototype = new HtmlLayerGL;
+_.getClass$ = function getClass_157(){
+  return Lplayn_html_HtmlSurfaceLayerGL_2_classLit;
+}
+;
+_.paint = function paint_1(parentTransform, parentAlpha){
+  if (!$isSet(this, ($clinit_AbstractLayer$Flag() , VISIBLE_1)))
+    return;
+  $drawTexture(this.gfx, this.tex, this.width_0, this.height_0, (this.savedLocal.set_0(parentTransform) , this.savedLocal.concatenate(this.transform, this.originX, this.originY)), this.height_0, this.width_0, -this.height_0, false, false, parentAlpha * this.alpha);
+}
+;
+_.surface_0 = function surface_0(){
+  return this.surface;
+}
+;
+_.fbuf = null;
+_.height_0 = 0;
+_.surface = null;
+_.tex = null;
+_.width_0 = 0;
+function HtmlTouch_0(rootElement){
+  $captureEvent(rootElement, 'touchstart', new HtmlTouch$1_0);
+  $capturePageEvent('touchend', new HtmlTouch$2_0);
+  $capturePageEvent('touchmove', new HtmlTouch$3_0);
+}
+
+function HtmlTouch(){
+}
+
+_ = HtmlTouch_0.prototype = HtmlTouch.prototype = new HtmlInput;
+_.getClass$ = function getClass_158(){
+  return Lplayn_html_HtmlTouch_2_classLit;
+}
+;
+function HtmlTouch$1_0(){
+}
+
+function HtmlTouch$1(){
+}
+
+_ = HtmlTouch$1_0.prototype = HtmlTouch$1.prototype = new Object_0;
+_.getClass$ = function getClass_159(){
+  return Lplayn_html_HtmlTouch$1_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_15(nativeEvent){
+}
+;
+function HtmlTouch$2_0(){
+}
+
+function HtmlTouch$2(){
+}
+
+_ = HtmlTouch$2_0.prototype = HtmlTouch$2.prototype = new Object_0;
+_.getClass$ = function getClass_160(){
+  return Lplayn_html_HtmlTouch$2_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_16(nativeEvent){
+}
+;
+function HtmlTouch$3_0(){
+}
+
+function HtmlTouch$3(){
+}
+
+_ = HtmlTouch$3_0.prototype = HtmlTouch$3.prototype = new Object_0;
+_.getClass$ = function getClass_161(){
+  return Lplayn_html_HtmlTouch$3_2_classLit;
+}
+;
+_.handleEvent = function handleEvent_17(nativeEvent){
+}
+;
+function getRandom(){
+  var $e0, random, val;
+  random = Math.random();
+  val = (ensureParameterMap() , $get_0(paramMap, 'analytics'));
+  if (val != null) {
+    try {
+      random = parseFloat_0(val);
+    }
+     catch ($e0) {
+      $e0 = caught($e0);
+      if (!instanceOf($e0, Q$Exception))
+        throw $e0;
+    }
+  }
+  return random;
+}
+
+function AbstractVector(){
+}
+
+_ = AbstractVector.prototype = new Object_0;
+_.equals$ = function equals_7(obj){
+  var p;
+  if (obj === this) {
+    return true;
+  }
+  if (instanceOf(obj, Q$AbstractVector)) {
+    p = obj;
+    return this.x == p.x && this.y == p.y;
+  }
+  return false;
+}
+;
+_.getClass$ = function getClass_162(){
+  return Lpythagoras_f_AbstractVector_2_classLit;
+}
+;
+_.hashCode$ = function hashCode_8(){
+  return round_int(this.x) ^ round_int(this.y);
+}
+;
+_.toString$ = function toString_15(){
+  return vectorToString(this.x, this.y);
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$AbstractVector]);
+function toString_16(value){
+  var buf, ii, ivalue;
+  buf = new StringBuilder_0;
+  if (value >= 0) {
+    buf.impl.string += '+';
+  }
+   else {
+    buf.impl.string += '-';
+    value = -value;
+  }
+  ivalue = round_int(value);
+  $append_2(buf.impl, ivalue);
+  buf.impl.string += '.';
+  for (ii = 0; ii < 3; ++ii) {
+    value = (value - ivalue) * 10;
+    ivalue = round_int(value);
+    $append_2(buf.impl, ivalue);
+  }
+  for (ii = 0; ii < 2; ++ii) {
+    $charAt_0(buf, buf.impl.string.length - 1) == 48 && $setLength(buf, buf.impl.string.length - 1);
+  }
+  return buf.impl.string;
+}
+
+function multiply_0(am00, am01, am10, am11, atx, aty, bm00, bm01, bm10, bm11, btx, bty, into){
+  into.m00 = am00 * bm00 + am10 * bm01;
+  into.m01 = am01 * bm00 + am11 * bm01;
+  into.m10 = am00 * bm10 + am10 * bm11;
+  into.m11 = am01 * bm10 + am11 * bm11;
+  into.tx = am00 * btx + am10 * bty + atx;
+  into.ty = am01 * btx + am11 * bty + aty;
+  return into;
+}
+
+function Vector_0(x, y){
+  this.x = x;
+  this.y = y;
+}
+
+function Vector(){
+}
+
+_ = Vector_0.prototype = Vector.prototype = new AbstractVector;
+_.getClass$ = function getClass_163(){
+  return Lpythagoras_f_Vector_2_classLit;
+}
+;
+_.castableTypeMap$ = makeCastMap([Q$AbstractVector]);
+_.x = 0;
+_.y = 0;
+function $clinit_Vectors(){
+  $clinit_Vectors = nullMethod;
+  new Vector_0(1, 0);
+  new Vector_0(0, 1);
+  new Vector_0(0, 0);
+  new Vector_0(-3.4028234663852886E38, -3.4028234663852886E38);
+  new Vector_0(3.4028234663852886E38, 3.4028234663852886E38);
+}
+
+function vectorToString(x, y){
+  $clinit_Vectors();
+  return toString_16(x) + toString_16(y);
+}
+
+var $entry = entry_0;
+function gwtOnLoad(errFn, modName, modBase, softPermutationId){
+  $moduleName = modName;
+  $moduleBase = modBase;
+  if (errFn)
+    try {
+      $entry(init)();
+    }
+     catch (e) {
+      errFn(modName);
+    }
+   else {
+    $entry(init)();
+  }
+}
+
+--></script>
+<script><!--
+var Ljava_lang_Object_2_classLit = createForClass('Object_0'), Lcom_allen_1sauer_gwt_voices_client_FlashSound_2_classLit = createForClass(null), Lcom_allen_1sauer_gwt_voices_client_Html5Sound_2_classLit = createForClass(null), Lcom_allen_1sauer_gwt_voices_client_NativeSound_2_classLit = createForClass(null), Ljava_lang_Enum_2_classLit = createForClass('Enum'), Lcom_allen_1sauer_gwt_voices_client_SoundController_2_classLit = createForClass('SoundController'), Lcom_allen_1sauer_gwt_voices_client_WebAudioSound_2_classLit = createForClass(null), Ljava_lang_Class_2_classLit = createForClass('Class'), _3Ljava_lang_Class_2_classLit = createForArray('Array_0'), Ljava_util_AbstractCollection_2_classLit = createForClass('AbstractCollection'), Ljava_util_AbstractList_2_classLit = createForClass('AbstractList'), Ljava_util_ArrayList_2_classLit = createForClass('ArrayList'), Ljava_lang_String_2_classLit = createForClass('String_0'), _3Ljava_lang_String_2_classLit = createForArray('Array_0'), Lcom_bigdicegames_playndemos_core_Ball_2_classLit = createForClass('Ball'), Lcom_bigdicegames_playndemos_core_Ball$1_2_classLit = createForClass('Ball$1'), Lcom_bigdicegames_playndemos_core_BreakN_2_classLit = createForClass('BreakN'), Lplayn_core_Mouse$Adapter_2_classLit = createForClass('Mouse$Adapter'), Lcom_bigdicegames_playndemos_core_BreakN$1_2_classLit = createForClass('BreakN$1'), Lplayn_core_Pointer$Adapter_2_classLit = createForClass('Pointer$Adapter'), Lcom_bigdicegames_playndemos_core_BreakN$2_2_classLit = createForClass('BreakN$2'), Lcom_bigdicegames_playndemos_core_Brick_2_classLit = createForClass('Brick'), Lcom_bigdicegames_playndemos_core_BrickManager_2_classLit = createForClass('BrickManager'), Lcom_bigdicegames_playndemos_core_Paddle_2_classLit = createForClass('Paddle'), Lcom_bigdicegames_playndemos_core_Paddle$1_2_classLit = createForClass('Paddle$1'), Ljava_lang_Throwable_2_classLit = createForClass('Throwable'), Ljava_lang_Exception_2_classLit = createForClass('Exception'), Ljava_lang_RuntimeException_2_classLit = createForClass('RuntimeException'), Lcom_google_gwt_core_client_JavaScriptException_2_classLit = createForClass('JavaScriptException'), Lcom_google_gwt_core_client_JavaScriptObject_2_classLit = createForClass('JavaScriptObject'), Lcom_google_gwt_core_client_Scheduler_2_classLit = createForClass('Scheduler'), _3I_classLit = createForArray('Array_0'), _3Ljava_lang_Object_2_classLit = createForArray('Array_0'), Lcom_google_gwt_core_client_impl_SchedulerImpl_2_classLit = createForClass('SchedulerImpl'), Lcom_google_gwt_core_client_impl_SchedulerImpl$Flusher_2_classLit = createForClass('SchedulerImpl$Flusher'), Lcom_google_gwt_core_client_impl_SchedulerImpl$Rescuer_2_classLit = createForClass('SchedulerImpl$Rescuer'), Lcom_google_gwt_core_client_impl_StackTraceCreator$Collector_2_classLit = createForClass('StackTraceCreator$Collector'), Ljava_lang_StackTraceElement_2_classLit = createForClass('StackTraceElement'), _3Ljava_lang_StackTraceElement_2_classLit = createForArray('Array_0'), Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorMoz_2_classLit = createForClass('StackTraceCreator$CollectorMoz'), Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorChrome_2_classLit = createForClass('StackTraceCreator$CollectorChrome'), Lcom_google_gwt_core_client_impl_StringBufferImpl_2_classLit = createForClass('StringBufferImpl'), Lcom_google_gwt_core_client_impl_StringBufferImplAppend_2_classLit = createForClass('StringBufferImplAppend'), Lcom_google_gwt_dom_client_Style$Overflow_2_classLit = createForEnum('Style$Overflow', values), _3Lcom_google_gwt_dom_client_Style$Overflow_2_classLit = createForArray('Array_0'), Lcom_google_gwt_dom_client_Style$Overflow$1_2_classLit = createForEnum('Style$Overflow$1', null), Lcom_google_gwt_dom_client_Style$Overflow$2_2_classLit = createForEnum('Style$Overflow$2', null), Lcom_google_gwt_dom_client_Style$Overflow$3_2_classLit = createForEnum('Style$Overflow$3', null), Lcom_google_gwt_dom_client_Style$Overflow$4_2_classLit = createForEnum('Style$Overflow$4', null), Lcom_google_gwt_dom_client_Style$Position_2_classLit = createForEnum('Style$Position', values_0), _3Lcom_google_gwt_dom_client_Style$Position_2_classLit = createForArray('Array_0'), Lcom_google_gwt_dom_client_Style$Position$1_2_classLit = createForEnum('Style$Position$1', null), Lcom_google_gwt_dom_client_Style$Position$2_2_classLit = createForEnum('Style$Position$2', null), Lcom_google_gwt_dom_client_Style$Position$3_2_classLit = createForEnum('Style$Position$3', null), Lcom_google_gwt_dom_client_Style$Position$4_2_classLit = createForEnum('Style$Position$4', null), Lcom_google_gwt_dom_client_Style$Unit_2_classLit = createForEnum('Style$Unit', values_1), _3Lcom_google_gwt_dom_client_Style$Unit_2_classLit = createForArray('Array_0'), Lcom_google_gwt_dom_client_Style$Unit$1_2_classLit = createForEnum('Style$Unit$1', null), Lcom_google_gwt_dom_client_Style$Unit$2_2_classLit = createForEnum('Style$Unit$2', null), Lcom_google_gwt_dom_client_Style$Unit$3_2_classLit = createForEnum('Style$Unit$3', null), Lcom_google_gwt_dom_client_Style$Unit$4_2_classLit = createForEnum('Style$Unit$4', null), Lcom_google_gwt_dom_client_Style$Unit$5_2_classLit = createForEnum('Style$Unit$5', null), Lcom_google_gwt_dom_client_Style$Unit$6_2_classLit = createForEnum('Style$Unit$6', null), Lcom_google_gwt_dom_client_Style$Unit$7_2_classLit = createForEnum('Style$Unit$7', null), Lcom_google_gwt_dom_client_Style$Unit$8_2_classLit = createForEnum('Style$Unit$8', null), Lcom_google_gwt_dom_client_Style$Unit$9_2_classLit = createForEnum('Style$Unit$9', null), Lcom_google_gwt_dom_client_Style$Visibility_2_classLit = createForEnum('Style$Visibility', values_2), _3Lcom_google_gwt_dom_client_Style$Visibility_2_classLit = createForArray('Array_0'), Lcom_google_gwt_dom_client_Style$Visibility$1_2_classLit = createForEnum('Style$Visibility$1', null), Lcom_google_gwt_dom_client_Style$Visibility$2_2_classLit = createForEnum('Style$Visibility$2', null), Lcom_google_gwt_event_dom_client_TouchEvent$TouchSupportDetector_2_classLit = createForClass('TouchEvent$TouchSupportDetector'), Lcom_google_gwt_storage_client_Storage_2_classLit = createForClass('Storage'), Lcom_google_gwt_storage_client_Storage$StorageSupportDetector_2_classLit = createForClass('Storage$StorageSupportDetector'), Ljava_util_AbstractMap_2_classLit = createForClass('AbstractMap'), Lcom_google_gwt_storage_client_StorageMap_2_classLit = createForClass('StorageMap'), Lcom_google_gwt_storage_client_StorageMap$StorageEntry_2_classLit = createForClass('StorageMap$StorageEntry'), Lcom_google_gwt_storage_client_StorageMap$StorageEntryIterator_2_classLit = createForClass('StorageMap$StorageEntryIterator'), Ljava_util_AbstractSet_2_classLit = createForClass('AbstractSet'), Lcom_google_gwt_storage_client_StorageMap$StorageEntrySet_2_classLit = createForClass('StorageMap$StorageEntrySet'), _3C_classLit = createForArray('Array_0'), _3F_classLit = createForArray('Array_0'), Ljava_lang_IndexOutOfBoundsException_2_classLit = createForClass('IndexOutOfBoundsException'), Ljava_lang_ArrayStoreException_2_classLit = createForClass('ArrayStoreException'), Ljava_lang_Boolean_2_classLit = createForClass(null), Ljava_lang_Double_2_classLit = createForClass(null), Ljava_lang_IllegalArgumentException_2_classLit = createForClass('IllegalArgumentException'), Ljava_lang_Integer_2_classLit = createForClass(null), Ljava_lang_NullPointerException_2_classLit = createForClass('NullPointerException'), Ljava_lang_NumberFormatException_2_classLit = createForClass('NumberFormatException'), Ljava_lang_StringBuffer_2_classLit = createForClass('StringBuffer'), Ljava_lang_StringBuilder_2_classLit = createForClass('StringBuilder'), Ljava_lang_UnsupportedOperationException_2_classLit = createForClass('UnsupportedOperationException'), Ljava_util_AbstractHashMap_2_classLit = createForClass('AbstractHashMap'), Ljava_util_AbstractHashMap$EntrySet_2_classLit = createForClass('AbstractHashMap$EntrySet'), Ljava_util_AbstractHashMap$EntrySetIterator_2_classLit = createForClass('AbstractHashMap$EntrySetIterator'), Ljava_util_AbstractMapEntry_2_classLit = createForClass('AbstractMapEntry'), Ljava_util_AbstractHashMap$MapEntryNull_2_classLit = createForClass('AbstractHashMap$MapEntryNull'), Ljava_util_AbstractHashMap$MapEntryString_2_classLit = createForClass('AbstractHashMap$MapEntryString'), Ljava_util_AbstractList$IteratorImpl_2_classLit = createForClass('AbstractList$IteratorImpl'), Ljava_util_AbstractMap$1_2_classLit = createForClass('AbstractMap$1'), Ljava_util_AbstractMap$1$1_2_classLit = createForClass('AbstractMap$1$1'), Ljava_util_HashMap_2_classLit = createForClass('HashMap'), Ljava_util_HashSet_2_classLit = createForClass('HashSet'), Ljava_util_MapEntryImpl_2_classLit = createForClass('MapEntryImpl'), Ljava_util_NoSuchElementException_2_classLit = createForClass('NoSuchElementException'), Lplayn_core_AbstractAssetManager_2_classLit = createForClass('AbstractAssetManager'), Lplayn_core_AbstractAssetManager$1_2_classLit = createForClass('AbstractAssetManager$1'), Lplayn_core_AbstractCachingAssetManager_2_classLit = createForClass('AbstractCachingAssetManager'), Lplayn_core_AbstractLayer_2_classLit = createForClass('AbstractLayer'), Lplayn_core_AbstractLayer$Flag_2_classLit = createForEnum('AbstractLayer$Flag', values_3), _3Lplayn_core_AbstractLayer$Flag_2_classLit = createForArray('Array_0'), Lplayn_core_CanvasSurface_2_classLit = createForClass('CanvasSurface'), Lplayn_core_Events$Input$Impl_2_classLit = createForClass('Events$Input$Impl'), Lplayn_core_Events$Position$Impl_2_classLit = createForClass('Events$Position$Impl'), Lplayn_core_GroupLayerImpl_2_classLit = createForClass('GroupLayerImpl'), Lplayn_core_Mouse$ButtonEvent$Impl_2_classLit = createForClass('Mouse$ButtonEvent$Impl'), Lplayn_core_Mouse$MotionEvent$Impl_2_classLit = createForClass('Mouse$MotionEvent$Impl'), Lplayn_core_Mouse$WheelEvent$Impl_2_classLit = createForClass('Mouse$WheelEvent$Impl'), Lplayn_core_Pointer$Event$Impl_2_classLit = createForClass('Pointer$Event$Impl'), Lpythagoras_f_AbstractTransform_2_classLit = createForClass('AbstractTransform'), Lpythagoras_f_AffineTransform_2_classLit = createForClass('AffineTransform'), Lplayn_core_StockInternalTransform_2_classLit = createForClass('StockInternalTransform'), Lplayn_core_Json$Object_2_classLit = createForInterface(), Lplayn_core_TypedArrayBuilder$1_2_classLit = createForClass('TypedArrayBuilder$1'), Lplayn_core_TypedArrayBuilder$2_2_classLit = createForClass('TypedArrayBuilder$2'), Lplayn_core_TypedArrayBuilder$3_2_classLit = createForClass('TypedArrayBuilder$3'), Lplayn_core_TypedArrayBuilder$4_2_classLit = createForClass('TypedArrayBuilder$4'), Lplayn_core_TypedArrayBuilder$5_2_classLit = createForClass('TypedArrayBuilder$5'), Lplayn_core_gl_LayerGL_2_classLit = createForClass('LayerGL'), Lplayn_html_HtmlAssetManager_2_classLit = createForClass('HtmlAssetManager'), Lplayn_html_HtmlAudio_2_classLit = createForClass('HtmlAudio'), Lplayn_html_HtmlCanvas_2_classLit = createForClass('HtmlCanvas'), Lplayn_html_HtmlImage_2_classLit = createForClass('HtmlImage'), Lplayn_html_HtmlLayerDom_2_classLit = createForClass('HtmlLayerDom'), Lplayn_html_HtmlLayerGL_2_classLit = createForClass('HtmlLayerGL'), Lplayn_html_HtmlGame$1_2_classLit = createForClass('HtmlGame$1'), Lplayn_html_HtmlGame$2_2_classLit = createForClass('HtmlGame$2'), Lplayn_html_HtmlGraphics_2_classLit = createForClass('HtmlGraphics'), Lplayn_html_HtmlGraphicsDom_2_classLit = createForClass('HtmlGraphicsDom'), Lplayn_html_HtmlGraphicsGL_2_classLit = createForClass('HtmlGraphicsGL'), Lplayn_html_HtmlGraphicsGL$Shader_2_classLit = createForClass('HtmlGraphicsGL$Shader'), Lplayn_html_HtmlGraphicsGL$ColorShader_2_classLit = createForClass('HtmlGraphicsGL$ColorShader'), Lplayn_html_HtmlGraphicsGL$TextureShader_2_classLit = createForClass('HtmlGraphicsGL$TextureShader'), Lplayn_html_HtmlGroupLayerDom_2_classLit = createForClass('HtmlGroupLayerDom'), Lplayn_html_HtmlGroupLayerGL_2_classLit = createForClass('HtmlGroupLayerGL'), Lplayn_html_HtmlImage$1_2_classLit = createForClass('HtmlImage$1'), Lplayn_html_HtmlImage$2_2_classLit = createForClass('HtmlImage$2'), Lplayn_html_HtmlImageLayerDom_2_classLit = createForClass('HtmlImageLayerDom'), Lplayn_html_HtmlImageLayerDom$1_2_classLit = createForClass('HtmlImageLayerDom$1'), Lplayn_html_HtmlImageLayerGL_2_classLit = createForClass('HtmlImageLayerGL'), Lplayn_html_HtmlInput_2_classLit = createForClass('HtmlInput'), Lplayn_html_HtmlInput$1_2_classLit = createForClass('HtmlInput$1'), Lplayn_html_HtmlInternalTransform_2_classLit = createForClass('HtmlInternalTransform'), Lplayn_html_HtmlKeyboard$1_2_classLit = createForClass('HtmlKeyboard$1'), Lplayn_html_HtmlKeyboard$2_2_classLit = createForClass('HtmlKeyboard$2'), Lplayn_html_HtmlMouse_2_classLit = createForClass('HtmlMouse'), Lplayn_html_HtmlMouse$1_2_classLit = createForClass('HtmlMouse$1'), Lplayn_html_HtmlMouse$2_2_classLit = createForClass('HtmlMouse$2'), Lplayn_html_HtmlMouse$3_2_classLit = createForClass('HtmlMouse$3'), Lplayn_html_HtmlMouse$4_2_classLit = createForClass('HtmlMouse$4'), Lplayn_html_HtmlMouse$5_2_classLit = createForClass('HtmlMouse$5'), Lplayn_html_HtmlPlatform_2_classLit = createForClass('HtmlPlatform'), Lplayn_html_HtmlPlatform$1_2_classLit = createForClass('HtmlPlatform$1'), Lplayn_html_HtmlPlatform$Mode_2_classLit = createForEnum('HtmlPlatform$Mode', values_4), _3Lplayn_html_HtmlPlatform$Mode_2_classLit = createForArray('Array_0'), Lplayn_html_HtmlPlatform$Mode$1_2_classLit = createForEnum('HtmlPlatform$Mode$1', null), Lplayn_html_HtmlPlatform$Mode$2_2_classLit = createForEnum('HtmlPlatform$Mode$2', null), Lplayn_html_HtmlPlatform$Mode$3_2_classLit = createForEnum('HtmlPlatform$Mode$3', null), Lplayn_html_HtmlPointer_2_classLit = createForClass('HtmlPointer'), Lplayn_html_HtmlPointer$1_2_classLit = createForClass('HtmlPointer$1'), Lplayn_html_HtmlPointer$2_2_classLit = createForClass('HtmlPointer$2'), Lplayn_html_HtmlPointer$3_2_classLit = createForClass('HtmlPointer$3'), Lplayn_html_HtmlPointer$4_2_classLit = createForClass('HtmlPointer$4'), Lplayn_html_HtmlPointer$5_2_classLit = createForClass('HtmlPointer$5'), Lplayn_html_HtmlPointer$6_2_classLit = createForClass('HtmlPointer$6'), Lplayn_html_HtmlStorage_2_classLit = createForClass('HtmlStorage'), Lplayn_html_HtmlSurfaceGL_2_classLit = createForClass('HtmlSurfaceGL'), Lplayn_html_HtmlSurfaceLayerDom_2_classLit = createForClass('HtmlSurfaceLayerDom'), Lplayn_html_HtmlSurfaceLayerGL_2_classLit = createForClass('HtmlSurfaceLayerGL'), Lplayn_html_HtmlTouch_2_classLit = createForClass('HtmlTouch'), Lplayn_html_HtmlTouch$1_2_classLit = createForClass('HtmlTouch$1'), Lplayn_html_HtmlTouch$2_2_classLit = createForClass('HtmlTouch$2'), Lplayn_html_HtmlTouch$3_2_classLit = createForClass('HtmlTouch$3'), Lpythagoras_f_AbstractVector_2_classLit = createForClass('AbstractVector'), Lpythagoras_f_Vector_2_classLit = createForClass('Vector');
+$stats && $stats({moduleName:'breakn',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalEnd'});
+if ($wnd.breakn) $wnd.breakn.onScriptLoad();
+--></script></body></html>

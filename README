@@ -1,0 +1,16 @@
+				BreakN
+			 A PlayN sample game
+			   By Dave LeCompte
+
+How many bricks can you knock down?
+
+A sample game showing:
+  - mouse input
+  - pointer input
+  - SurfaceLayer drawing
+  - ImageLayer drawing
+  - very simple physics
+  - asynchronous asset loading
+  - build for HTML5 web target
+  - build for Java Desktop
+  - build for Android APK
